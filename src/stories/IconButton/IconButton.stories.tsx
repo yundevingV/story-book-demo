@@ -38,16 +38,6 @@ const meta: Meta<typeof IconButton> = {
 export default meta;
 type Story = StoryObj<typeof IconButton>;
 
-export const Example: Story = {
-  args: {
-    label: "button",
-    icon: <FiPlus />,
-    variant: "main",
-    size: "medium",
-    state: "default",
-  },
-};
-
 export const IconButtonList: Story = {
   parameters: {
     controls: { disable: true },
@@ -77,6 +67,46 @@ export const IconButtonList: Story = {
           args={{
             label: "Twitter",
             icon: <FaTwitter />,
+          }}
+        />
+      </div>
+    ),
+  ],
+};
+
+export const OnlyIconButtonList: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  decorators: [
+    (Story) => (
+      <div className="flex gap-4">
+        <Story
+          args={{
+            label: "Chrome",
+            icon: <FaChrome />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Facebook",
+            icon: <FaFacebook />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Instagram",
+            icon: <FaInstagram />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Twitter",
+            icon: <FaTwitter />,
+            onlyIcon: true,
           }}
         />
       </div>

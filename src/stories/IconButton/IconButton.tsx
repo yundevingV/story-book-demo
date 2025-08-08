@@ -6,11 +6,12 @@ export const IconButton = ({
   variant,
   size,
   state,
+  onlyIcon,
   ...props
 }: IconButtonProps) => {
   return (
     <Button
-      label={label}
+      label={onlyIcon ? "" : label}
       variant={variant}
       size={size}
       state={state}
