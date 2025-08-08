@@ -20,14 +20,17 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: { type: "radio" },
       options: ["main", "warning", "error"],
+      description: "버튼 타입을 설정할 수 있습니다.",
     },
     state: {
       control: { type: "radio" },
       options: ["default", "loading", "success", "error"],
+      description: "버튼 상태를 설정할 수 있습니다.",
     },
     size: {
       control: { type: "radio" },
       options: ["small", "medium", "large"],
+      description: "버튼 크기를 설정할 수 있습니다.",
     },
   },
   args: { onClick: fn() },
@@ -59,22 +62,6 @@ export const VariantButtonList: Story = {
   ],
 };
 
-export const StateButtonList: Story = {
-  parameters: {
-    controls: { disable: true },
-  },
-  decorators: [
-    (Story) => (
-      <div className="flex gap-4">
-        <Story args={{ label: "button", variant: "main", state: "default" }} />
-        <Story args={{ label: "button", variant: "main", state: "loading" }} />
-        <Story args={{ label: "button", variant: "main", state: "success" }} />
-        <Story args={{ label: "button", variant: "main", state: "error" }} />
-      </div>
-    ),
-  ],
-};
-
 export const SizeButtonList: Story = {
   parameters: {
     controls: { disable: true },
@@ -82,9 +69,9 @@ export const SizeButtonList: Story = {
   decorators: [
     (Story) => (
       <div className="flex gap-4">
-        <Story args={{ label: "button", variant: "main", size: "small" }} />
-        <Story args={{ label: "button", variant: "main", size: "medium" }} />
-        <Story args={{ label: "button", variant: "main", size: "large" }} />
+        <Story args={{ label: "button", size: "small" }} />
+        <Story args={{ label: "button", size: "medium" }} />
+        <Story args={{ label: "button", size: "large" }} />
       </div>
     ),
   ],

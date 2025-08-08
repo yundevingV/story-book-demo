@@ -1,4 +1,3 @@
-import { FiLoader, FiCheck, FiX } from "react-icons/fi";
 import cx from "classnames";
 import { cva } from "class-variance-authority";
 
@@ -22,31 +21,23 @@ const buttonStyle = cva(
         large: "px-6 py-3 text-lg h-12 gap-x-2",
       },
     },
+    // 기본값 설정
+    defaultVariants: {
+      variant: "main",
+      size: "medium",
+    },
   }
 );
 
 export const Button = ({
   label,
-  size = "medium",
-  variant = "main",
-  state = "default",
+  size,
+  variant,
+  state,
   className,
+  children,
   ...props
 }: ButtonProps) => {
-  // 상태별 아이콘
-  const getIcon = () => {
-    switch (state) {
-      case "loading":
-        return <FiLoader className="animate-spin -ml-1 mr-2 h-4 w-4" />;
-      case "success":
-        return <FiCheck className="w-4 h-4 mr-2" />;
-      case "error":
-        return <FiX className="w-4 h-4 mr-2" />;
-      default:
-        return null;
-    }
-  };
-
   // 상태별 비활성화
   const isDisabled = state === "loading";
 
@@ -57,8 +48,8 @@ export const Button = ({
       className={cx(buttonStyle({ size, variant }), className)}
       {...props}
     >
-      <div className="flex items-center justify-center">
-        {getIcon()}
+      <div className="flex items-center justify-center gap-2">
+        {children}
         {label}
       </div>
     </button>
