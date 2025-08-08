@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/nextjs";
 import { fn } from "storybook/internal/test";
-import { FiPlus } from "react-icons/fi";
 import { IconButton } from "./IconButton";
 import { FaChrome, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 
