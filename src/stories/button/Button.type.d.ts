@@ -7,5 +7,6 @@ type ButtonProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   state?: ButtonState;
+  className?: string;
   onClick?: () => void;
 };
