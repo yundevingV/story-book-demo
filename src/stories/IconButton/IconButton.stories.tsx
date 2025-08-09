@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/nextjs";
 import { fn } from "storybook/internal/test";
 import { IconButton } from "./IconButton";
+import { Icon } from "../icon/Icon";
 import { FaChrome, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 
 const meta: Meta<typeof IconButton> = {
@@ -47,25 +48,25 @@ export const IconButtonList: Story = {
         <Story
           args={{
             label: "Chrome",
-            icon: <FaChrome />,
+            icon: <Icon icon={<FaChrome />} />,
           }}
         />
         <Story
           args={{
             label: "Facebook",
-            icon: <FaFacebook />,
+            icon: <Icon icon={<FaFacebook />} />,
           }}
         />
         <Story
           args={{
             label: "Instagram",
-            icon: <FaInstagram />,
+            icon: <Icon icon={<FaInstagram />} />,
           }}
         />
         <Story
           args={{
             label: "Twitter",
-            icon: <FaTwitter />,
+            icon: <Icon icon={<FaTwitter />} />,
           }}
         />
       </div>
@@ -83,28 +84,68 @@ export const OnlyIconButtonList: Story = {
         <Story
           args={{
             label: "Chrome",
-            icon: <FaChrome />,
+            icon: <Icon icon={<FaChrome />} />,
             onlyIcon: true,
           }}
         />
         <Story
           args={{
             label: "Facebook",
-            icon: <FaFacebook />,
+            icon: <Icon icon={<FaFacebook />} />,
             onlyIcon: true,
           }}
         />
         <Story
           args={{
             label: "Instagram",
-            icon: <FaInstagram />,
+            icon: <Icon icon={<FaInstagram />} />,
             onlyIcon: true,
           }}
         />
         <Story
           args={{
             label: "Twitter",
-            icon: <FaTwitter />,
+            icon: <Icon icon={<FaTwitter />} />,
+            onlyIcon: true,
+          }}
+        />
+      </div>
+    ),
+  ],
+};
+
+export const ColorIconButtonList: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  decorators: [
+    (Story) => (
+      <div className="flex gap-4">
+        <Story
+          args={{
+            label: "Chrome",
+            icon: <Icon icon={<FaChrome />} className="text-red-500" />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Facebook",
+            icon: <Icon icon={<FaFacebook />} className="text-blue-500" />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Instagram",
+            icon: <Icon icon={<FaInstagram />} className="text-pink-500" />,
+            onlyIcon: true,
+          }}
+        />
+        <Story
+          args={{
+            label: "Twitter",
+            icon: <Icon icon={<FaTwitter />} className="text-blue-500" />,
             onlyIcon: true,
           }}
         />
