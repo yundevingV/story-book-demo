@@ -7,6 +7,7 @@ export const IconButton = ({
   size,
   state,
   onlyIcon,
+  className,
   ...props
 }: IconButtonProps) => {
   return (
@@ -15,6 +16,7 @@ export const IconButton = ({
       variant={variant}
       size={size}
       state={state}
+      className={className}
       {...props}
     >
       {icon}

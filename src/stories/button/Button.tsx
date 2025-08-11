@@ -1,5 +1,5 @@
-import cx from "classnames";
-import { cva } from "class-variance-authority";
+import { cva, cx } from "class-variance-authority";
+import { twMerge } from "tailwind-merge";
 
 const buttonStyle = cva(
   `font-medium rounded-lg
@@ -9,11 +9,10 @@ const buttonStyle = cva(
   {
     variants: {
       variant: {
-        main: "bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400 focus:ring-gray-500",
+        main: "bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400 ",
         warning:
-          "bg-yellow-500 text-white hover:bg-yellow-600 active:bg-yellow-700 focus:ring-yellow-500",
-        error:
-          "bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-500",
+          "bg-yellow-500 text-white hover:bg-yellow-600 active:bg-yellow-700 ",
+        error: "bg-red-500 text-white hover:bg-red-600 active:bg-red-700",
       },
       size: {
         small: "px-3 py-1.5 text-sm h-8 gap-x-1",
@@ -45,7 +44,7 @@ export const Button = ({
     <button
       type="button"
       disabled={isDisabled}
-      className={cx(buttonStyle({ size, variant }), className)}
+      className={twMerge(buttonStyle({ size, variant }), className)}
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
