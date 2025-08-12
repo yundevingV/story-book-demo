@@ -44,7 +44,7 @@ export const TypeInputList: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-4 bg-black/80 p-4 w-96">
+      <div className="flex flex-col gap-4 p-4 w-96">
         <Story
           args={{
             variant: "default",
@@ -84,7 +84,7 @@ export const WithButton: Story = {
     controls: { disable: true },
   },
   render: (args) => (
-    <div className="flex gap-4 bg-black/80 p-4">
+    <div className="flex gap-4 p-4">
       <Input type="email" placeholder="email" {...args} />
       <Button
         variant="default"
