@@ -1,5 +1,5 @@
 import { cva } from "class-variance-authority";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/lib/utils";
 
 const buttonStyle = cva(
   `font-medium rounded-lg
@@ -53,7 +53,7 @@ export const Button = ({
     <button
       type="button"
       disabled={isDisabled}
-      className={twMerge(buttonStyle({ size, variant }), className)}
+      className={cn(buttonStyle({ size, variant }), className)}
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
