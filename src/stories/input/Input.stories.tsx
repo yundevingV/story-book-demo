@@ -6,6 +6,7 @@ import { Label } from "../Label/Label";
 import { Icon } from "../icon/Icon";
 import { FaAmazon, FaApple, FaFacebook } from "react-icons/fa";
 import { IconButton } from "../IconButton/IconButton";
+import { Divider } from "../Divider/Divider";
 
 const meta: Meta<typeof Input> = {
   title: "Input",
@@ -127,6 +128,7 @@ export const LoginForm: Story = {
         id="password"
       />
       <Button variant="success" label="Login" size="sm" />
+      <Divider />
       <IconButton
         icon={<Icon icon={<FaApple />} className="text-white-500" />}
         label="Login with Apple"
