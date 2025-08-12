@@ -13,7 +13,7 @@ const inputStyle = cva(
   focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[1px]
   disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50
   text-base light:text-black dark:text-white
-  placeholder:text-default-500 placeholder:text-default-500 
+  placeholder:text-default-500  
   `,
   {
     variants: {
@@ -27,7 +27,7 @@ const inputStyle = cva(
         password: "",
         email: "",
         number: "",
-        file: "text-sm cursor-pointer text-default-300 file:cursor-pointer file:text-white file:inline-flex file:h-7 file:bg-transparent file:text-sm file:font-medium",
+        file: "text-sm cursor-pointer light:text-default-300 dark:text-default-300 file:cursor-pointer file:text-white file:inline-flex file:h-7 file:bg-transparent file:text-sm file:font-medium",
       },
     },
     defaultVariants: {
