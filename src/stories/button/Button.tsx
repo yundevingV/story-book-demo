@@ -1,18 +1,27 @@
-import { cva, cx } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
 const buttonStyle = cva(
   `font-medium rounded-lg
   transition-all duration-200 ease-in-out cursor-pointer
-  disabled:opacity-50 disabled:cursor-not-allowed,
+  disabled:opacity-50 disabled:cursor-not-allowed
   `,
   {
     variants: {
       variant: {
-        main: "bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400 ",
-        warning:
-          "bg-yellow-500 text-white hover:bg-yellow-600 active:bg-yellow-700 ",
-        error: "bg-red-500 text-white hover:bg-red-600 active:bg-red-700",
+        main: "bg-gray-200 hover:bg-gray-300 active:bg-gray-400 text-gray-900",
+        yellow:
+          "bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-white",
+        amber: "bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white",
+        red: "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white",
+        blue: "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white",
+        green: "bg-green-500 hover:bg-green-600 active:bg-green-700 text-white",
+        purple:
+          "bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white",
+        sky: "bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white",
+        gray: "bg-gray-500 hover:bg-gray-600 active:bg-gray-700 text-white",
+        black: "bg-black hover:bg-black/80 active:bg-black/90 text-white",
+        white: "bg-white hover:bg-white/80 active:bg-white/90 text-black",
       },
       size: {
         small: "px-3 py-1.5 text-sm h-8 gap-x-1",

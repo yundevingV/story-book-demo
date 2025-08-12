@@ -19,7 +19,18 @@ const meta: Meta<typeof Button> = {
     },
     variant: {
       control: { type: "radio" },
-      options: ["main", "warning", "error"],
+      options: [
+        "main",
+        "yellow",
+        "red",
+        "blue",
+        "green",
+        "purple",
+        "sky",
+        "gray",
+        "black",
+        "white",
+      ],
       description: "버튼 타입을 설정할 수 있습니다.",
     },
     state: {
@@ -54,9 +65,9 @@ export const VariantButtonList: Story = {
       <div className="flex gap-4">
         <Story args={{ label: "button", variant: "main", state: "default" }} />
         <Story
-          args={{ label: "button", variant: "warning", state: "default" }}
+          args={{ label: "button", variant: "yellow", state: "default" }}
         />
-        <Story args={{ label: "button", variant: "error", state: "default" }} />
+        <Story args={{ label: "button", variant: "red", state: "default" }} />
       </div>
     ),
   ],

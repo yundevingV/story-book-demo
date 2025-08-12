@@ -1,4 +1,15 @@
-type ButtonVariant = "main" | "warning" | "error";
+type ButtonVariant =
+  | "main"
+  | "amber"
+  | "yellow"
+  | "red"
+  | "blue"
+  | "green"
+  | "purple"
+  | "sky"
+  | "gray"
+  | "black"
+  | "white";
 type ButtonSize = "small" | "medium" | "large";
 type ButtonState = "default" | "loading" | "success" | "error";
 
