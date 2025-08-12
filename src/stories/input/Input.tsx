@@ -67,7 +67,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <p
             className={cn(
               "mt-1 text-sm",
-              error ? "text-error-500" : "text-default-500"
+              error ? "text-error-500" : "text-default-300"
             )}
           >
             {helperText}
