@@ -18,7 +18,7 @@ import {
 import { SiLine, SiSlack } from "react-icons/si";
 
 const meta: Meta<typeof IconButton> = {
-  title: "Example/IconButton",
+  title: "Button",
   component: IconButton,
   parameters: {
     layout: "centered",

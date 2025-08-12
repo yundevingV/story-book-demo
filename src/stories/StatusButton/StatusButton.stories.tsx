@@ -3,7 +3,7 @@ import { fn } from "storybook/internal/test";
 import { StatusButton } from "./StatusButton";
 
 const meta: Meta<typeof StatusButton> = {
-  title: "Example/StatusButton",
+  title: "Button",
   component: StatusButton,
   parameters: {
     layout: "centered",
