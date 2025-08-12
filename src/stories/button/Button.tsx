@@ -10,7 +10,7 @@ const buttonStyle = cva(
     variants: {
       variant: {
         default:
-          "bg-default-500 hover:bg-default-600 active:bg-default-700 text-b border-default-500",
+          "bg-default-500 hover:bg-default-600 active:bg-default-700 border-default-500",
         primary:
           "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white border-primary-500",
         secondary:
@@ -26,7 +26,7 @@ const buttonStyle = cva(
           "bg-error-500 hover:bg-error-600 active:bg-error-700 text-white border-error-500",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-9 px-4 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
       },

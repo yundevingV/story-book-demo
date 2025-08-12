@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+import { Button } from "../Button/Button"; // 기존 Button 컴포넌트 import
 
 import { Input } from "./Input";
 
@@ -75,4 +76,21 @@ export const TypeInputList: Story = {
       </div>
     ),
   ],
+};
+
+// Input과 Button을 함께 사용하는 스토리
+export const WithButton: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  render: (args) => (
+    <div className="flex gap-4 bg-black/80 p-4">
+      <Input type="email" placeholder="email" {...args} />
+      <Button
+        variant="default"
+        label="Subscribe"
+        className="bg-transparent border border-gray-400"
+      />
+    </div>
+  ),
 };
