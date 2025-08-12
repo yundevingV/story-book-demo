@@ -46,21 +46,21 @@ export const StatusButtonList: Story = {
         <Story
           args={{
             label: "Loading",
-            variant: "main",
+            variant: "default",
             state: "loading",
           }}
         />
         <Story
           args={{
             label: "Success",
-            variant: "green",
+            variant: "success",
             state: "success",
           }}
         />
         <Story
           args={{
             label: "Error",
-            variant: "red",
+            variant: "error",
             state: "error",
           }}
         />

@@ -178,32 +178,32 @@ export const LoginIconButtonList: Story = {
           args={{
             label: "Login with GitHub",
             icon: <Icon icon={<FaGithub />} className="text-white" />,
-            className: "text-white border-black text-sm",
-            variant: "black",
+            className:
+              "bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Google",
             icon: <Icon icon={<FaGoogle />} className="text-red-500" />,
-            className: "text-black border-[#e5e5e5] text-sm",
-            variant: "white",
+            className:
+              "bg-white hover:bg-white/80 active:bg-white/90 text-black border-[#e5e5e5] text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Facebook",
             icon: <Icon icon={<FaFacebook />} className="text-white-500" />,
-            className: "text-white border-blue text-sm",
-            variant: "blue",
+            className:
+              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white border-blue text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with X (Twitter)",
             icon: <Icon icon={<FaXTwitter />} className="text-white-500" />,
-            className: "text-white border-black text-sm",
-            variant: "black",
+            className:
+              "bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm",
           }}
         />
         <Story
@@ -228,56 +228,56 @@ export const LoginIconButtonList: Story = {
                 className="text-white-500"
               />
             ),
-            className: "text-black border-yellow text-sm",
-            variant: "yellow",
+            className:
+              "bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Apple",
             icon: <Icon icon={<FaApple />} className="text-white-500" />,
-            className: "text-white border-black text-sm",
-            variant: "black",
+            className:
+              "bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Amazon",
             icon: <Icon icon={<FaAmazon />} className="text-black-500" />,
-            className: "text-black border-yellow text-sm",
-            variant: "yellow",
+            className:
+              "bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Microsoft",
             icon: <Icon icon={<FaMicrosoft />} className="text-blue-600" />,
-            className: "text-white border-gray text-sm",
-            variant: "gray",
+            className:
+              "bg-gray-500 hover:bg-gray-600 active:bg-gray-700 text-white border-gray text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Line",
             icon: <Icon icon={<SiLine />} className="text-white-500" />,
-            className: "text-white border-green text-sm",
-            variant: "green",
+            className:
+              "bg-green-500 hover:bg-green-600 active:bg-green-700 text-white border-green text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with Slack",
             icon: <Icon icon={<SiSlack />} className="text-white-500" />,
-            className: "text-white border-purple text-sm",
-            variant: "purple",
+            className:
+              "bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white border-purple text-sm",
           }}
         />
         <Story
           args={{
             label: "Login with LinkedIn",
             icon: <Icon icon={<FaLinkedin />} className="text-white-700" />,
-            className: "text-white border-blue text-sm",
-            variant: "blue",
+            className:
+              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white border-blue text-sm",
           }}
         />
       </div>

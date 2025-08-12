@@ -20,16 +20,14 @@ const meta: Meta<typeof Button> = {
     variant: {
       control: { type: "radio" },
       options: [
-        "main",
-        "yellow",
-        "red",
-        "blue",
-        "green",
-        "purple",
-        "sky",
-        "gray",
-        "black",
-        "white",
+        "default",
+        "primary",
+        "secondary",
+        "accent",
+        "info",
+        "success",
+        "warning",
+        "error",
       ],
       description: "버튼 타입을 설정할 수 있습니다.",
     },
@@ -62,12 +60,27 @@ export const VariantButtonList: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="flex gap-4">
-        <Story args={{ label: "button", variant: "main", state: "default" }} />
+      <div className="grid grid-cols-3 gap-4">
         <Story
-          args={{ label: "button", variant: "yellow", state: "default" }}
+          args={{ label: "default", variant: "default", state: "default" }}
         />
-        <Story args={{ label: "button", variant: "red", state: "default" }} />
+        <Story
+          args={{ label: "primary", variant: "primary", state: "default" }}
+        />
+        <Story
+          args={{ label: "secondary", variant: "secondary", state: "default" }}
+        />
+        <Story
+          args={{ label: "accent", variant: "accent", state: "default" }}
+        />
+        <Story args={{ label: "info", variant: "info", state: "default" }} />
+        <Story
+          args={{ label: "success", variant: "success", state: "default" }}
+        />
+        <Story
+          args={{ label: "warning", variant: "warning", state: "default" }}
+        />
+        <Story args={{ label: "error", variant: "error", state: "default" }} />
       </div>
     ),
   ],
@@ -80,9 +93,9 @@ export const SizeButtonList: Story = {
   decorators: [
     (Story) => (
       <div className="flex gap-4">
-        <Story args={{ label: "button", size: "small" }} />
-        <Story args={{ label: "button", size: "medium" }} />
-        <Story args={{ label: "button", size: "large" }} />
+        <Story args={{ label: "default", size: "default" }} />
+        <Story args={{ label: "sm", size: "sm" }} />
+        <Story args={{ label: "lg", size: "lg" }} />
       </div>
     ),
   ],

@@ -4,7 +4,103 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+@theme {
+  /* Default 팔레트 - 기본 배경/테두리 */
+  --color-default-50: oklch(0.98 0.006 240);
+  --color-default-100: oklch(0.96 0.012 240);
+  --color-default-200: oklch(0.9 0.018 240);
+  --color-default-300: oklch(0.83 0.024 240);
+  --color-default-400: oklch(0.64 0.018 240);
+  --color-default-500: oklch(0.55 0.018 240); /* slate-500과 동일 */
+  --color-default-600: oklch(0.47 0.018 240);
+  --color-default-700: oklch(0.39 0.018 240);
+  --color-default-800: oklch(0.31 0.018 240);
+  --color-default-900: oklch(0.23 0.018 240);
 
+  /* Primary 팔레트 - 주요 브랜드 컬러 */
+  --color-primary-50: oklch(0.98 0.02 257.2);
+  --color-primary-100: oklch(0.95 0.04 257.2);
+  --color-primary-200: oklch(0.9 0.08 257.2);
+  --color-primary-300: oklch(0.8 0.12 257.2);
+  --color-primary-400: oklch(0.7 0.16 257.2);
+  --color-primary-500: oklch(0.6048 0.22 257.2);
+  --color-primary-600: oklch(0.5 0.22 257.2);
+  --color-primary-700: oklch(0.4 0.2 257.2);
+  --color-primary-800: oklch(0.3 0.18 257.2);
+  --color-primary-900: oklch(0.2 0.16 257.2);
+
+  /* Secondary 팔레트 - 보조 브랜드 컬러 */
+  --color-secondary-50: oklch(0.98 0.02 294.99);
+  --color-secondary-100: oklch(0.95 0.04 294.99);
+  --color-secondary-200: oklch(0.9 0.08 294.99);
+  --color-secondary-300: oklch(0.8 0.12 294.99);
+  --color-secondary-400: oklch(0.7 0.16 294.99);
+  --color-secondary-500: oklch(0.5015 0.1883 294.99);
+  --color-secondary-600: oklch(0.4 0.18 294.99);
+  --color-secondary-700: oklch(0.3 0.16 294.99);
+  --color-secondary-800: oklch(0.25 0.14 294.99);
+  --color-secondary-900: oklch(0.2 0.12 294.99);
+
+  /* Accent 팔레트 - 강조 컬러 */
+  --color-accent-50: oklch(0.98 0.02 51.48);
+  --color-accent-100: oklch(0.95 0.04 51.48);
+  --color-accent-200: oklch(0.9 0.08 51.48);
+  --color-accent-300: oklch(0.8 0.12 51.48);
+  --color-accent-400: oklch(0.75 0.16 51.48);
+  --color-accent-500: oklch(0.7265 0.1832 51.48);
+  --color-accent-600: oklch(0.65 0.18 51.48);
+  --color-accent-700: oklch(0.55 0.16 51.48);
+  --color-accent-800: oklch(0.45 0.14 51.48);
+  --color-accent-900: oklch(0.35 0.12 51.48);
+
+  /* Info 팔레트 - 정보 컬러 */
+  --color-info-50: oklch(0.98 0.02 200);
+  --color-info-100: oklch(0.95 0.04 200);
+  --color-info-200: oklch(0.9 0.08 200);
+  --color-info-300: oklch(0.8 0.12 200);
+  --color-info-400: oklch(0.7 0.16 200);
+  --color-info-500: oklch(0.6 0.18 200);
+  --color-info-600: oklch(0.5 0.18 200);
+  --color-info-700: oklch(0.4 0.16 200);
+  --color-info-800: oklch(0.3 0.14 200);
+  --color-info-900: oklch(0.2 0.12 200);
+
+  /* Success 팔레트 - 성공 컬러 */
+  --color-success-50: oklch(0.98 0.02 146.74);
+  --color-success-100: oklch(0.95 0.04 146.74);
+  --color-success-200: oklch(0.9 0.08 146.74);
+  --color-success-300: oklch(0.8 0.12 146.74);
+  --color-success-400: oklch(0.7 0.16 146.74);
+  --color-success-500: oklch(0.6401 0.1751 146.74);
+  --color-success-600: oklch(0.55 0.17 146.74);
+  --color-success-700: oklch(0.45 0.15 146.74);
+  --color-success-800: oklch(0.35 0.13 146.74);
+  --color-success-900: oklch(0.25 0.11 146.74);
+
+  /* Warning 팔레트 - 경고 컬러 */
+  --color-warning-50: oklch(0.98 0.02 84.9338);
+  --color-warning-100: oklch(0.95 0.04 84.9338);
+  --color-warning-200: oklch(0.9 0.08 84.9338);
+  --color-warning-300: oklch(0.85 0.12 84.9338);
+  --color-warning-400: oklch(0.8 0.16 84.9338);
+  --color-warning-500: oklch(0.8442 0.172159 84.9338);
+  --color-warning-600: oklch(0.75 0.16 84.9338);
+  --color-warning-700: oklch(0.65 0.14 84.9338);
+  --color-warning-800: oklch(0.55 0.12 84.9338);
+  --color-warning-900: oklch(0.45 0.1 84.9338);
+
+  /* Error 팔레트 - 에러 컬러 */
+  --color-error-50: oklch(0.98 0.02 21.24);
+  --color-error-100: oklch(0.95 0.04 21.24);
+  --color-error-200: oklch(0.9 0.08 21.24);
+  --color-error-300: oklch(0.8 0.12 21.24);
+  --color-error-400: oklch(0.7 0.16 21.24);
+  --color-error-500: oklch(0.5915 0.202 21.24);
+  --color-error-600: oklch(0.5 0.2 21.24);
+  --color-error-700: oklch(0.4 0.18 21.24);
+  --color-error-800: oklch(0.3 0.16 21.24);
+  --color-error-900: oklch(0.2 0.14 21.24);
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

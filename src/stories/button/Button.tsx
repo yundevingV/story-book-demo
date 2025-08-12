@@ -9,30 +9,32 @@ const buttonStyle = cva(
   {
     variants: {
       variant: {
-        main: "bg-gray-200 hover:bg-gray-300 active:bg-gray-400 text-gray-900",
-        yellow:
-          "bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-white",
-        amber: "bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-white",
-        red: "bg-red-500 hover:bg-red-600 active:bg-red-700 text-white",
-        blue: "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white",
-        green: "bg-green-500 hover:bg-green-600 active:bg-green-700 text-white",
-        purple:
-          "bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white",
-        sky: "bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white",
-        gray: "bg-gray-500 hover:bg-gray-600 active:bg-gray-700 text-white",
-        black: "bg-black hover:bg-black/80 active:bg-black/90 text-white",
-        white: "bg-white hover:bg-white/80 active:bg-white/90 text-black",
+        default:
+          "bg-default-500 hover:bg-default-600 active:bg-default-700 text-b border-default-500",
+        primary:
+          "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white border-primary-500",
+        secondary:
+          "bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-700 text-white border-secondary-500",
+        accent:
+          "bg-accent-500 hover:bg-accent-600 active:bg-accent-700 text-white border-accent-500",
+        info: "bg-info-500 hover:bg-info-600 active:bg-info-700 text-white border-info-500",
+        success:
+          "bg-success-500 hover:bg-success-600 active:bg-success-700 text-white border-success-500",
+        warning:
+          "bg-warning-500 hover:bg-warning-600 active:bg-warning-700 text-white border-warning-500",
+        error:
+          "bg-error-500 hover:bg-error-600 active:bg-error-700 text-white border-error-500",
       },
       size: {
-        small: "px-3 py-1.5 text-sm h-8 gap-x-1",
-        medium: "px-4 py-2 text-base h-10 gap-x-1.5",
-        large: "px-6 py-3 text-lg h-12 gap-x-2",
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
       },
     },
     // 기본값 설정
     defaultVariants: {
-      variant: "main",
-      size: "medium",
+      variant: "default",
+      size: "default",
     },
   }
 );

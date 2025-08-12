@@ -1,16 +1,13 @@
 type ButtonVariant =
-  | "main"
-  | "amber"
-  | "yellow"
-  | "red"
-  | "blue"
-  | "green"
-  | "purple"
-  | "sky"
-  | "gray"
-  | "black"
-  | "white";
-type ButtonSize = "small" | "medium" | "large";
+  | "default"
+  | "primary"
+  | "secondary"
+  | "accent"
+  | "info"
+  | "success"
+  | "warning"
+  | "error";
+type ButtonSize = "default" | "sm" | "lg";
 type ButtonState = "default" | "loading" | "success" | "error";
 
 interface ButtonProps {
