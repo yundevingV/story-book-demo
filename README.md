@@ -1,7 +1,5 @@
 # 🎨 Storybook Demo Project
 
-> **Next.js 15 + Tailwind CSS v4 + React 19**로 만든 컴포넌트 라이브러리
-
 ## ✨ 프로젝트 소개
 
 이 프로젝트는 **Storybook**을 활용한 컴포넌트 개발 및 문서화 연습을 위한 레포지토리입니다. 최신 웹 기술 스택을 사용하여 현대적이고 재사용 가능한 UI 컴포넌트들을 구축했습니다.
