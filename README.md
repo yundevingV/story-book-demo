@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎨 Storybook Demo Project
 
-## Getting Started
+> **Next.js 15 + Tailwind CSS v4 + React 19**로 만든 컴포넌트 라이브러리
 
-First, run the development server:
+## ✨ 프로젝트 소개
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+이 프로젝트는 **Storybook**을 활용한 컴포넌트 개발 및 문서화 연습을 위한 레포지토리입니다. 최신 웹 기술 스택을 사용하여 현대적이고 재사용 가능한 UI 컴포넌트들을 구축했습니다.
+
+## 🚀 기술 스택
+
+| 기술             | 버전 | 설명                           |
+| ---------------- | ---- | ------------------------------ |
+| **Next.js**      | 15   | React 기반 풀스택 프레임워크   |
+| **React**        | 19   | 최신 React 기능 활용           |
+| **Tailwind CSS** | v4   | 유틸리티 퍼스트 CSS 프레임워크 |
+| **Storybook**    | 최신 | 컴포넌트 개발 및 문서화 도구   |
+| **TypeScript**   | 최신 | 타입 안전성 보장               |
+
+## 🎯 주요 기능
+
+- 🧩 **재사용 가능한 컴포넌트**: Button, Input, Divider, Icon 등
+- 📚 **Storybook 문서화**: 각 컴포넌트별 사용법 및 예시
+- 🎨 **다양한 변형**: variant, size, state 등 다양한 옵션
+- 🌙 **다크모드 지원**: 시스템 설정에 따른 자동 테마 전환
+- 📱 **반응형 디자인**: 모든 디바이스에서 최적화된 UI
+
+## 🏗️ 프로젝트 구조
+
+```
+src/
+├── app/                 # Next.js 앱 라우터
+├── lib/                 # 유틸리티 함수
+└── stories/             # Storybook 컴포넌트
+    ├── Button/          # 버튼 컴포넌트
+    ├── Input/           # 입력 컴포넌트
+    ├── Divider/         # 구분선 컴포넌트
+    ├── Icon/            # 아이콘 컴포넌트
+    └── StatusButton/    # 상태 버튼 컴포넌트
+
+<!-- 등등 추가및 변경 예정 -->
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 시작하기
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. 의존성 설치
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+yarn install
+```
 
-## Learn More
+### 2. 개발 서버 실행
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Next.js 앱 실행
+yarn dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Storybook 실행
+yarn storybook
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 컴포넌트 가이드
 
-## Deploy on Vercel
+### Button
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Variants**: default, primary, secondary, accent, info, success, warning, error
+- **Sizes**: sm, md, lg
+- **States**: loading, disabled
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Input
+
+- **Types**: text, email, password, file
+- **Variants**: default, filled, outline
+- **Features**: error state, helper text
+
+### Divider
+
+- **Variants**: default, primary, secondary, accent, info, success, warning, error
+- **Customizable**: height, width, spacing
+
+## 🔧 개발 환경
+
+- **Node.js**: 18+
+- **Package Manager**: Yarn
+- **Editor**: VS Code (권장)
+- **Browser**: Chrome, Firefox, Safari, Edge
+
+```
+
+```
