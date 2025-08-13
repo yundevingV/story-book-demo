@@ -2,12 +2,6 @@ import * as React from "react";
 import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
 
-export interface InputProps extends React.ComponentProps<"input"> {
-  variant?: "default" | "filled" | "outline";
-  error?: boolean;
-  helperText?: string;
-  type?: "text" | "email" | "password" | "file";
-}
 const inputStyle = cva(
   `border border-1 border-default-400 flex w-full min-w-0 h-9 rounded-md border bg-transparent px-3 py-1 shadow-xs transition-[color,box-shadow] outline-none 
   focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[1px]

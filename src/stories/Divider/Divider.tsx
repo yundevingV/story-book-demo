@@ -5,18 +5,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 
-interface DividerProps extends React.ComponentProps<"div"> {
-  variant?:
-    | "default"
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "info"
-    | "success"
-    | "warning"
-    | "error";
-}
-
 const dividerStyle = cva("w-full h-0.5", {
   variants: {
     variant: {

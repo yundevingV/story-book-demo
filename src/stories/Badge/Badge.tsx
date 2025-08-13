@@ -1,18 +1,4 @@
 import { cva } from "class-variance-authority";
-import { ComponentProps } from "react";
-
-export interface BadgeProps extends ComponentProps<"div"> {
-  variant:
-    | "default"
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "info"
-    | "success"
-    | "warning"
-    | "error";
-  size: "default" | "sm" | "lg";
-}
 
 const badgeStyle = cva(
   `font-medium rounded-lg text-center
