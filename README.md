@@ -81,7 +81,3 @@ yarn storybook
 - **Package Manager**: Yarn
 - **Editor**: VS Code (권장)
 - **Browser**: Chrome, Firefox, Safari, Edge
-
-```
-
-```
