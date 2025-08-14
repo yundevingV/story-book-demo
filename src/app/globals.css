@@ -6,16 +6,16 @@
 }
 @theme {
   /* Default 팔레트 - 기본 배경/테두리 */
-  --color-default-50: oklch(0.98 0.006 240);
-  --color-default-100: oklch(0.96 0.012 240);
-  --color-default-200: oklch(0.9 0.018 240);
-  --color-default-300: oklch(0.83 0.024 240);
-  --color-default-400: oklch(0.64 0.018 240);
-  --color-default-500: oklch(0.55 0.018 240); /* slate-500과 동일 */
-  --color-default-600: oklch(0.47 0.018 240);
-  --color-default-700: oklch(0.39 0.018 240);
-  --color-default-800: oklch(0.31 0.018 240);
-  --color-default-900: oklch(0.23 0.018 240);
+  --color-default-50: oklch(98.5% 0 0);
+  --color-default-100: oklch(97% 0.001 106.424);
+  --color-default-200: oklch(92.3% 0.003 48.717);
+  --color-default-300: oklch(86.9% 0.005 56.366);
+  --color-default-400: oklch(70.9% 0.01 56.259);
+  --color-default-500: oklch(55.3% 0.013 58.071);
+  --color-default-600: oklch(44.4% 0.011 73.639);
+  --color-default-700: oklch(37.4% 0.01 67.558);
+  --color-default-800: oklch(21.6% 0.006 56.043);
+  --color-default-900: oklch(14.7% 0.004 49.25);
 
   /* Primary 팔레트 - 주요 브랜드 컬러 */
   --color-primary-50: oklch(0.98 0.02 257.2);
