@@ -60,7 +60,7 @@ export const Button = ({
     >
       <div className="flex items-center justify-center gap-2">
         {children}
-        {label}
+        {label && <span className="truncate">{label}</span>}
       </div>
     </button>
   );

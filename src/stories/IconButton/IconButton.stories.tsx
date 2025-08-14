@@ -173,7 +173,7 @@ export const LoginIconButtonList: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-4 p-10 bg-zinc-800">
+      <div className="flex flex-col gap-4">
         <Story
           args={{
             label: "Login with GitHub",
