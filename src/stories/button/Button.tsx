@@ -26,7 +26,7 @@ const buttonStyle = cva(
           "bg-error-500 hover:bg-error-600 active:bg-error-700 text-white border-error-500",
       },
       size: {
-        default: "h-9 px-4 has-[>svg]:px-3",
+        md: "h-9 px-4 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
       },
@@ -34,7 +34,7 @@ const buttonStyle = cva(
     // 기본값 설정
     defaultVariants: {
       variant: "default",
-      size: "default",
+      size: "md",
     },
   }
 );

@@ -41,7 +41,7 @@ const meta: Meta<typeof IconButton> = {
     },
     size: {
       control: { type: "radio" },
-      options: ["small", "medium", "large"],
+      options: ["sm", "md", "lg"],
       description: "버튼 크기를 설정할 수 있습니다.",
     },
   },

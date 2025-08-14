@@ -38,7 +38,7 @@ const meta: Meta<typeof Button> = {
     },
     size: {
       control: { type: "radio" },
-      options: ["small", "medium", "large"],
+      options: ["sm", "md", "lg"],
       description: "버튼 크기를 설정할 수 있습니다.",
     },
   },
@@ -93,7 +93,7 @@ export const SizeButtonList: Story = {
   decorators: [
     (Story) => (
       <div className="flex gap-4">
-        <Story args={{ label: "default", size: "default" }} />
+        <Story args={{ label: "md", size: "md" }} />
         <Story args={{ label: "sm", size: "sm" }} />
         <Story args={{ label: "lg", size: "lg" }} />
       </div>

@@ -127,7 +127,7 @@ export const LoginForm: Story = {
         helperText="Password must be at least 8 characters long"
         id="password"
       />
-      <Button variant="success" label="Login" size="sm" />
+      <Button variant="success" label="Login" size="md" />
       <Divider />
       <IconButton
         icon={<Icon icon={<FaApple />} className="text-white-500" />}

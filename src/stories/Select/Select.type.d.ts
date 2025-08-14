@@ -1,6 +1,6 @@
 interface SelectProps {
   options: SelectOption[];
-  size?: "sm" | "md" | "lg";
+  size?: SizeType;
   error?: boolean;
   helperText?: string;
   placeholder?: string;
@@ -13,7 +13,7 @@ interface SelectProps {
 
 interface SelectContainerProps extends React.ComponentProps<"div"> {
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: SizeType;
 }
 
 interface SelectTriggerProps extends React.ComponentProps<"button"> {

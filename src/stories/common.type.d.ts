@@ -1,3 +1,5 @@
+// common types
+
 type VariantType =
   | "default"
   | "primary"
@@ -8,4 +10,4 @@ type VariantType =
   | "warning"
   | "error";
 
-type SizeType = "sm" | "default" | "lg";
+type SizeType = "sm" | "md" | "lg";
