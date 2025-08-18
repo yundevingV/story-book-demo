@@ -7,10 +7,7 @@ import { FaCheck, FaChevronDown } from "react-icons/fa";
 
 // Select 컴포넌트 (메인 컨테이너)
 export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
-  (
-    { options, size, placeholder, error, label, value, onChange, ...props },
-    ref
-  ) => {
+  ({ options, size, placeholder, error, label, value, onChange }, ref) => {
     const containerStyle = cva("relative", {
       variants: {
         size: {
@@ -169,20 +166,21 @@ export const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>(
 );
 
 // SelectLabel 컴포넌트
-export const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
-  ({ className, children, ...props }, ref) => (
-    <span
-      ref={ref}
-      className={cn(
-        "flex-1 truncate text-default-600 dark:text-default-400 p-3 text-sm",
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </span>
-  )
-);
+export const SelectLabel = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<"div">
+>(({ className, children, ...props }, ref) => (
+  <span
+    ref={ref}
+    className={cn(
+      "flex-1 truncate text-default-600 dark:text-default-400 p-3 text-sm",
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </span>
+));
 
 // SelectGroup 컴포넌트
 export const SelectGroup = React.forwardRef<HTMLDivElement, SelectGroupProps>(

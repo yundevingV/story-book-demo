@@ -7,18 +7,15 @@ interface SelectProps {
   label?: string;
   required?: boolean;
   value?: string;
-  className?: string;
   onChange?: (value: string) => void;
 }
 
 interface SelectContainerProps extends React.ComponentProps<"div"> {
-  className?: string;
   size?: SizeType;
 }
 
 interface SelectTriggerProps extends React.ComponentProps<"button"> {
   isOpen: boolean;
-  className?: string;
   error?: boolean;
 }
 
@@ -26,13 +23,10 @@ interface SelectValueProps extends React.ComponentProps<"span"> {
   value: string;
 }
 
-interface SelectLabelProps extends React.ComponentProps<"div"> {
-  className?: string;
-}
+// interface SelectLabelProps extends React.ComponentProps<"div"> {}
 
 interface SelectGroupProps extends React.ComponentProps<"div"> {
   isOpen: boolean;
-  className?: string;
 }
 
 interface SelectItemProps extends React.ComponentProps<"div"> {
