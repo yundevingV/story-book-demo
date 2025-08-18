@@ -9,7 +9,7 @@ import {
   CardContent,
 } from "./Card";
 import { Button } from "../Button/Button";
-import { Input } from "../input/Input";
+import { Input } from "../Input/Input";
 import { Label } from "../Label/Label";
 import { IconButton } from "../IconButton/IconButton";
 import { Icon } from "../icon/Icon";
