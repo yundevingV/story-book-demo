@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/nextjs";
 import { fn } from "storybook/internal/test";
 import { IconButton } from "./IconButton";
-import { Icon } from "../icon/Icon";
+import { Icon } from "../Icon/Icon";
 import {
   FaChrome,
   FaFacebook,

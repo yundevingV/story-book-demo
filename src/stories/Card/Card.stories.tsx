@@ -12,7 +12,7 @@ import { Button } from "../Button/Button";
 import { Input } from "../Input/Input";
 import { Label } from "../Label/Label";
 import { IconButton } from "../IconButton/IconButton";
-import { Icon } from "../icon/Icon";
+import { Icon } from "../Icon/Icon";
 
 const meta: Meta<typeof Card> = {
   title: "Card",

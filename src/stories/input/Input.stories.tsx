@@ -3,7 +3,7 @@ import { Button } from "../Button/Button"; // 기존 Button 컴포넌트 import
 
 import { Input } from "./Input";
 import { Label } from "../Label/Label";
-import { Icon } from "../icon/Icon";
+import { Icon } from "../Icon/Icon";
 import { FaAmazon, FaApple, FaFacebook } from "react-icons/fa";
 import { IconButton } from "../IconButton/IconButton";
 import { Divider } from "../Divider/Divider";
