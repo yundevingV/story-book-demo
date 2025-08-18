@@ -17,7 +17,7 @@ const badgeStyle = cva(
         error: "bg-error-500 border-error-500",
       },
       size: {
-        default: "px-4 has-[>svg]:px-3 text-base",
+        md: "px-4 has-[>svg]:px-3 text-base",
         sm: "px-3 has-[>svg]:px-2.5 text-sm",
         lg: "px-6 has-[>svg]:px-4",
       },
@@ -25,7 +25,7 @@ const badgeStyle = cva(
     // 기본값 설정
     defaultVariants: {
       variant: "default",
-      size: "default",
+      size: "md",
     },
   }
 );

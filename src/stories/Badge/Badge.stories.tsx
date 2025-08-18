@@ -28,25 +28,25 @@ export const VariantInputList: Story = {
   },
   render: () => (
     <div className="flex flex-col gap-4 p-4 justify-center items-center">
-      <Badge variant="default" size="default">
+      <Badge variant="default" size="md">
         Default
       </Badge>
-      <Badge variant="primary" size="default">
+      <Badge variant="primary" size="md">
         Primary
       </Badge>
-      <Badge variant="secondary" size="default">
+      <Badge variant="secondary" size="md">
         Secondary
       </Badge>
-      <Badge variant="info" size="default">
+      <Badge variant="info" size="md">
         Info
       </Badge>
-      <Badge variant="success" size="default">
+      <Badge variant="success" size="md">
         Success
       </Badge>
-      <Badge variant="warning" size="default">
+      <Badge variant="warning" size="md">
         Warning
       </Badge>
-      <Badge variant="error" size="default">
+      <Badge variant="error" size="md">
         Error
       </Badge>
     </div>
@@ -62,7 +62,7 @@ export const SizeInputList: Story = {
       <Badge variant="primary" size="sm">
         Primary
       </Badge>
-      <Badge variant="primary" size="default">
+      <Badge variant="primary" size="md">
         Primary
       </Badge>
       <Badge variant="primary" size="lg">
