@@ -158,21 +158,27 @@ export const RealWorldExample: Story = {
       <div className="flex items-center gap-2">
         <span>사용자 이름:</span>
         <Tooltip content="사용자의 실제 이름을 입력하세요">
-          <span className="text-default-400 cursor-help">ℹ️</span>
+          <span className="text-default-600 dark:text-default-400 cursor-help">
+            ℹ️
+          </span>
         </Tooltip>
       </div>
 
       <div className="flex items-center gap-2">
         <span>이메일:</span>
         <Tooltip content="로그인에 사용될 이메일 주소입니다">
-          <span className="text-default-400 cursor-help">ℹ️</span>
+          <span className="text-default-600 dark:text-default-400 cursor-help">
+            ℹ️
+          </span>
         </Tooltip>
       </div>
 
       <div className="flex items-center gap-2">
         <span>비밀번호:</span>
         <Tooltip content="8자 이상, 영문+숫자+특수문자 조합">
-          <span className="text-default-400 cursor-help">ℹ️</span>
+          <span className="text-default-600 dark:text-default-400 cursor-help">
+            ℹ️
+          </span>
         </Tooltip>
       </div>
     </div>
