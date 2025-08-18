@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonStyle = cva(
-  `font-medium rounded-lg
+  `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   disabled:opacity-50 disabled:cursor-not-allowed
   `,
@@ -10,7 +10,7 @@ const buttonStyle = cva(
     variants: {
       variant: {
         default:
-          "bg-default-500 hover:bg-default-600 active:bg-default-700 border-default-500",
+          "bg-default-500 hover:bg-default-600 active:bg-default-700 border-default-500 ",
         primary:
           "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white border-primary-500",
         secondary:
