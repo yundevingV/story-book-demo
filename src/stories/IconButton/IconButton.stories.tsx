@@ -174,8 +174,7 @@ export const ColorIconButtonList: Story = {
     ),
   ],
 };
-console.log(<FaTwitter />);
-console.log(<SiLine />);
+
 export const LoginIconButtonList: Story = {
   parameters: {
     controls: { disable: true },
