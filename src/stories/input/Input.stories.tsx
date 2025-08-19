@@ -137,7 +137,7 @@ export const LoginForm: Story = {
       <IconButton
         icon={<Icon icon={<FaFacebook />} className="text-white-500" />}
         label="Login with Facebook"
-        className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white border-blue text-sm"
+        className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-default-900 border-blue text-sm"
       />
       <IconButton
         icon={<Icon icon={<FaAmazon />} className="text-white-500" />}

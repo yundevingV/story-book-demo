@@ -47,7 +47,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <div className="w-full">
         <input
           ref={ref}
-          placeholder={placeholder}
+          placeholder={placeholder ?? "placeholder"}
           type={type}
           data-slot="input"
           className={cn(
