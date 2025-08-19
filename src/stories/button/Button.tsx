@@ -10,20 +10,20 @@ const buttonStyle = cva(
     variants: {
       variant: {
         default:
-          "bg-default-500 hover:bg-default-600 active:bg-default-700 border-default-500 ",
+          "bg-default-500 hover:bg-default-600 active:bg-default-700 border-default-500 text-white",
         primary:
-          "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white border-primary-500",
+          "bg-primary-500 hover:bg-primary-600 active:bg-primary-700 border-primary-500 text-black",
         secondary:
-          "bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-700 text-white border-secondary-500",
+          "bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-700 border-secondary-500 text-black",
         accent:
-          "bg-accent-500 hover:bg-accent-600 active:bg-accent-700 text-white border-accent-500",
-        info: "bg-info-500 hover:bg-info-600 active:bg-info-700 text-white border-info-500",
+          "bg-accent-500 hover:bg-accent-600 active:bg-accent-700 border-accent-500 text-black",
+        info: "bg-info-500 hover:bg-info-600 active:bg-info-700 border-info-500 text-black",
         success:
-          "bg-success-500 hover:bg-success-600 active:bg-success-700 text-white border-success-500",
+          "bg-success-500 hover:bg-success-600 active:bg-success-700 border-success-500 text-black",
         warning:
-          "bg-warning-500 hover:bg-warning-600 active:bg-warning-700 text-white border-warning-500",
+          "bg-warning-500 hover:bg-warning-600 active:bg-warning-700 border-warning-500 text-black",
         error:
-          "bg-error-500 hover:bg-error-600 active:bg-error-700 text-white border-error-500",
+          "bg-error-500 hover:bg-error-600 active:bg-error-700 border-error-500 text-black",
       },
       size: {
         md: "h-9 px-4 has-[>svg]:px-3",

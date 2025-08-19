@@ -99,6 +99,7 @@ export const OnlyIconButtonList: Story = {
             label: "Chrome",
             icon: <Icon icon={<FaChrome />} />,
             onlyIcon: true,
+            "aria-label": "Chrome",
           }}
         />
         <Story
@@ -106,6 +107,7 @@ export const OnlyIconButtonList: Story = {
             label: "Facebook",
             icon: <Icon icon={<FaFacebook />} />,
             onlyIcon: true,
+            "aria-label": "Facebook",
           }}
         />
         <Story
@@ -113,6 +115,7 @@ export const OnlyIconButtonList: Story = {
             label: "Instagram",
             icon: <Icon icon={<FaInstagram />} />,
             onlyIcon: true,
+            "aria-label": "Instagram",
           }}
         />
         <Story
@@ -120,6 +123,7 @@ export const OnlyIconButtonList: Story = {
             label: "Twitter",
             icon: <Icon icon={<FaTwitter />} />,
             onlyIcon: true,
+            "aria-label": "Twitter",
           }}
         />
       </div>
@@ -139,6 +143,7 @@ export const ColorIconButtonList: Story = {
             label: "Chrome",
             icon: <Icon icon={<FaChrome />} className="text-red-500" />,
             onlyIcon: true,
+            "aria-label": "Chrome",
           }}
         />
         <Story
@@ -146,6 +151,7 @@ export const ColorIconButtonList: Story = {
             label: "Facebook",
             icon: <Icon icon={<FaFacebook />} className="text-blue-500" />,
             onlyIcon: true,
+            "aria-label": "Facebook",
           }}
         />
         <Story
@@ -153,6 +159,7 @@ export const ColorIconButtonList: Story = {
             label: "Instagram",
             icon: <Icon icon={<FaInstagram />} className="text-pink-500" />,
             onlyIcon: true,
+            "aria-label": "Instagram",
           }}
         />
         <Story
@@ -160,13 +167,15 @@ export const ColorIconButtonList: Story = {
             label: "Twitter",
             icon: <Icon icon={<FaTwitter />} className="text-blue-500" />,
             onlyIcon: true,
+            "aria-label": "Twitter",
           }}
         />
       </div>
     ),
   ],
 };
-
+console.log(<FaTwitter />);
+console.log(<SiLine />);
 export const LoginIconButtonList: Story = {
   parameters: {
     controls: { disable: true },
@@ -193,15 +202,15 @@ export const LoginIconButtonList: Story = {
         <Story
           args={{
             label: "Login with Facebook",
-            icon: <Icon icon={<FaFacebook />} className="text-white-500" />,
+            icon: <Icon icon={<FaFacebook />} className="text-white" />,
             className:
-              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white border-blue text-sm",
+              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue text-sm text-default-900",
           }}
         />
         <Story
           args={{
             label: "Login with X (Twitter)",
-            icon: <Icon icon={<FaXTwitter />} className="text-white-500" />,
+            icon: <Icon icon={<FaXTwitter />} className="text-white" />,
             className:
               "bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm",
           }}
@@ -225,7 +234,7 @@ export const LoginIconButtonList: Story = {
                     ></path>
                   </svg>
                 }
-                className="text-white-500"
+                className="text-white"
               />
             ),
             className:
@@ -235,7 +244,7 @@ export const LoginIconButtonList: Story = {
         <Story
           args={{
             label: "Login with Apple",
-            icon: <Icon icon={<FaApple />} className="text-white-500" />,
+            icon: <Icon icon={<FaApple />} className="text-white" />,
             className:
               "bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm",
           }}
@@ -243,7 +252,7 @@ export const LoginIconButtonList: Story = {
         <Story
           args={{
             label: "Login with Amazon",
-            icon: <Icon icon={<FaAmazon />} className="text-black-500" />,
+            icon: <Icon icon={<FaAmazon />} className="text-black" />,
             className:
               "bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm",
           }}
@@ -259,25 +268,35 @@ export const LoginIconButtonList: Story = {
         <Story
           args={{
             label: "Login with Line",
-            icon: <Icon icon={<SiLine />} className="text-white-500" />,
+            icon: (
+              <Icon
+                icon={<SiLine role="presentation" />}
+                className="text-white"
+              />
+            ),
             className:
-              "bg-green-500 hover:bg-green-600 active:bg-green-700 text-white border-green text-sm",
+              "bg-green-500 hover:bg-green-600 active:bg-green-700 border-green text-sm text-default-900",
           }}
         />
         <Story
           args={{
             label: "Login with Slack",
-            icon: <Icon icon={<SiSlack />} className="text-white-500" />,
+            icon: (
+              <Icon
+                icon={<SiSlack role="presentation" />}
+                className="text-white"
+              />
+            ),
             className:
-              "bg-purple-500 hover:bg-purple-600 active:bg-purple-700 text-white border-purple text-sm",
+              "bg-purple-500 hover:bg-purple-600 active:bg-purple-700 border-purple text-sm text-black",
           }}
         />
         <Story
           args={{
             label: "Login with LinkedIn",
-            icon: <Icon icon={<FaLinkedin />} className="text-white-700" />,
+            icon: <Icon icon={<FaLinkedin />} className="text-white" />,
             className:
-              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white border-blue text-sm",
+              "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue text-sm text-default-900",
           }}
         />
       </div>
