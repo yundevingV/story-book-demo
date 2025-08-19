@@ -93,7 +93,10 @@ export const DifferentElements: Story = {
       </Tooltip>
 
       <Tooltip content="링크 툴팁">
-        <a href="#" className="text-primary-500 hover:underline">
+        <a
+          href="#"
+          className="text-primary-500 dark:text-primary-400 hover:underline"
+        >
           Link
         </a>
       </Tooltip>
@@ -105,7 +108,7 @@ export const DifferentElements: Story = {
       </Tooltip>
 
       <Tooltip content="텍스트 툴팁">
-        <span className="text-default-600 cursor-help border-b border-dotted border-default-400">
+        <span className="text-default-600 dark:text-default-400 cursor-help border-b border-dotted border-default-400">
           Hover me
         </span>
       </Tooltip>
