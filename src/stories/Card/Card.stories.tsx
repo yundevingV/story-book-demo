@@ -121,6 +121,7 @@ export const ListViewCard: Story = {
           <p>리스트 뷰 카드입니다.</p>
         </CardContent>
       </Card>
+
       <Card className="w-80 overflow-hidden">
         <CardHeader>
           <CardTitle>리스트 뷰 카드</CardTitle>
@@ -132,10 +133,11 @@ export const ListViewCard: Story = {
           </div>
           <div className="flex flex-col gap-2">
             <p>리스트 뷰 카드입니다.</p>
-            <p className="text-sm text-default-600">리스트 뷰 카드입니다.</p>
+            <CardDescription>리스트 뷰 카드 설명입니다.</CardDescription>
           </div>
         </CardContent>
       </Card>
+
       <Card className="w-80 overflow-hidden">
         <CardContent className="flex gap-4 items-center">
           <div className="size-16 rounded-lg bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center">
@@ -143,7 +145,7 @@ export const ListViewCard: Story = {
           </div>
           <div className="flex flex-col gap-2">
             <p>리스트 뷰 카드입니다.</p>
-            <p className="text-sm text-default-600">리스트 뷰 카드입니다.</p>
+            <CardDescription>리스트 뷰 카드 설명입니다.</CardDescription>
           </div>
         </CardContent>
       </Card>
@@ -278,7 +280,7 @@ export const RealWorldExample: Story = {
             </div>
             <div>
               <p className="font-medium">사용자 이름</p>
-              <p className="text-sm text-default-600">user@example.com</p>
+              <CardDescription>user@example.com</CardDescription>
             </div>
           </div>
         </CardContent>
@@ -297,8 +299,10 @@ export const RealWorldExample: Story = {
         </CardHeader>
         <CardContent>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary-600">1,234</div>
-            <p className="text-sm text-default-600">총 방문자 수</p>
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">
+              1,234
+            </div>
+            <CardDescription>총 방문자 수</CardDescription>
           </div>
         </CardContent>
         <CardFooter>
@@ -324,12 +328,14 @@ export const LoginCard: Story = {
         <form>
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <Label>Email</Label>
-              <Input placeholder="m@example.com" />
+              <Label htmlFor="email" aria-label="Email">
+                Email
+              </Label>
+              <Input id="email" placeholder="m@example.com" />
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Password</Label>
-              <Input placeholder="" />
+              <Label aria-label="Password">Password</Label>
+              <Input id="password" placeholder="password" />
             </div>
           </div>
         </form>
