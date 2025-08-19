@@ -7,14 +7,14 @@ const badgeStyle = cva(
   {
     variants: {
       variant: {
-        default: "bg-default-500 border-default-500",
-        primary: "bg-primary-500 border-primary-500",
-        secondary: "bg-secondary-500 border-secondary-500",
+        default: "bg-default-500 border-default-500 text-white",
+        primary: "bg-primary-500 border-primary-500 text-black",
+        secondary: "bg-secondary-500 border-secondary-500 text-black",
         accent: "bg-accent-500 border-accent-500",
-        info: "bg-info-500 border-info-500",
-        success: "bg-success-500 border-success-500",
-        warning: "bg-warning-500 border-warning-500",
-        error: "bg-error-500 border-error-500",
+        info: "bg-info-500 border-info-500 text-black",
+        success: "bg-success-500 border-success-500 text-black",
+        warning: "bg-warning-500 border-warning-500 text-black",
+        error: "bg-error-500 border-error-500 text-black",
       },
       size: {
         md: "px-4 has-[>svg]:px-3 text-base",
