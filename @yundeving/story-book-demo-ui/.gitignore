@@ -45,4 +45,3 @@ storybook-static
 
 .yarn
 dist
-.rollup.cache
