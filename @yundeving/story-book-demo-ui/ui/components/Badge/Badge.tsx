@@ -1,5 +1,6 @@
 import { cva } from "class-variance-authority";
 import { type BadgeProps } from "./Badge.type";
+import { cn } from "../../lib/utils";
 
 const badgeStyle = cva(
   `font-medium rounded-lg text-center
@@ -31,9 +32,15 @@ const badgeStyle = cva(
   }
 );
 
-const Badge = ({ children, variant, size, ...props }: BadgeProps) => {
+const Badge = ({
+  children,
+  variant,
+  size,
+  className,
+  ...props
+}: BadgeProps) => {
   return (
-    <div className={badgeStyle({ variant, size })} {...props}>
+    <div className={cn(badgeStyle({ variant, size }), className)} {...props}>
       {children}
     </div>
   );
