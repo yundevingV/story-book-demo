@@ -1,6 +1,6 @@
 {
   "name": "@yundeving/story-book-demo-ui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of reusable UI components built with Storybook",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -33,13 +33,17 @@
   "homepage": "https://github.com/yundevingV/story-book-demo#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "clsx": ">=2.0.0",
+    "tailwind-merge": ">=3.0.0",
+    "class-variance-authority": ">=0.7.0"
   },
   "devDependencies": {
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.3.1",
+    "class-variance-authority": "^0.7.1",
     "typescript": "^5.9.2"
   },
   "packageManager": "yarn@4.9.0"
