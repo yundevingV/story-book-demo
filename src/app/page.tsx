@@ -1,3 +1,9 @@
+import { Button } from "@yundeving/story-book-demo-ui";
+
 export default function Home() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <Button>Hello World</Button>
+    </div>
+  );
 }

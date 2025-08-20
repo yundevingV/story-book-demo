@@ -1,0 +1,46 @@
+{
+  "name": "@yundeving/story-book-demo-ui",
+  "version": "1.0.2",
+  "description": "A collection of reusable UI components built with Storybook",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "storybook": "storybook dev -p 6006",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "storybook",
+    "react",
+    "typescript"
+  ],
+  "author": "Yundeving <ggdbstjd0222@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yundevingV/story-book-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yundevingV/story-book-demo/issues"
+  },
+  "homepage": "https://github.com/yundevingV/story-book-demo#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "yarn@4.9.0"
+}

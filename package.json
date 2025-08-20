@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "packages",
-    "web"
+    "@yundeving/story-book-demo-ui",
+    "storybook-demo-test-app"
   ],
   "scripts": {
     "dev": "next dev",
@@ -13,8 +13,8 @@
     "lint": "next lint",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_bb83889e0c308bb",
-    "ui": "yarn workspace packages",
-    "web": "yarn workspace web"
+    "ui": "yarn workspace @yundeving/story-book-demo-ui",
+    "app": "yarn workspace storybook-demo-test-app"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

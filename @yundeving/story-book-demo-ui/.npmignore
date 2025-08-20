@@ -1,0 +1,36 @@
+# Source files
+src/
+components/
+lib/
+stories/
+*.tsx
+*.ts
+!*.d.ts
+
+# Build tools
+rollup.config.mjs
+tsconfig.json
+.eslintrc*
+.prettierrc*
+
+# Development files
+node_modules/
+.git/
+.gitignore
+README.md
+yarn.lock
+package-lock.json
+
+# Storybook
+.storybook/
+storybook-static/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
