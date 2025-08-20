@@ -7868,6 +7868,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"packages@workspace:packages":
+  version: 0.0.0-use.local
+  resolution: "packages@workspace:packages"
+  languageName: unknown
+  linkType: soft
+
 "pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -10138,6 +10144,12 @@ __metadata:
   checksum: 10c0/6c0901f75ce245d33991225af915eea1c5ae4ba087f3aee2b70dd377d4cacb34bef02a48daf109da9d59b2d31ec6463d924a0d72f8618ae1643dd07b95de5275
   languageName: node
   linkType: hard
+
+"web@workspace:web":
+  version: 0.0.0-use.local
+  resolution: "web@workspace:web"
+  languageName: unknown
+  linkType: soft
 
 "webpack-dev-middleware@npm:^6.1.2":
   version: 6.1.3
