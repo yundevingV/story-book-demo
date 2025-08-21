@@ -16,9 +16,9 @@
 
 ## 🏗️ 프로젝트 구조
 
-story-book-demo/ # 모노레포 루트 <br />
-ㄴ @yundeving/story-book-demo-ui/ # UI 컴포넌트 라이브러리 <br />
-ㄴ storybook-demo-test-app/ # Next.js 테스트 앱<br />
+- story-book-demo/ (monorepo root)
+  - @yundeving/story-book-demo-ui/ (UI component library)
+  - storybook-demo-test-app/ (Next.js test app)
 
 ## 🚀 시작하기
 
@@ -50,14 +50,14 @@ yarn ui build
 
 ```css
 /* globals.css */
-@import "@yundeving/story-book-demo-ui/styles.css";
+@import "@yundeving/story-book-demo-ui/styled.css";
 ```
 
 또는 Next.js App Router의 경우:
 
 ```tsx
 // app/layout.tsx
-import "@yundeving/story-book-demo-ui/styles.css";
+import "@yundeving/story-book-demo-ui/styled.css";
 ```
 
 ### 2. 컴포넌트 사용
