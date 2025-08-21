@@ -38,13 +38,14 @@ export default function Sidebar() {
             const isActive = pathname === item.href;
             return (
               <Button
+                onClick={() => router.push(item.href)}
                 key={item.href}
                 className={cn(
                   "w-fit bg-transparent",
                   isActive && "bg-default-900"
                 )}
               >
-                <p onClick={() => router.push(item.href)}>{item.name}</p>
+                <p>{item.name}</p>
               </Button>
             );
           })}
