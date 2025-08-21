@@ -1,60 +1,98 @@
-# 🎨 Storybook Demo Project
+# 🎨 Storybook Demo UI Library
 
 ## ✨ 프로젝트 소개
 
-이 프로젝트는 **Storybook**을 활용한 컴포넌트 개발 및 문서화 연습을 위한 레포지토리입니다. 최신 웹 기술 스택을 사용하여 현대적이고 재사용 가능한 UI 컴포넌트들을 구축했습니다.
+이 프로젝트는 **Storybook**을 활용한 재사용 가능한 UI 컴포넌트 라이브러리입니다. 최신 웹 기술 스택을 사용하여 현대적이고 확장 가능한 컴포넌트들을 구축했습니다.
 
 ## 🚀 기술 스택
 
 | 기술             | 버전 | 설명                           |
 | ---------------- | ---- | ------------------------------ |
-| **Next.js**      | 15   | React 기반 풀스택 프레임워크   |
 | **React**        | 19   | 최신 React 기능 활용           |
+| **TypeScript**   | 5.9+ | 타입 안전성 보장               |
 | **Tailwind CSS** | v4   | 유틸리티 퍼스트 CSS 프레임워크 |
 | **Storybook**    | 최신 | 컴포넌트 개발 및 문서화 도구   |
-| **TypeScript**   | 최신 | 타입 안전성 보장               |
-
-## 🎯 주요 기능
-
-- 🧩 **재사용 가능한 컴포넌트**: Button, Input, Divider, Icon 등
-- 📚 **Storybook 문서화**: 각 컴포넌트별 사용법 및 예시
-- 🎨 **다양한 변형**: variant, size, state 등 다양한 옵션
-- 🌙 **다크모드 지원**: 시스템 설정에 따른 자동 테마 전환
-- 📱 **반응형 디자인**: 모든 디바이스에서 최적화된 UI
+| **Next.js**      | 15   | 테스트 앱용 React 프레임워크   |
 
 ## 🏗️ 프로젝트 구조
 
-```
-src/
-├── app/                 # Next.js 앱 라우터
-├── lib/                 # 유틸리티 함수
-└── stories/             # Storybook 컴포넌트
-    ├── Button/          # 버튼 컴포넌트
-    ├── Input/           # 입력 컴포넌트
-    ├── Divider/         # 구분선 컴포넌트
-    ├── Icon/            # 아이콘 컴포넌트
-    └── StatusButton/    # 상태 버튼 컴포넌트
+story-book-demo/ # 모노레포 루트 <br />
+ㄴ @yundeving/story-book-demo-ui/ # UI 컴포넌트 라이브러리 <br />
+ㄴ storybook-demo-test-app/ # Next.js 테스트 앱<br />
 
-<!-- 등등 추가및 변경 예정 -->
-```
-
-## 시작하기
+## 🚀 시작하기
 
 ### 1. 의존성 설치
 
 ```bash
+# 모노레포 루트에서
 yarn install
 ```
 
 ### 2. 개발 서버 실행
 
 ```bash
-# Next.js 앱 실행
-yarn dev
+# UI 라이브러리 Storybook 실행
+yarn ui storybook
 
-# Storybook 실행
-yarn storybook
+# 테스트 앱 실행
+yarn app dev
+
+# 컴포넌트 빌드
+yarn ui build
 ```
+
+## 📦 사용법
+
+### 1. CSS Import (필수)
+
+먼저 앱의 `globals.css` 또는 `layout.tsx`에 다음을 추가하세요:
+
+```css
+/* globals.css */
+@import "@yundeving/story-book-demo-ui/styles.css";
+```
+
+또는 Next.js App Router의 경우:
+
+```tsx
+// app/layout.tsx
+import "@yundeving/story-book-demo-ui/styles.css";
+```
+
+### 2. 컴포넌트 사용
+
+```tsx
+import { Button, Card, Badge } from "@yundeving/story-book-demo-ui";
+
+function App() {
+  return (
+    <Card>
+      <h2>Welcome to our UI library</h2>
+      <Button variant="primary">Click me</Button>
+      <Badge>New</Badge>
+    </Card>
+  );
+}
+```
+
+## 🧪 테스트 앱
+
+### 테스트 앱 실행
+
+```bash
+# 테스트 앱 개발 서버 실행
+yarn workspace storybook-demo-test-app dev
+
+# 브라우저에서 http://localhost:3000 접속
+```
+
+### 테스트 앱 기능
+
+- 모든 UI 컴포넌트 실시간 테스트
+- 다양한 variant, size, state 조합 확인
+- 반응형 디자인 테스트
+- 실제 Next.js 환경에서의 동작 검증
 
 ## 🎨 컴포넌트 가이드
 
@@ -62,22 +100,64 @@ yarn storybook
 
 - **Variants**: default, primary, secondary, accent, info, success, warning, error
 - **Sizes**: sm, md, lg
-- **States**: loading, disabled
+- **States**: default, loading, success, error
+
+### Badge
+
+- **Variants**: default, primary, secondary, accent, info, success, warning, error
+- **Sizes**: sm, md, lg
+
+### Card
+
+- **Components**: CardHeader, CardTitle, CardDescription, CardContent, CardFooter, CardAction
 
 ### Input
 
-- **Types**: text, email, password, file
 - **Variants**: default, filled, outline
-- **Features**: error state, helper text
+- **Features**: error state, helper text, validation
 
-### Divider
-
-- **Variants**: default, primary, secondary, accent, info, success, warning, error
-- **Customizable**: height, width, spacing
-
-## 🔧 개발 환경
+## ⚒️ 개발 환경
 
 - **Node.js**: 18+
-- **Package Manager**: Yarn
+- **Package Manager**: Yarn 4.9.0
 - **Editor**: VS Code (권장)
 - **Browser**: Chrome, Firefox, Safari, Edge
+
+## 📋 의존성
+
+### Peer Dependencies
+
+- `react`: >=16.8.0
+- `react-dom`: >=16.8.0
+
+### Dependencies
+
+- `clsx`: CSS 클래스 조합
+- `tailwind-merge`: Tailwind 클래스 충돌 해결
+- `class-variance-authority`: 컴포넌트 variant 관리
+- `react-icons`: 아이콘 컴포넌트
+
+## 🎯 워크스페이스 명령어
+
+```bash
+# UI 라이브러리 관련
+yarn ui build
+yarn ui storybook
+
+# 테스트 앱 관련
+yarn app dev
+yarn app build
+yarn app start
+
+```
+
+## ⚠️ 중요사항
+
+- CSS import 없이는 컴포넌트 스타일링이 적용되지 않습니다
+- Tailwind 설정이나 추가 CSS 작업이 필요하지 않습니다
+- 한 줄 import로 모든 스타일이 자동 적용됩니다
+- 테스트 앱은 개발중이며 라이브러리 개발 및 검증용입니다
+
+## 라이선스
+
+MIT License
