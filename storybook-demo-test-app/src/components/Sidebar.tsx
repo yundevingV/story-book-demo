@@ -2,7 +2,7 @@
 
 import { cn } from "@yundeving/story-book-demo-ui";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface SidebarItem {
   name: string;
