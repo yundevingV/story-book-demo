@@ -31,7 +31,7 @@ export default function Sidebar() {
   return (
     <div className="flex h-screen w-64">
       {/* Sidebar */}
-      <div className={`bg-default-800 shadow-lg w-64 p-4 flex flex-col gap-4`}>
+      <div className="bg-default-800 shadow-lg w-64 p-4 flex flex-col gap-4">
         {/* Navigation Items */}
         <nav className="mt-4 flex flex-col gap-2">
           {sidebarItems.map((item) => {
