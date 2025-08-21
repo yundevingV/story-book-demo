@@ -50,14 +50,14 @@ yarn ui build
 
 ```css
 /* globals.css */
-@import "@yundeving/story-book-demo-ui/styles.css";
+@import "@yundeving/story-book-demo-ui/styled.css";
 ```
 
 또는 Next.js App Router의 경우:
 
 ```tsx
 // app/layout.tsx
-import "@yundeving/story-book-demo-ui/styles.css";
+import "@yundeving/story-book-demo-ui/styled.css";
 ```
 
 ### 2. 컴포넌트 사용
