@@ -44,4 +44,7 @@ next-env.d.ts
 storybook-static
 
 .yarn
+
+# dist file
+styled.css
 dist

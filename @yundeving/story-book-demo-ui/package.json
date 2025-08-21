@@ -1,6 +1,6 @@
 {
   "name": "@yundeving/story-book-demo-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A collection of reusable UI components built with Storybook",
   "main": "dist/index.js",
   "module": "dist/index.js",
