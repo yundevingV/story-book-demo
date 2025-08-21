@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Sidebar from "@/components/Sidebar";
 import "@yundeving/story-book-demo-ui/style.css";
+
+import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
