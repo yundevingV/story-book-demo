@@ -1,0 +1,101 @@
+/* distribute css file */
+@import "tailwindcss";
+@source "./dist/**/*.{js,jsx}";
+
+@theme {
+  /* Default 팔레트 - 기본 배경/테두리 */
+  --color-default-50: oklch(98.5% 0 0);
+  --color-default-100: oklch(97% 0.001 106.424);
+  --color-default-200: oklch(92.3% 0.003 48.717);
+  --color-default-300: oklch(87% 0 0);
+  --color-default-400: oklch(70.8% 0 0);
+  --color-default-500: oklch(55.6% 0 0);
+  --color-default-600: oklch(43.9% 0 0);
+  --color-default-700: oklch(37.1% 0 0);
+  --color-default-800: oklch(26.9% 0 0);
+  --color-default-900: oklch(20.5% 0 0);
+
+  /* Primary 팔레트 - 주요 브랜드 컬러 */
+  --color-primary-50: oklch(96.2% 0.018 272.314);
+  --color-primary-100: oklch(96.2% 0.018 272.314);
+  --color-primary-200: oklch(87% 0.065 274.039);
+  --color-primary-300: oklch(78.5% 0.115 274.713);
+  --color-primary-400: oklch(67.3% 0.182 276.935);
+  --color-primary-500: oklch(58.5% 0.233 277.117);
+  --color-primary-600: oklch(51.1% 0.262 276.966);
+  --color-primary-700: oklch(45.7% 0.24 277.023);
+  --color-primary-800: oklch(39.8% 0.195 277.366);
+  --color-primary-900: oklch(35.9% 0.144 278.697);
+
+  /* Secondary 팔레트 - 보조 브랜드 컬러 */
+  --color-secondary-50: oklch(97.1% 0.014 343.198);
+  --color-secondary-100: oklch(94.8% 0.028 342.258);
+  --color-secondary-200: oklch(89.9% 0.061 343.231);
+  --color-secondary-300: oklch(82.3% 0.12 346.018);
+  --color-secondary-400: oklch(71.8% 0.202 349.761);
+  --color-secondary-500: oklch(65.6% 0.241 354.308);
+  --color-secondary-600: oklch(59.2% 0.249 0.584);
+  --color-secondary-700: oklch(52.5% 0.223 3.958);
+  --color-secondary-800: oklch(45.9% 0.187 3.815);
+  --color-secondary-900: oklch(40.8% 0.153 2.432);
+
+  /* Accent 팔레트 - 강조 컬러 */
+  --color-accent-50: oklch(0.98 0.02 51.48);
+  --color-accent-100: oklch(0.95 0.04 51.48);
+  --color-accent-200: oklch(0.9 0.08 51.48);
+  --color-accent-300: oklch(0.8 0.12 51.48);
+  --color-accent-400: oklch(0.75 0.16 51.48);
+  --color-accent-500: oklch(0.7265 0.1832 51.48);
+  --color-accent-600: oklch(0.65 0.18 51.48);
+  --color-accent-700: oklch(0.55 0.16 51.48);
+  --color-accent-800: oklch(0.45 0.14 51.48);
+  --color-accent-900: oklch(0.35 0.12 51.48);
+
+  /* Info 팔레트 - 정보 컬러 */
+  --color-info-50: oklch(0.98 0.02 200);
+  --color-info-100: oklch(0.95 0.04 200);
+  --color-info-200: oklch(0.9 0.08 200);
+  --color-info-300: oklch(0.8 0.12 200);
+  --color-info-400: oklch(0.7 0.16 200);
+  --color-info-500: oklch(0.6 0.18 200);
+  --color-info-600: oklch(0.5 0.18 200);
+  --color-info-700: oklch(0.4 0.16 200);
+  --color-info-800: oklch(0.3 0.14 200);
+  --color-info-900: oklch(0.2 0.12 200);
+
+  /* Success 팔레트 - 성공 컬러 */
+  --color-success-50: oklch(97.9% 0.021 166.113);
+  --color-success-100: oklch(95% 0.052 163.051);
+  --color-success-200: oklch(90.5% 0.093 164.15);
+  --color-success-300: oklch(84.5% 0.143 164.978);
+  --color-success-400: oklch(76.5% 0.177 163.223);
+  --color-success-500: oklch(69.6% 0.17 162.48);
+  --color-success-600: oklch(59.6% 0.145 163.225);
+  --color-success-700: oklch(50.8% 0.118 165.612);
+  --color-success-800: oklch(43.2% 0.095 166.913);
+  --color-success-900: oklch(37.8% 0.077 168.94);
+
+  /* Warning 팔레트 - 경고 컬러 */
+  --color-warning-50: oklch(0.98 0.02 84.9338);
+  --color-warning-100: oklch(0.95 0.04 84.9338);
+  --color-warning-200: oklch(0.9 0.08 84.9338);
+  --color-warning-300: oklch(0.85 0.12 84.9338);
+  --color-warning-400: oklch(0.8 0.16 84.9338);
+  --color-warning-500: oklch(0.8442 0.172159 84.9338);
+  --color-warning-600: oklch(0.75 0.16 84.9338);
+  --color-warning-700: oklch(0.65 0.14 84.9338);
+  --color-warning-800: oklch(0.55 0.12 84.9338);
+  --color-warning-900: oklch(0.45 0.1 84.9338);
+
+  /* Error 팔레트 - 에러 컬러 */
+  --color-error-50: oklch(0.98 0.02 21.24);
+  --color-error-100: oklch(0.95 0.04 21.24);
+  --color-error-200: oklch(0.9 0.08 21.24);
+  --color-error-300: oklch(0.8 0.12 21.24);
+  --color-error-400: oklch(0.7 0.16 21.24);
+  --color-error-500: oklch(0.5915 0.202 21.24);
+  --color-error-600: oklch(0.5 0.2 21.24);
+  --color-error-700: oklch(0.4 0.18 21.24);
+  --color-error-800: oklch(0.3 0.16 21.24);
+  --color-error-900: oklch(0.2 0.14 21.24);
+}
