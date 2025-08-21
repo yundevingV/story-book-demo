@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, cn } from "@yundeving/story-book-demo-ui";
+import { cn } from "@yundeving/story-book-demo-ui";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
 interface SidebarItem {
@@ -26,31 +27,28 @@ const sidebarItems: SidebarItem[] = [
 
 export default function Sidebar() {
   const pathname = usePathname();
-  const router = useRouter();
 
   return (
-    <div className="flex h-screen w-64">
+    <div className="h-screen w-64 bg-default-800 shadow-lg p-4 flex flex-col gap-4">
       {/* Sidebar */}
-      <div className="bg-default-800 shadow-lg w-64 p-4 flex flex-col gap-4">
-        {/* Navigation Items */}
-        <nav className="mt-4 flex flex-col gap-2">
-          {sidebarItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Button
-                onClick={() => router.push(item.href)}
-                key={item.href}
-                className={cn(
-                  "w-fit bg-transparent",
-                  isActive && "bg-default-900"
-                )}
-              >
-                {item.name}
-              </Button>
-            );
-          })}
-        </nav>
-      </div>
+      {/* Navigation Items */}
+      <nav className="mt-4 flex flex-col gap-2">
+        {sidebarItems.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              href={item.href}
+              key={item.href}
+              className={cn(
+                "w-fit bg-transparent h-9 px-4 inline-flex items-center justify-center font-medium rounded-lg text-default-200 transition-all duration-200 ease-in-out",
+                isActive && "bg-default-900"
+              )}
+            >
+              {item.name}
+            </Link>
+          );
+        })}
+      </nav>
     </div>
   );
 }
