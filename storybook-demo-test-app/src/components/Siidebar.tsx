@@ -1,12 +1,11 @@
 "use client";
 
 import { Button, cn } from "@yundeving/story-book-demo-ui";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface SidebarItem {
   name: string;
   href: string;
-  icon?: string;
 }
 
 const sidebarItems: SidebarItem[] = [
@@ -27,6 +26,7 @@ const sidebarItems: SidebarItem[] = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <div className="flex h-screen w-64">
@@ -44,7 +44,7 @@ export default function Sidebar() {
                   isActive && "bg-default-900"
                 )}
               >
-                <a href={item.href}>{item.name}</a>
+                <p onClick={() => router.push(item.href)}>{item.name}</p>
               </Button>
             );
           })}
