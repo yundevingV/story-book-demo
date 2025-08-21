@@ -45,7 +45,7 @@ export default function Sidebar() {
                   isActive && "bg-default-900"
                 )}
               >
-                <p>{item.name}</p>
+                {item.name}
               </Button>
             );
           })}
