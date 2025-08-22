@@ -18,14 +18,14 @@ First, add the following to your app's `globals.css` or `layout.tsx`:
 
 ```css
 /* globals.css */
-@import "@yundeving/story-book-demo-ui/styles.css";
+@import "@yundeving/story-book-demo-ui/styled.css";
 ```
 
 Or for Next.js App Router:
 
 ```tsx
 // app/layout.tsx
-import "@yundeving/story-book-demo-ui/styles.css";
+import "@yundeving/story-book-demo-ui/styled.css";
 
 export default function RootLayout({
   children,
