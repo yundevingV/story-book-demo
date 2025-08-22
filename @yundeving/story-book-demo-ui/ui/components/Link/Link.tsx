@@ -23,16 +23,27 @@ const customLinkStyle = cva(
 
 const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
   (
-    { size = "md", label, className, children, disabled = false, ...props },
+    {
+      size = "md",
+      label,
+      className,
+      children,
+      disabled = false,
+      onClick,
+      ...props
+    },
     ref
   ) => {
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (disabled) {
-        e.preventDefault();
-        return;
-      }
-      props.onClick?.(e);
-    };
+    const handleClick = React.useCallback(
+      (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (disabled) {
+          e.preventDefault();
+          return;
+        }
+        onClick?.(e);
+      },
+      [disabled, onClick]
+    );
 
     return (
       <Link
@@ -41,6 +52,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
         className={cn(customLinkStyle({ size }), className)}
         aria-disabled={disabled}
         onClick={handleClick}
+        tabIndex={disabled ? -1 : undefined}
         {...props}
       >
         <div className="flex items-center justify-center gap-2">
