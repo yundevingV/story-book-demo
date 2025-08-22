@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@yundeving/story-book-demo-ui";
-import Link from "next/link";
+import { cn, Link } from "@yundeving/story-book-demo-ui";
+
 import { usePathname } from "next/navigation";
 
 interface SidebarItem {
