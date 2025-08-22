@@ -8,9 +8,9 @@
   "files": [
     "dist",
     "README.md",
-    "style.css"
+    "styled.css"
   ],
-  "style": "style.css",
+  "style": "styled.css",
   "scripts": {
     "build": "tsc && cp ./style.css ./styled.css",
     "storybook": "storybook dev -p 6006",
