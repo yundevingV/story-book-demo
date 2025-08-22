@@ -28,3 +28,4 @@ export {
 export { default as Skeleton } from "./Skeleton";
 export { default as StatusButton } from "./StatusButton";
 export { default as Tooltip } from "./Tooltip";
+export { default as Link } from "./Link";
