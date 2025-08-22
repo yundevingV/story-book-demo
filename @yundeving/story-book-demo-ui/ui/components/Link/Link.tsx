@@ -13,9 +13,9 @@ const customLinkStyle = cva(
   {
     variants: {
       size: {
-        md: "p-3",
-        sm: "p-1.5",
-        lg: "p-5",
+        md: "p-2",
+        sm: "p-1",
+        lg: "p-3",
       },
     },
   }
@@ -45,7 +45,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
       >
         <div className="flex items-center justify-center gap-2">
           {children}
-          {label && <span>{label}</span>}
+          {label && <span className="truncate">{label}</span>}
         </div>
       </Link>
     );

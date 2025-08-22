@@ -22,10 +22,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
-  args: {
-    href: "/",
-    label: "Link",
-  },
+  render: () => (
+    <div className="flex flex-col gap-4">
+      <Link href="/" label="Link" size="md" />
+    </div>
+  ),
 };
 
 export const LinkList: Story = {
@@ -34,6 +35,7 @@ export const LinkList: Story = {
       <Link href="/" label="Link" size="md" />
       <Link href="/" label="Link" size="sm" />
       <Link href="/" label="Link" size="lg" />
+      <Link href="/" label="Disabled Link" size="lg" disabled />
     </div>
   ),
 };
