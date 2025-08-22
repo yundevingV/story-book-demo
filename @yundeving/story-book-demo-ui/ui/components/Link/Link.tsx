@@ -29,6 +29,7 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (disabled) {
         e.preventDefault();
+        return;
       }
       props.onClick?.(e);
     };
