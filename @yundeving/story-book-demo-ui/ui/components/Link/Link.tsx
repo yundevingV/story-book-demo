@@ -7,7 +7,7 @@ const LinkStyle = cva(
   `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   [&[aria-disabled=true]]:opacity-50 [&[aria-disabled=true]]:cursor-not-allowed
-  bg-default-100 dark:bg-default-800 p-2 inline-block
+  bg-default-100 dark:bg-default-800 inline-block
   `,
   {
     variants: {
@@ -48,6 +48,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         onClick={handleClick}
         tabIndex={disabled ? -1 : undefined}
         {...props}
+        href={disabled ? undefined : props.href}
       >
         <div className="flex items-center justify-center gap-2">
           {children}
