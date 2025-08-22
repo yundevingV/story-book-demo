@@ -43,7 +43,11 @@
     "eslint-plugin-storybook": "^9.1.1",
     "storybook": "^9.1.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "webpack": "5.101.2"
+  },
+  "resolutions": {
+    "webpack": "5.101.2"
   },
   "packageManager": "yarn@4.9.0"
 }
