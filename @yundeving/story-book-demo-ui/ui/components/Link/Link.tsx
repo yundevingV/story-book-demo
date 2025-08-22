@@ -7,7 +7,7 @@ const LinkStyle = cva(
   `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   [&[aria-disabled=true]]:opacity-50 [&[aria-disabled=true]]:cursor-not-allowed
-  bg-default-100 dark:bg-default-800 p-2
+  bg-default-100 dark:bg-default-800 p-2 inline-block
   `,
   {
     variants: {
