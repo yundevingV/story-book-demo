@@ -1,10 +1,8 @@
-import type { LinkProps } from "next/link";
+import type { AnchorHTMLAttributes } from "react";
 import { SizeType } from "../common.type";
 
-export interface CustomLinkProps extends LinkProps {
+export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   size?: SizeType;
   label?: string;
   disabled?: boolean;
-  className?: string;
-  children?: React.ReactNode;
 }

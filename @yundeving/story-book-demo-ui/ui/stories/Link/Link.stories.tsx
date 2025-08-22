@@ -15,18 +15,18 @@ const meta: Meta<typeof Link> = {
     },
   },
   args: {},
-};
+} satisfies Meta<typeof Link>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 export const Example: Story = {
-  render: () => (
-    <div className="flex flex-col gap-4">
-      <Link href="/" label="Link" size="md" />
-    </div>
-  ),
+  args: {
+    href: "/",
+    label: "Link",
+    size: "md",
+  },
 };
 
 export const LinkList: Story = {

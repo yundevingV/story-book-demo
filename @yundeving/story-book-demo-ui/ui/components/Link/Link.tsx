@@ -1,14 +1,13 @@
 import React from "react";
-import Link from "next/link";
 import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
-import type { CustomLinkProps } from "./Link.type";
+import type { LinkProps } from "./Link.type";
 
-const customLinkStyle = cva(
+const LinkStyle = cva(
   `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   [&[aria-disabled=true]]:opacity-50 [&[aria-disabled=true]]:cursor-not-allowed
-  bg-default-100 dark:bg-default-800
+  bg-default-100 dark:bg-default-800 p-2
   `,
   {
     variants: {
@@ -18,20 +17,15 @@ const customLinkStyle = cva(
         lg: "p-3",
       },
     },
+    defaultVariants: {
+      size: "md",
+    },
   }
 );
 
-const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
+const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   (
-    {
-      size = "md",
-      label,
-      className,
-      children,
-      disabled = false,
-      onClick,
-      ...props
-    },
+    { size, label, className, children, disabled = false, onClick, ...props },
     ref
   ) => {
     const handleClick = React.useCallback(
@@ -46,10 +40,10 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
     );
 
     return (
-      <Link
+      <a
         ref={ref}
         data-slot="link"
-        className={cn(customLinkStyle({ size }), className)}
+        className={cn(LinkStyle({ size }), className)}
         aria-disabled={disabled}
         onClick={handleClick}
         tabIndex={disabled ? -1 : undefined}
@@ -59,11 +53,11 @@ const CustomLink = React.forwardRef<HTMLAnchorElement, CustomLinkProps>(
           {children}
           {label && <span className="truncate">{label}</span>}
         </div>
-      </Link>
+      </a>
     );
   }
 );
 
-CustomLink.displayName = "CustomLink";
+Link.displayName = "Link";
 
-export default CustomLink;
+export default Link;
