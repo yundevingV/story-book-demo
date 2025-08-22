@@ -8,11 +8,7 @@ function getAbsolutePath(value: string) {
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config: StorybookConfig = {
   stories: ["../ui/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [
-    "@storybook/addon-postcss",
-    "@storybook/addon-docs",
-    "@storybook/addon-a11y",
-  ],
+  addons: ["@storybook/addon-docs", "@storybook/addon-a11y"],
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
     options: {},

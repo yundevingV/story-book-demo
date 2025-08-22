@@ -1,6 +1,6 @@
 {
   "name": "@yundeving/story-book-demo-ui",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A collection of reusable UI components built with Storybook",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -8,9 +8,9 @@
   "files": [
     "dist",
     "README.md",
-    "style.css"
+    "styled.css"
   ],
-  "style": "style.css",
+  "style": "styled.css",
   "scripts": {
     "build": "tsc && cp ./style.css ./styled.css",
     "storybook": "storybook dev -p 6006",
