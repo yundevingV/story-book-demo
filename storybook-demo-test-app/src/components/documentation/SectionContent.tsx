@@ -33,7 +33,7 @@ function SectionContent({ preview, code }: SectionContentProps) {
                 ? "text-default-600 dark:text-default-200"
                 : "text-default-200 dark:text-default-600"
             )}
-            onClick={() => setIsPreview(true)}
+            onClick={() => setIsPreview(false)}
           >
             Code
           </Button>
