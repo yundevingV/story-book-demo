@@ -47,16 +47,13 @@ function SectionContent({ preview, code, children }: SectionContentProps) {
             Code
           </Button>
         </div>
-        {isPreview && (
-          <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
+          {isPreview ? (
             <ComponentDemo>{preview}</ComponentDemo>
-          </div>
-        )}
-        {!isPreview && (
-          <div className="flex flex-col gap-4">
+          ) : (
             <CodeBlock language="tsx">{code}</CodeBlock>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
