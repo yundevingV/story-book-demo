@@ -11,14 +11,6 @@ interface SectionContentProps extends React.HTMLAttributes<HTMLDivElement> {
 function SectionContent({ preview, code }: SectionContentProps) {
   const [isPreview, setIsPreview] = useState(true);
 
-  const handlePreview = () => {
-    setIsPreview(true);
-  };
-
-  const handleCodeView = () => {
-    setIsPreview(false);
-  };
-
   return (
     <div className="flex-1 min-w-0 mt-4">
       <div className="flex flex-col gap-4">
@@ -30,7 +22,7 @@ function SectionContent({ preview, code }: SectionContentProps) {
                 ? "text-default-600 dark:text-default-200"
                 : "text-default-200 dark:text-default-600"
             )}
-            onClick={handlePreview}
+            onClick={() => setIsPreview(true)}
           >
             Preview
           </Button>
@@ -41,7 +33,7 @@ function SectionContent({ preview, code }: SectionContentProps) {
                 ? "text-default-600 dark:text-default-200"
                 : "text-default-200 dark:text-default-600"
             )}
-            onClick={handleCodeView}
+            onClick={() => setIsPreview(true)}
           >
             Code
           </Button>
