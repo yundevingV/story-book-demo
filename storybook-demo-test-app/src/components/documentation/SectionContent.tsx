@@ -6,10 +6,9 @@ import ComponentDemo from "./ComponentDemo";
 interface SectionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   preview: React.ReactNode;
   code: string;
-  children?: React.ReactNode;
 }
 
-function SectionContent({ preview, code, children }: SectionContentProps) {
+function SectionContent({ preview, code }: SectionContentProps) {
   const [isPreview, setIsPreview] = useState(true);
 
   const handlePreview = () => {
@@ -59,5 +58,4 @@ function SectionContent({ preview, code, children }: SectionContentProps) {
   );
 }
 
-export { SectionContent };
 export default SectionContent;

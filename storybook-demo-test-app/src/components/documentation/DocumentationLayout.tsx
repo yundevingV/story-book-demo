@@ -40,5 +40,4 @@ function DocumentationLayout({
   );
 }
 
-export { DocumentationLayout };
 export default DocumentationLayout;

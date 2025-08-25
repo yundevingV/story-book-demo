@@ -9,5 +9,4 @@ function SectionTitle({ children }: SectionTitleProps) {
   );
 }
 
-export { SectionTitle };
 export default SectionTitle;

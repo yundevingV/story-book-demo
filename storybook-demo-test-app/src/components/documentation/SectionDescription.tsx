@@ -9,5 +9,4 @@ function SectionDescription({ children }: SectionDescriptionProps) {
   );
 }
 
-export { SectionDescription };
 export default SectionDescription;

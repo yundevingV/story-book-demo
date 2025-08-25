@@ -19,5 +19,4 @@ function ComponentDemo({ children, className }: ComponentDemoProps) {
   );
 }
 
-export { ComponentDemo };
 export default ComponentDemo;

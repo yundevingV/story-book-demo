@@ -11,8 +11,8 @@ import {
   DocumentationLayout,
   DocumentationSection,
   SectionTitle,
+  SectionContent,
 } from "@/components/documentation";
-import SectionContent from "@/components/documentation/SectionContent";
 import { FaCheck, FaFacebook } from "react-icons/fa";
 
 export default function ButtonPage() {

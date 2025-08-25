@@ -62,5 +62,4 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
   );
 }
 
-export { CodeBlock };
 export default CodeBlock;

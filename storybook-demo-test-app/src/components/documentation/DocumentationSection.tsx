@@ -21,5 +21,4 @@ function DocumentationSection({
   );
 }
 
-export { DocumentationSection };
 export default DocumentationSection;
