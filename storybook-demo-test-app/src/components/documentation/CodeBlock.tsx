@@ -38,7 +38,7 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
   return (
     <Card
       className={cn(
-        "bg-default-200 dark:bg-default-900 h-96 mb-6 overflow-y-auto",
+        "bg-default-200 dark:bg-default-900 max-h-96 mb-6 overflow-y-auto",
         className
       )}
     >
