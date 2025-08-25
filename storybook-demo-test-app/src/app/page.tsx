@@ -168,9 +168,9 @@ export default function Home() {
             <CardDescription>현재 작업 상태</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
-            <StatusButton state="loading" label="로딩 중" variant="default" />
-            <StatusButton state="success" label="성공" variant="success" />
-            <StatusButton state="error" label="에러" variant="error" />
+            <StatusButton status="loading" label="로딩 중" variant="default" />
+            <StatusButton status="success" label="성공" variant="success" />
+            <StatusButton status="error" label="에러" variant="error" />
           </CardContent>
         </Card>
 
