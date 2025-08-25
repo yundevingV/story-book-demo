@@ -20,6 +20,9 @@ import {
 } from "@yundeving/story-book-demo-ui";
 import React from "react";
 
+import { FaPlus, FaTrash } from "react-icons/fa";
+import { VscRefresh } from "react-icons/vsc";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-6 items-center min-h-screen p-6">
@@ -130,10 +133,10 @@ export default function Home() {
           <CardContent className="flex gap-3 flex-wrap">
             <IconButton
               label="새로고침"
-              icon={<Icon icon={<span>🔄</span>} />}
+              icon={<Icon icon={<VscRefresh />} />}
             />
-            <IconButton label="추가" icon={<Icon icon={<span>➕</span>} />} />
-            <IconButton label="삭제" icon={<Icon icon={<span>🗑️</span>} />} />
+            <IconButton label="추가" icon={<Icon icon={<FaPlus />} />} />
+            <IconButton label="삭제" icon={<Icon icon={<FaTrash />} />} />
           </CardContent>
         </Card>
 
