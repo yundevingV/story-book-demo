@@ -38,13 +38,11 @@ export default function Home() {
             <form>
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="email" aria-label="Email">
-                    Email
-                  </Label>
+                  <Label htmlFor="email">Email</Label>
                   <Input id="email" placeholder="m@example.com" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Label aria-label="Password">Password</Label>
+                  <Label htmlFor="Password">Password</Label>
                   <Input id="password" placeholder="password" />
                 </div>
               </div>
