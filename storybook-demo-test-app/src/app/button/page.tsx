@@ -21,7 +21,6 @@ export default function ButtonPage() {
       title="Button"
       description="Displays a button or a component that looks like a button."
     >
-      {/* 기본 사용법 */}
       <DocumentationSection id="basic-usage">
         <SectionContent
           preview={<Button label="기본 버튼" />}
@@ -31,7 +30,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="secondary-button" className="">
+      <DocumentationSection id="secondary-button">
         <SectionTitle>Secondary</SectionTitle>
         <SectionContent
           preview={<Button label="secondary" variant="secondary" />}
@@ -41,7 +40,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="icon" className="">
+      <DocumentationSection id="icon">
         <SectionTitle>Icon</SectionTitle>
         <SectionContent
           preview={<IconButton onlyIcon icon={<Icon icon={<FaCheck />} />} />}
@@ -51,13 +50,13 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="icon-button" className="">
+      <DocumentationSection id="icon-button">
         <SectionTitle>Icon With Button</SectionTitle>
         <SectionContent
           preview={
             <IconButton
               label="Login with Facebook"
-              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue text-sm text-default-900"
+              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue-500 text-sm text-default-900"
               icon={<Icon icon={<FaFacebook />} className="text-white" />}
             />
           }
@@ -71,7 +70,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="status-button" className="">
+      <DocumentationSection id="status-button">
         <SectionTitle>Loading</SectionTitle>
         <SectionContent
           preview={<StatusButton label="Loading" status="loading" />}
@@ -81,7 +80,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="disabled-button" className="">
+      <DocumentationSection id="disabled-button">
         <SectionTitle>Disabled</SectionTitle>
         <SectionContent
           preview={<Button label="Disabled" disabled />}
