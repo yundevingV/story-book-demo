@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, Button, Icon } from "@yundeving/story-book-demo-ui";
 import { cn } from "@yundeving/story-book-demo-ui";
 import { FaCopy, FaCheck } from "react-icons/fa";
@@ -18,11 +18,22 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
     try {
       await navigator.clipboard.writeText(children);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Failed to copy text: ", err);
     }
   };
+
+  // copied 상태가 true가 되면 2초 후 false로 변경
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+
+      // cleanup function으로 타이머 정리
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
 
   return (
     <Card
