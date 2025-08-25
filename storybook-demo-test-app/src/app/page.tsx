@@ -45,7 +45,7 @@ export default function Home() {
                   <Input id="email" placeholder="m@example.com" />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <Label htmlFor="Password">Password</Label>
+                  <Label htmlFor="password">Password</Label>
                   <Input id="password" placeholder="password" />
                 </div>
               </div>
