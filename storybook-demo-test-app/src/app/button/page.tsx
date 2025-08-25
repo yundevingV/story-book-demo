@@ -31,7 +31,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="basic-usage" className="">
+      <DocumentationSection id="secondary-button" className="">
         <SectionTitle>Secondary</SectionTitle>
         <SectionContent
           preview={<Button label="secondary" variant="secondary" />}
@@ -41,7 +41,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="basic-usage" className="">
+      <DocumentationSection id="icon-button" className="">
         <SectionTitle>Icon</SectionTitle>
         <SectionContent
           preview={<IconButton onlyIcon icon={<Icon icon={<FaCheck />} />} />}
@@ -51,7 +51,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="basic-usage" className="">
+      <DocumentationSection id="icon-button" className="">
         <SectionTitle>Icon With Button</SectionTitle>
         <SectionContent
           preview={
@@ -71,7 +71,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="basic-usage" className="">
+      <DocumentationSection id="status-button" className="">
         <SectionTitle>Loading</SectionTitle>
         <SectionContent
           preview={<StatusButton label="Loading" status="loading" />}
@@ -81,7 +81,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="basic-usage" className="">
+      <DocumentationSection id="disabled-button" className="">
         <SectionTitle>Disabled</SectionTitle>
         <SectionContent
           preview={<Button label="Disabled" disabled />}
