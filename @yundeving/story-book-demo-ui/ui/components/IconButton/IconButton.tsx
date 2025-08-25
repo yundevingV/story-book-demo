@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../Button";
 import { type IconButtonProps } from "./IconButton.type";
 
@@ -7,7 +6,7 @@ const IconButton = ({
   label,
   variant,
   size,
-  state,
+  status,
   onlyIcon,
   className,
   ...props
@@ -17,7 +16,7 @@ const IconButton = ({
       label={onlyIcon ? "" : label}
       variant={variant}
       size={size}
-      state={state}
+      status={status}
       className={className}
       {...props}
     >

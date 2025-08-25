@@ -1,4 +1,3 @@
-import React from "react";
 import { FaCheck } from "react-icons/fa";
 import Button from "../Button";
 import { PiSpinnerBold } from "react-icons/pi";
@@ -9,7 +8,7 @@ const StatusButton = ({
   label,
   variant,
   size,
-  state,
+  status,
   ...props
 }: StatusButtonProps) => {
   return (
@@ -17,12 +16,12 @@ const StatusButton = ({
       label={label}
       variant={variant}
       size={size}
-      state={state}
+      status={status}
       {...props}
     >
-      {state === "loading" && <PiSpinnerBold className="animate-spin" />}
-      {state === "success" && <FaCheck />}
-      {state === "error" && <BiSolidError />}
+      {status === "loading" && <PiSpinnerBold className="animate-spin" />}
+      {status === "success" && <FaCheck />}
+      {status === "error" && <BiSolidError />}
     </Button>
   );
 };

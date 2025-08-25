@@ -1,4 +1,3 @@
-import React from "react";
 import { cva } from "class-variance-authority";
 import { cn } from "../../lib/utils";
 import { type ButtonProps } from "./Button.type";
@@ -45,13 +44,13 @@ const Button = ({
   label,
   size,
   variant,
-  state,
+  status,
   className,
   children,
   ...props
 }: ButtonProps) => {
   // 상태별 비활성화
-  const isDisabled = state === "loading";
+  const isDisabled = status === "loading";
 
   return (
     <button

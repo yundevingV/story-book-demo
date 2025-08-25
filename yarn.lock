@@ -9469,7 +9469,6 @@ __metadata:
     tailwind-merge: "npm:^3.3.1"
     tailwindcss: "npm:^4"
     typescript: "npm:^5"
-    webpack: "npm:5.101.2"
   languageName: unknown
   linkType: soft
 
