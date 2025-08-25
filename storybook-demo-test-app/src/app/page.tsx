@@ -70,7 +70,7 @@ export default function Home() {
                       ></path>
                     </svg>
                   }
-                  className="text-white-500"
+                  className="text-white"
                 />
               }
               className="w-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm"
