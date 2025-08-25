@@ -10,7 +10,7 @@ interface SectionContentProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 function SectionContent({ preview, code, children }: SectionContentProps) {
-  const [isPreview, setIsPreview] = useState<boolean>(true);
+  const [isPreview, setIsPreview] = useState(true);
 
   const handlePreview = () => {
     setIsPreview(true);
