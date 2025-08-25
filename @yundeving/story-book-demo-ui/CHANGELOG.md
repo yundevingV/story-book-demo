@@ -11,8 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Link Component**: Added new Link component with size variants (sm, md, lg)
 
-...
-
 ## [1.1.5] - 2024-08-25
 
 ### Changed
