@@ -8,12 +8,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@yundeving/story-book-demo-ui": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-syntax-highlighter": "^15.6.3",
     "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {

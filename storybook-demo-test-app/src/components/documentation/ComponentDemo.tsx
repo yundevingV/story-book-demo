@@ -11,8 +11,13 @@ interface ComponentDemoProps {
 
 function ComponentDemo({ children, className }: ComponentDemoProps) {
   return (
-    <Card className={cn("mb-6 max-h-96 overflow-y-auto", className)}>
-      <CardContent className="p-6 items-center h-full flex justify-center">
+    <Card
+      className={cn(
+        "min-h-96 mb-6 overflow-y-auto flex flex-col items-center justify-center",
+        className
+      )}
+    >
+      <CardContent>
         <div className="flex flex-wrap items-center gap-4">{children}</div>
       </CardContent>
     </Card>
