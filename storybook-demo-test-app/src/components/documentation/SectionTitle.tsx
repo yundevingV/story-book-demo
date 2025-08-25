@@ -1,4 +1,7 @@
-function SectionTitle({ children }: { children: React.ReactNode }) {
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+function SectionTitle({ children }: SectionTitleProps) {
   return (
     <h2 className="text-2xl font-bold text-default-800 dark:text-default-200 mb-4">
       {children}
