@@ -41,7 +41,7 @@ export default function ButtonPage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="icon-button" className="">
+      <DocumentationSection id="icon" className="">
         <SectionTitle>Icon</SectionTitle>
         <SectionContent
           preview={<IconButton onlyIcon icon={<Icon icon={<FaCheck />} />} />}
