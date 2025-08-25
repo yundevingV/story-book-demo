@@ -1,7 +1,12 @@
 "use client";
 
 import React from "react";
-import { Button, Icon, IconButton } from "@yundeving/story-book-demo-ui";
+import {
+  Button,
+  Icon,
+  IconButton,
+  StatusButton,
+} from "@yundeving/story-book-demo-ui";
 import {
   DocumentationLayout,
   DocumentationSection,
@@ -63,6 +68,26 @@ export default function ButtonPage() {
   className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue text-sm text-default-900"
   icon={<Icon icon={<FaFacebook />} className="text-white" />}
 />`}
+        />
+      </DocumentationSection>
+
+      <DocumentationSection id="basic-usage" className="">
+        <SectionTitle>Loading</SectionTitle>
+        <SectionContent
+          preview={<StatusButton label="Loading" status="loading" />}
+          code={`import { StatusButton } from "@yundeving/story-book-demo-ui";
+
+<StatusButton label="Loading" status="loading" />`}
+        />
+      </DocumentationSection>
+
+      <DocumentationSection id="basic-usage" className="">
+        <SectionTitle>Disabled</SectionTitle>
+        <SectionContent
+          preview={<Button label="Disabled" disabled />}
+          code={`import { Button } from "@yundeving/story-book-demo-ui";
+
+<Button label="Disabled" disabled />`}
         />
       </DocumentationSection>
     </DocumentationLayout>
