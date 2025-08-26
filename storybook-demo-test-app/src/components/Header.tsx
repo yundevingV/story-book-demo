@@ -43,9 +43,9 @@ export default function Header() {
               !mounted ? (
                 <Skeleton className="w-10 h-4" />
               ) : isDark ? (
-                <FaSun className="text-white" />
+                <FaSun className="text-default-200" />
               ) : (
-                <FaMoon className="text-black" />
+                <FaMoon className="text-default-800" />
               )
             }
           />
