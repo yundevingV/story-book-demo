@@ -74,7 +74,7 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
         customStyle={{
           margin: 0,
           borderRadius: "0.5rem",
-          height: "24rem", // min-h-96
+          height: "24rem",
           lineHeight: "1.5",
         }}
         codeTagProps={{
