@@ -19,8 +19,8 @@ function SectionContent({ preview, code }: SectionContentProps) {
             className={cn(
               "bg-transparent hover:bg-transparent active:bg-transparent p-0 ",
               isPreview
-                ? "text-default-600 dark:text-default-200"
-                : "text-default-200 dark:text-default-600"
+                ? "text-default-800 dark:text-default-200"
+                : "text-default-400 dark:text-default-600"
             )}
             onClick={() => setIsPreview(true)}
           >
@@ -30,8 +30,8 @@ function SectionContent({ preview, code }: SectionContentProps) {
             className={cn(
               "bg-transparent hover:bg-transparent active:bg-transparent p-0",
               !isPreview
-                ? "text-default-600 dark:text-default-200"
-                : "text-default-200 dark:text-default-600"
+                ? "text-default-800 dark:text-default-200"
+                : "text-default-400 dark:text-default-600"
             )}
             onClick={() => setIsPreview(false)}
           >
