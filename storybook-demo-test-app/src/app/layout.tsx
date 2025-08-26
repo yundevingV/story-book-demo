@@ -17,12 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-default-200 dark:bg-default-800">
             <Header />
             <div className="flex pt-16">
