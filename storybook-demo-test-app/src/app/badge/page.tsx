@@ -43,7 +43,7 @@ export default function BadgePage() {
         />
       </DocumentationSection>
 
-      <DocumentationSection id="variant">
+      <DocumentationSection id="size">
         <SectionContent
           preview={
             <>
@@ -59,7 +59,7 @@ export default function BadgePage() {
 <Badge size="lg"> Badge </Badge>`}
         />
       </DocumentationSection>
-      <DocumentationSection id="variant">
+      <DocumentationSection id="long-text">
         <SectionContent
           preview={
             <>
