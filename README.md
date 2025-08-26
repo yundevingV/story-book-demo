@@ -63,7 +63,7 @@ import "@yundeving/story-book-demo-ui/styled.css";
 ### 2. 컴포넌트 사용
 
 ```tsx
-import { Button, Card, Badge } from "@yundeving/story-book-demo-ui";
+import { Badge, Button, Card } from "@yundeving/story-book-demo-ui";
 
 function App() {
   return (

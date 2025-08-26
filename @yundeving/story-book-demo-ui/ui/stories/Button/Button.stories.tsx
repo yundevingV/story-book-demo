@@ -1,7 +1,7 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import { fn } from "storybook/test";
+
+import React from "react";
 
 import Button from "../../components/Button";
 

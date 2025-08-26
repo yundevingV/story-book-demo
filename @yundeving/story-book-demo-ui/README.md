@@ -43,7 +43,7 @@ export default function RootLayout({
 ### 2. Use Components
 
 ```tsx
-import { Button, Card, Badge } from "@yundeving/story-book-demo-ui";
+import { Badge, Button, Card } from "@yundeving/story-book-demo-ui";
 
 function App() {
   return (

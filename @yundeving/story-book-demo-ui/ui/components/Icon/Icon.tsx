@@ -1,5 +1,7 @@
-import React from "react";
 import cx from "classnames";
+
+import React from "react";
+
 export interface IconProps {
   icon: React.ReactNode;
   className?: string;

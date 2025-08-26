@@ -1,23 +1,23 @@
-import React from "react";
-
 import { Meta, StoryObj } from "@storybook/nextjs";
 import { fn } from "storybook/internal/test";
 
-import { IconButton, Icon } from "../../components";
+import React from "react";
 import {
+  FaAmazon,
+  FaApple,
   FaChrome,
   FaFacebook,
-  FaInstagram,
-  FaTwitter,
   FaGithub,
   FaGoogle,
-  FaXTwitter,
-  FaApple,
-  FaAmazon,
-  FaMicrosoft,
+  FaInstagram,
   FaLinkedin,
+  FaMicrosoft,
+  FaTwitter,
+  FaXTwitter,
 } from "react-icons/fa6";
 import { SiLine, SiSlack } from "react-icons/si";
+
+import { Icon, IconButton } from "../../components";
 
 const meta: Meta<typeof IconButton> = {
   title: "Button",

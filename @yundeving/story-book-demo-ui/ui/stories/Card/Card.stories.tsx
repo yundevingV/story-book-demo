@@ -1,15 +1,16 @@
+import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import React from "react";
 
-import type { Meta, StoryObj } from "@storybook/nextjs";
 import {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
   Button,
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
   Icon,
   IconButton,
   Input,
@@ -93,7 +94,7 @@ export const ThumbnailViewCard: Story = {
   render: () => (
     <>
       <Card className="w-80 overflow-hidden">
-        <div className="w-full h-48 bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center"></div>
+        <div className="from-primary-400 to-secondary-500 flex h-48 w-full items-center justify-center bg-gradient-to-br"></div>
         <CardHeader>
           <CardTitle>썸네일 뷰 카드</CardTitle>
           <CardDescription>썸네일 뷰 카드입니다.</CardDescription>
@@ -116,9 +117,9 @@ export const ListViewCard: Story = {
           <CardDescription>리스트 뷰 카드입니다.</CardDescription>
         </CardHeader>
 
-        <CardContent className="flex gap-4 items-center">
-          <div className="size-16 rounded-lg bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center">
-            <span className="text-white text-lg font-medium"></span>
+        <CardContent className="flex items-center gap-4">
+          <div className="from-primary-400 to-secondary-500 flex size-16 items-center justify-center rounded-lg bg-gradient-to-br">
+            <span className="text-lg font-medium text-white"></span>
           </div>
           <p>리스트 뷰 카드입니다.</p>
         </CardContent>
@@ -129,9 +130,9 @@ export const ListViewCard: Story = {
           <CardTitle>리스트 뷰 카드</CardTitle>
         </CardHeader>
 
-        <CardContent className="flex gap-4 items-center">
-          <div className="size-16 rounded-lg bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center">
-            <span className="text-white text-lg font-medium"></span>
+        <CardContent className="flex items-center gap-4">
+          <div className="from-primary-400 to-secondary-500 flex size-16 items-center justify-center rounded-lg bg-gradient-to-br">
+            <span className="text-lg font-medium text-white"></span>
           </div>
           <div className="flex flex-col gap-2">
             <p>리스트 뷰 카드입니다.</p>
@@ -141,9 +142,9 @@ export const ListViewCard: Story = {
       </Card>
 
       <Card className="w-80 overflow-hidden">
-        <CardContent className="flex gap-4 items-center">
-          <div className="size-16 rounded-lg bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center">
-            <span className="text-white text-lg font-medium"></span>
+        <CardContent className="flex items-center gap-4">
+          <div className="from-primary-400 to-secondary-500 flex size-16 items-center justify-center rounded-lg bg-gradient-to-br">
+            <span className="text-lg font-medium text-white"></span>
           </div>
           <div className="flex flex-col gap-2">
             <p>리스트 뷰 카드입니다.</p>
@@ -158,7 +159,7 @@ export const ListViewCard: Story = {
 // 다양한 크기의 Card
 export const DifferentSizes: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 w-full max-w-4xl">
+    <div className="flex w-full max-w-4xl flex-col gap-4">
       <Card className="w-full">
         <CardHeader>
           <CardTitle>큰 카드</CardTitle>
@@ -197,7 +198,7 @@ export const DifferentSizes: Story = {
 // 테마별 Card
 export const ThemeVariants: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
+    <div className="grid w-full max-w-4xl grid-cols-1 gap-4 md:grid-cols-2">
       <Card className="border-primary-200 bg-primary-50">
         <CardHeader>
           <CardTitle className="text-primary-800 dark:text-primary-200">
@@ -268,7 +269,7 @@ export const ThemeVariants: Story = {
 // 실제 사용 예시
 export const RealWorldExample: Story = {
   render: () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+    <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
       {/* 사용자 프로필 카드 */}
       <Card>
         <CardHeader>
@@ -277,7 +278,7 @@ export const RealWorldExample: Story = {
         </CardHeader>
         <CardContent>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold">
+            <div className="bg-primary-500 flex h-12 w-12 items-center justify-center rounded-full font-bold text-white">
               U
             </div>
             <div>
@@ -301,7 +302,7 @@ export const RealWorldExample: Story = {
         </CardHeader>
         <CardContent>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">
+            <div className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
               1,234
             </div>
             <CardDescription>총 방문자 수</CardDescription>
@@ -367,7 +368,7 @@ export const LoginCard: Story = {
               className="text-white-500"
             />
           }
-          className="w-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm"
+          className="border-yellow w-full bg-yellow-500 text-sm text-black hover:bg-yellow-600 active:bg-yellow-700"
         />
       </CardFooter>
     </Card>

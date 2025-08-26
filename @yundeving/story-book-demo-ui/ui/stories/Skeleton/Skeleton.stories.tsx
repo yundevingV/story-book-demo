@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import React from "react";
+
 import Skeleton from "../../components/Skeleton";
 
 const meta: Meta<typeof Skeleton> = {

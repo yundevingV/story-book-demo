@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Button, cn } from "@yundeving/story-book-demo-ui";
 import CodeBlock from "./CodeBlock";
 import ComponentDemo from "./ComponentDemo";
+import { Button, cn } from "@yundeving/story-book-demo-ui";
+import { useState } from "react";
 
 interface SectionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   preview: React.ReactNode;
@@ -12,7 +12,7 @@ function SectionContent({ preview, code }: SectionContentProps) {
   const [isPreview, setIsPreview] = useState(true);
 
   return (
-    <div className="flex-1 min-w-0 mt-4">
+    <div className="mt-4 min-w-0 flex-1">
       <div className="flex flex-col gap-4">
         <div className="flex gap-4">
           <Button

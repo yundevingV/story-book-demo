@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { cn, IconButton, Skeleton } from "@yundeving/story-book-demo-ui";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { IconButton, Skeleton, cn } from "@yundeving/story-book-demo-ui";
 import { useTheme } from "next-themes";
+import React, { useEffect, useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Header() {
   const { setTheme, resolvedTheme } = useTheme();
@@ -21,11 +21,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-default-900/80 backdrop-blur-sm border-b border-default-200 dark:border-default-700">
+    <header className=" dark:bg-default-900/80 border-default-200 dark:border-default-700 fixed top-0 right-0 left-0 z-50 border-b bg-white/80 backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 py-3">
         {/* 로고/제목 영역 */}
         <div className="flex items-center gap-3">
-          <h1 className="text-xl font-bold text-default-800 dark:text-default-200">
+          <h1 className="text-default-800 dark:text-default-200 text-xl font-bold">
             Story Book Demo
           </h1>
         </div>
@@ -36,12 +36,12 @@ export default function Header() {
             size="sm"
             onClick={toggleTheme}
             className={cn(
-              "flex items-center gap-2 bg-transparent ",
+              "flex items-center gap-2 bg-transparent",
               "hover:bg-default-200 dark:hover:bg-default-700"
             )}
             icon={
               !mounted ? (
-                <Skeleton className="w-10 h-4" />
+                <Skeleton className="h-4 w-10" />
               ) : isDark ? (
                 <FaSun className="text-default-200" />
               ) : (

@@ -1,4 +1,5 @@
 import { cva } from "class-variance-authority";
+
 import { cn } from "../../lib/utils";
 import { type ButtonProps } from "./Button.type";
 

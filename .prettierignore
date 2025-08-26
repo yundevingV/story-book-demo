@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+**/dist/
+.next/
+**/.next/
+out/
+**/out/
+build/
+**/build/
+
+# Generated files
+*.d.ts
+**/*.d.ts
+*.js.map
+**/*.js.map
+
+# Package manager files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Environment files
+.env*
+**/.env*
+
+# Logs
+*.log
+**/*.log
+
+# Cache directories
+.cache/
+**/.cache/
+
+# IDE files
+.idea/
+**/.idea/
+
+# Storybook build
+storybook-static/
+**/storybook-static/
+
+# Hot reload files
+*.hot-update.*
+**/*.hot-update.*
+
+# TypeScript cache
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Webpack bundles
+webpack-runtime.js
+**/webpack-runtime.js
+
+# Generated manifest files
+*manifest*.json
+**/*manifest*.json
+
+# Next.js specific
+next-env.d.ts
+**/next-env.d.ts

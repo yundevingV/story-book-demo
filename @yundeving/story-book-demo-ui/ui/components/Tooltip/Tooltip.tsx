@@ -1,6 +1,8 @@
-import React from "react";
-import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
+
+import React from "react";
+
+import { cn } from "../../lib/utils";
 import { type TooltipProps } from "./Tooltip.type";
 
 const tooltipStyle = cva(
@@ -96,15 +98,15 @@ const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
             {isArrow && (
               <div
                 className={cn(
-                  "absolute w-2 h-2 bg-default-900 rotate-45",
+                  "bg-default-900 absolute h-2 w-2 rotate-45",
                   position === "top" &&
-                    "top-full left-1/2 -translate-x-1/2 -mt-1",
+                    "top-full left-1/2 -mt-1 -translate-x-1/2",
                   position === "bottom" &&
-                    "bottom-full left-1/2 -translate-x-1/2 -mb-1",
+                    "bottom-full left-1/2 -mb-1 -translate-x-1/2",
                   position === "left" &&
-                    "left-full top-1/2 -translate-y-1/2 -ml-1",
+                    "top-1/2 left-full -ml-1 -translate-y-1/2",
                   position === "right" &&
-                    "right-full top-1/2 -translate-y-1/2 -mr-1"
+                    "top-1/2 right-full -mr-1 -translate-y-1/2"
                 )}
               />
             )}

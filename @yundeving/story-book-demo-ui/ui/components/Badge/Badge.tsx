@@ -1,6 +1,7 @@
 import { cva } from "class-variance-authority";
-import { type BadgeProps } from "./Badge.type";
+
 import { cn } from "../../lib/utils";
+import { type BadgeProps } from "./Badge.type";
 
 const badgeStyle = cva(
   `font-medium rounded-lg text-center

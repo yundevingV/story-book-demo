@@ -1,16 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { Button, Icon, Skeleton } from "@yundeving/story-book-demo-ui";
 import { cn } from "@yundeving/story-book-demo-ui";
-import { FaCopy, FaCheck } from "react-icons/fa";
-import { useTheme } from "next-themes";
 
+import React, { useEffect, useState } from "react";
+import { FaCheck, FaCopy } from "react-icons/fa";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   materialDark,
   materialLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import { useTheme } from "next-themes";
 
 interface CodeBlockProps {
   children: string;
@@ -61,7 +62,7 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
         variant="default"
         className={cn(
           "absolute top-3 right-3 z-10",
-          "bg-white/10 hover:bg-white/20 active:bg-white/30 text-white border-white/20"
+          "border-white/20 bg-white/10 text-white hover:bg-white/20 active:bg-white/30"
         )}
         onClick={handleCopy}
       >

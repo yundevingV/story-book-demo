@@ -70,8 +70,7 @@ git push origin master
 2. `New Issue` 새로운 이슈 생성
 3. 제목은 영어로 (branch 이름 영어로 하기 위함), 설명은 한글이나 영어로 작성
 4. 오른쪽에 `Assigner`, `Label` 지정
-5. `create a branch` 작업 진행 
-
+5. `create a branch` 작업 진행
 
 ### 3. 작업 진행
 

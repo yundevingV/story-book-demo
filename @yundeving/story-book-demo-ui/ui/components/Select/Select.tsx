@@ -1,16 +1,17 @@
-import React from "react";
-import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
+
+import React from "react";
 import { FaCheck, FaChevronDown } from "react-icons/fa";
 
+import { cn } from "../../lib/utils";
 import type {
-  SelectOption,
-  SelectProps,
   SelectContainerProps,
-  SelectTriggerProps,
-  SelectValueProps,
   SelectGroupProps,
   SelectItemProps,
+  SelectOption,
+  SelectProps,
+  SelectTriggerProps,
+  SelectValueProps,
 } from "./Select.type";
 
 // Select 컴포넌트 (메인 컨테이너)
@@ -179,7 +180,7 @@ const SelectLabel = React.forwardRef<
   <span
     ref={ref}
     className={cn(
-      "flex-1 truncate text-default-600 dark:text-default-400 p-3 text-sm",
+      "text-default-600 dark:text-default-400 flex-1 truncate p-3 text-sm",
       className
     )}
     {...props}
@@ -194,13 +195,13 @@ const SelectGroup = React.forwardRef<HTMLDivElement, SelectGroupProps>(
     <div
       ref={ref}
       className={cn(
-        "absolute top-full left-0 w-full mt-1 p-1",
-        "bg-white dark:bg-default-800 border border-default-200 dark:border-default-800",
-        "rounded-md shadow-lg z-10 max-h-60 overflow-auto",
+        "absolute top-full left-0 mt-1 w-full p-1",
+        "dark:bg-default-800 border-default-200 dark:border-default-800 border bg-white",
+        "z-10 max-h-60 overflow-auto rounded-md shadow-lg",
         "transition-all duration-150",
         isOpen
-          ? "opacity-100 scale-100 translate-y-0 pointer-events-auto ease-out"
-          : "opacity-0 scale-95 -translate-y-1 pointer-events-none ease-in",
+          ? "pointer-events-auto translate-y-0 scale-100 opacity-100 ease-out"
+          : "pointer-events-none -translate-y-1 scale-95 opacity-0 ease-in",
         className
       )}
       {...props}
@@ -216,18 +217,18 @@ const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
     <div
       ref={ref}
       className={cn(
-        "px-3 py-2 cursor-pointer transition-colors rounded-md",
+        "cursor-pointer rounded-md px-3 py-2 transition-colors",
         "",
         disabled
-          ? "bg-transparent text-default-200 dark:text-default-600 cursor-not-allowed "
-          : "bg-white dark:bg-default-800 hover:bg-default-50 dark:hover:bg-default-700 text-default-800  dark:text-default-200 hover:text-default-700 dark:hover:text-default-200 ",
+          ? "text-default-200 dark:text-default-600 cursor-not-allowed bg-transparent"
+          : "dark:bg-default-800 hover:bg-default-50 dark:hover:bg-default-700 text-default-800 dark:text-default-200 hover:text-default-700 dark:hover:text-default-200 bg-white",
         selected && "bg-default-50 dark:bg-default-700",
         className
       )}
       onClick={!disabled ? onClick : undefined}
       {...props}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         {value} {selected && <FaCheck className="size-3" />}
       </div>
     </div>
