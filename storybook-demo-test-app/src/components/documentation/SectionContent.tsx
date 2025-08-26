@@ -16,8 +16,9 @@ function SectionContent({ preview, code }: SectionContentProps) {
       <div className="flex flex-col gap-4">
         <div className="flex gap-4">
           <Button
+            variant="ghost"
             className={cn(
-              "bg-transparent hover:bg-transparent active:bg-transparent p-0 ",
+              "p-0",
               isPreview
                 ? "text-default-800 dark:text-default-200"
                 : "text-default-400 dark:text-default-600"
@@ -27,8 +28,9 @@ function SectionContent({ preview, code }: SectionContentProps) {
             Preview
           </Button>
           <Button
+            variant="ghost"
             className={cn(
-              "bg-transparent hover:bg-transparent active:bg-transparent p-0",
+              "p-0",
               !isPreview
                 ? "text-default-800 dark:text-default-200"
                 : "text-default-400 dark:text-default-600"
