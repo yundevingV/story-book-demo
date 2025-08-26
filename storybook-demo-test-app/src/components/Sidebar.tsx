@@ -40,7 +40,7 @@ export default function Sidebar() {
               href={item.href}
               key={item.href}
               className={cn(
-                "w-full bg-transparent h-9 inline-flex items-center justify-left font-medium rounded-lg  transition-all duration-200 ease-in-out",
+                "w-full bg-transparent h-9 px-4 inline-flex items-center justify-start font-medium rounded-lg transition-all duration-200 ease-in-out",
                 "text-default-800 dark:text-default-200",
                 isActive && "bg-default-300 dark:bg-default-700"
               )}
