@@ -31,7 +31,7 @@ const meta: Meta<typeof Button> = {
       ],
       description: "버튼 타입을 설정할 수 있습니다.",
     },
-    state: {
+    status: {
       control: { type: "radio" },
       options: ["default", "loading", "success", "error"],
       description: "버튼 상태를 설정할 수 있습니다.",
@@ -61,26 +61,15 @@ export const VariantButtonList: Story = {
   decorators: [
     (Story) => (
       <div className="grid grid-cols-3 gap-4">
-        <Story
-          args={{ label: "default", variant: "default", state: "default" }}
-        />
-        <Story
-          args={{ label: "primary", variant: "primary", state: "default" }}
-        />
-        <Story
-          args={{ label: "secondary", variant: "secondary", state: "default" }}
-        />
-        <Story
-          args={{ label: "accent", variant: "accent", state: "default" }}
-        />
-        <Story args={{ label: "info", variant: "info", state: "default" }} />
-        <Story
-          args={{ label: "success", variant: "success", state: "default" }}
-        />
-        <Story
-          args={{ label: "warning", variant: "warning", state: "default" }}
-        />
-        <Story args={{ label: "error", variant: "error", state: "default" }} />
+        <Story args={{ label: "default", variant: "default" }} />
+        <Story args={{ label: "primary", variant: "primary" }} />
+        <Story args={{ label: "secondary", variant: "secondary" }} />
+        <Story args={{ label: "accent", variant: "accent" }} />
+        <Story args={{ label: "info", variant: "info" }} />
+        <Story args={{ label: "success", variant: "success" }} />
+        <Story args={{ label: "warning", variant: "warning" }} />
+        <Story args={{ label: "error", variant: "error" }} />
+        <Story args={{ label: "ghost", variant: "ghost" }} />
       </div>
     ),
   ],

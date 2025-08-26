@@ -25,6 +25,8 @@ const buttonStyle = cva(
           "bg-warning-500 hover:bg-warning-600 active:bg-warning-700 border-warning-500 text-black",
         error:
           "bg-error-500 hover:bg-error-600 active:bg-error-700 border-error-500 text-black",
+        ghost:
+          "bg-transparent hover:bg-transparent active:bg-transparent border-transparent text-default-800 dark:text-default-200",
       },
       size: {
         md: "h-9 px-4 has-[>svg]:px-3",

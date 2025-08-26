@@ -8,6 +8,7 @@ export type VariantType =
   | "info"
   | "success"
   | "warning"
-  | "error";
+  | "error"
+  | "ghost";
 
 export type SizeType = "sm" | "md" | "lg";
