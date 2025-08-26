@@ -21,14 +21,14 @@ Story Book Demo UI 프로젝트에 기여해주셔서 감사합니다! 이 가�
 ### 2. 로컬에 클론
 
 ```bash
-git clone https://github.com/[your-username]/story-book-demo.git
+git clone https://github.com/yundevingV/story-book-demo.git
 cd story-book-demo
 ```
 
 ### 3. 업스트림 원격 저장소 추가
 
 ```bash
-git remote add upstream https://github.com/[original-owner]/story-book-demo.git
+git remote add upstream https://github.com/yundevingV/story-book-demo.git
 ```
 
 ## 🛠️ 개발 환경 설정
@@ -58,26 +58,15 @@ yarn storybook
 작업을 시작하기 전에 항상 최신 상태로 동기화합니다:
 
 ```bash
-git checkout main
+git checkout master
 git fetch upstream
-git merge upstream/main
-git push origin main
+git merge upstream/master
+git push origin master
 ```
 
 ### 2. 작업 브랜치 생성
 
-기능별로 새로운 브랜치를 생성합니다:
-
-```bash
-# 기능 추가
-git checkout -b feature/button-component-enhancement
-
-# 버그 수정
-git checkout -b fix/input-validation-issue
-
-# 문서 개선
-git checkout -b docs/update-readme
-```
+이슈 생성 후 `create new branch`
 
 ### 3. 작업 진행
 
@@ -90,7 +79,7 @@ git checkout -b docs/update-readme
 ```bash
 git add .
 git commit -m "feat: Button 컴포넌트에 loading 상태 추가"
-git push origin feature/button-component-enhancement
+git push origin your-branch
 ```
 
 ### 5. Pull Request 생성
