@@ -1,19 +1,21 @@
 "use client";
 
-import React from "react";
 import {
   Button,
   Icon,
   IconButton,
   StatusButton,
 } from "@yundeving/story-book-demo-ui";
+
+import React from "react";
+import { FaCheck, FaFacebook } from "react-icons/fa";
+
 import {
   DocumentationLayout,
   DocumentationSection,
-  SectionTitle,
   SectionContent,
+  SectionTitle,
 } from "@/components/documentation";
-import { FaCheck, FaFacebook } from "react-icons/fa";
 
 export default function ButtonPage() {
   return (
@@ -56,7 +58,7 @@ export default function ButtonPage() {
           preview={
             <IconButton
               label="Login with Facebook"
-              className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 border-blue-500 text-sm text-default-900"
+              className="text-default-900 border-blue-500 bg-blue-500 text-sm hover:bg-blue-600 active:bg-blue-700"
               icon={<Icon icon={<FaFacebook />} className="text-white" />}
             />
           }

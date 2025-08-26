@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import Link from "../../components/Link";
 
 const meta: Meta<typeof Link> = {

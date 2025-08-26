@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
-import Sidebar from "@/components/Sidebar";
 import "@yundeving/story-book-demo-ui/style.css";
+
+import type { Metadata } from "next";
+
 import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="min-h-screen bg-default-200 dark:bg-default-800">
+          <div className="bg-default-200 dark:bg-default-800 min-h-screen">
             <Header />
             <div className="flex pt-16">
               {/* Header 높이만큼 padding-top */}

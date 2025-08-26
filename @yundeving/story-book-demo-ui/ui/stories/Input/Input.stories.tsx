@@ -1,16 +1,16 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import React from "react";
+import { FaAmazon, FaApple, FaFacebook } from "react-icons/fa";
 
 import {
   Button,
-  Input,
-  Label,
+  Divider,
   Icon,
   IconButton,
-  Divider,
+  Input,
+  Label,
 } from "../../components";
-
-import { FaAmazon, FaApple, FaFacebook } from "react-icons/fa";
 
 const meta: Meta<typeof Input> = {
   title: "Input",
@@ -53,7 +53,7 @@ export const TypeInputList: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-4 p-4 w-96">
+      <div className="flex w-96 flex-col gap-4 p-4">
         <Story
           args={{
             variant: "default",
@@ -98,7 +98,7 @@ export const WithButton: Story = {
       <Button
         variant="default"
         label="Subscribe"
-        className="bg-transparent border border-gray-400"
+        className="border border-gray-400 bg-transparent"
       />
     </div>
   ),
@@ -109,7 +109,7 @@ export const WithLabel: Story = {
     controls: { disable: true },
   },
   render: (args) => (
-    <div className="flex flex-col gap-4 p-4 w-96">
+    <div className="flex w-96 flex-col gap-4 p-4">
       <Label>Email</Label>
       <Input type="email" placeholder="email" {...args} />
     </div>
@@ -121,7 +121,7 @@ export const LoginForm: Story = {
     controls: { disable: true },
   },
   render: () => (
-    <div className="flex flex-col gap-4 p-4 w-96">
+    <div className="flex w-96 flex-col gap-4 p-4">
       <Label htmlFor="email">Email</Label>
       <Input type="email" placeholder="email" id="email" />
       <Label htmlFor="password">Password</Label>
@@ -136,17 +136,17 @@ export const LoginForm: Story = {
       <IconButton
         icon={<Icon icon={<FaApple />} className="text-white-500" />}
         label="Login with Apple"
-        className="bg-black hover:bg-black/80 active:bg-black/90 text-white border-black text-sm"
+        className="border-black bg-black text-sm text-white hover:bg-black/80 active:bg-black/90"
       />
       <IconButton
         icon={<Icon icon={<FaFacebook />} className="text-white-500" />}
         label="Login with Facebook"
-        className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-default-900 border-blue text-sm"
+        className="text-default-900 border-blue bg-blue-500 text-sm hover:bg-blue-600 active:bg-blue-700"
       />
       <IconButton
         icon={<Icon icon={<FaAmazon />} className="text-white-500" />}
         label="Login with Amazon"
-        className="bg-amber-500 hover:bg-amber-600 active:bg-amber-700 text-black border-amber text-sm"
+        className="border-amber bg-amber-500 text-sm text-black hover:bg-amber-600 active:bg-amber-700"
       />
     </div>
   ),

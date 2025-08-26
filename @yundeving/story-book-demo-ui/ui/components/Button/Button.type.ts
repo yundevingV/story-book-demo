@@ -1,4 +1,4 @@
-import { type VariantType, type SizeType } from "../common.type";
+import { type SizeType, type VariantType } from "../common.type";
 
 export type ButtonStatus = "default" | "loading" | "success" | "error";
 

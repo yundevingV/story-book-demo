@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
 import { Card, CardContent } from "@yundeving/story-book-demo-ui";
 import { cn } from "@yundeving/story-book-demo-ui";
+
+import React from "react";
 
 interface ComponentDemoProps {
   children: React.ReactNode;
@@ -13,7 +14,7 @@ function ComponentDemo({ children, className }: ComponentDemoProps) {
   return (
     <Card
       className={cn(
-        "min-h-96 mb-6 overflow-y-auto flex flex-col items-center justify-center",
+        "mb-6 flex min-h-96 flex-col items-center justify-center overflow-y-auto",
         className
       )}
     >

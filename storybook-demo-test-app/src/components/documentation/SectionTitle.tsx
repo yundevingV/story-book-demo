@@ -3,7 +3,7 @@ interface SectionTitleProps {
 }
 function SectionTitle({ children }: SectionTitleProps) {
   return (
-    <h2 className="text-2xl font-bold text-default-800 dark:text-default-200 mb-4">
+    <h2 className="text-default-800 dark:text-default-200 mb-4 text-2xl font-bold">
       {children}
     </h2>
   );

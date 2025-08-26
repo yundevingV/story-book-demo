@@ -1,35 +1,35 @@
 "use client";
 
 import {
+  Badge,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-  Button,
-  IconButton,
   Icon,
-  Label,
+  IconButton,
   Input,
-  Badge,
-  Tooltip,
-  Skeleton,
+  Label,
   Select,
+  Skeleton,
   StatusButton,
+  Tooltip,
 } from "@yundeving/story-book-demo-ui";
-import React from "react";
 
+import React from "react";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import { VscRefresh } from "react-icons/vsc";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-6 items-center min-h-screen p-6">
-      <h1 className="text-2xl font-bold text-default-800 dark:text-default-300 ">
+    <div className="flex min-h-screen flex-col items-center gap-6 p-6">
+      <h1 className="text-default-800 dark:text-default-300 text-2xl font-bold">
         Hello Design System Demo
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 w-full max-w-6xl">
+      <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         <Card className="w-full max-w-sm">
           <CardHeader>
             <CardTitle>Login to your account</CardTitle>
@@ -76,7 +76,7 @@ export default function Home() {
                   className="text-white"
                 />
               }
-              className="w-full bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700 text-black border-yellow text-sm"
+              className="border-yellow w-full bg-yellow-500 text-sm text-black hover:bg-yellow-600 active:bg-yellow-700"
             />
           </CardFooter>
         </Card>
@@ -87,7 +87,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white font-bold">
+              <div className="bg-primary-500 flex h-12 w-12 items-center justify-center rounded-full font-bold text-white">
                 U
               </div>
               <div>
@@ -111,7 +111,7 @@ export default function Home() {
           </CardHeader>
           <CardContent>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400">
+              <div className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
                 1,234
               </div>
               <CardDescription>총 방문자 수</CardDescription>
@@ -130,7 +130,7 @@ export default function Home() {
             <CardTitle>Quick Actions</CardTitle>
             <CardDescription>자주 사용하는 작업을 빠르게 실행</CardDescription>
           </CardHeader>
-          <CardContent className="flex gap-3 flex-wrap">
+          <CardContent className="flex flex-wrap gap-3">
             <IconButton
               label="새로고침"
               icon={<Icon icon={<VscRefresh />} />}

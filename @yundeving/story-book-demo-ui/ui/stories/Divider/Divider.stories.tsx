@@ -1,6 +1,6 @@
-import React from "react";
-
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import React from "react";
 
 import { Divider } from "../../components";
 
@@ -31,7 +31,7 @@ export const DividerList: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="flex flex-col gap-4 w-96">
+      <div className="flex w-96 flex-col gap-4">
         <Story args={{ variant: "default" }} className="h-4" />
         <Story args={{ variant: "primary" }} className="h-4" />
         <Story args={{ variant: "secondary" }} className="h-4" />

@@ -1,5 +1,6 @@
-import { cn } from "../../lib/utils";
 import { cva } from "class-variance-authority";
+
+import { cn } from "../../lib/utils";
 import { type DividerProps } from "./Divider.type";
 
 const dividerStyle = cva("w-full h-0.5", {

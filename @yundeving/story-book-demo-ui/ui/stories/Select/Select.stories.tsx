@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
 import React from "react";
 
-import Label from "../../components/Label";
 import {
   Select,
   SelectContainer,
@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../components";
+import Label from "../../components/Label";
 
 const meta: Meta<typeof Select> = {
   title: "Select",
@@ -72,7 +73,7 @@ export const SelectExample: Story = {
     const selectedOption = options.find((opt) => opt.value === selectedValue);
 
     return (
-      <div className="flex flex-col gap-4 justify-center items-center p-4">
+      <div className="flex flex-col items-center justify-center gap-4 p-4">
         <SelectContainer ref={selectRef} size={args.size}>
           <SelectTrigger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
             <SelectValue value={selectedOption?.label || "Choose an option"} />
@@ -132,8 +133,8 @@ export const SelectWithLabel: Story = {
 
     return (
       <>
-        <div className="flex flex-col gap-4 items-center p-4">
-          <Label className="text-left w-full">시스템 설정</Label>
+        <div className="flex flex-col items-center gap-4 p-4">
+          <Label className="w-full text-left">시스템 설정</Label>
 
           <SelectContainer ref={selectRef} className="w-full">
             <SelectTrigger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
@@ -196,7 +197,7 @@ export const SelectWithDisabledItem: Story = {
     const selectedOption = options.find((opt) => opt.value === selectedValue);
 
     return (
-      <div className="flex flex-col gap-4 items-center p-4">
+      <div className="flex flex-col items-center gap-4 p-4">
         <SelectContainer ref={selectRef}>
           <SelectTrigger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
             <SelectValue value={selectedOption?.label || "Choose an option"} />
@@ -256,7 +257,7 @@ export const SmallSizeSelect: Story = {
     const selectedOption = options.find((opt) => opt.value === selectedValue);
 
     return (
-      <div className="flex flex-col gap-4 items-center p-4">
+      <div className="flex flex-col items-center gap-4 p-4">
         <SelectContainer ref={selectRef} size="sm">
           <SelectTrigger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
             <SelectValue value={selectedOption?.label || "Choose an option"} />

@@ -1,5 +1,6 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs";
+
+import React from "react";
 
 import Badge from "../../components/Badge";
 
@@ -28,7 +29,7 @@ export const VariantInputList: Story = {
     controls: { disable: true },
   },
   render: () => (
-    <div className="flex flex-col gap-4 p-4 justify-center items-center">
+    <div className="flex flex-col items-center justify-center gap-4 p-4">
       <Badge variant="default" size="md">
         Default
       </Badge>
@@ -59,7 +60,7 @@ export const SizeInputList: Story = {
     controls: { disable: true },
   },
   render: () => (
-    <div className="flex flex-col gap-4 p-4 justify-center items-center">
+    <div className="flex flex-col items-center justify-center gap-4 p-4">
       <Badge variant="primary" size="sm">
         Primary
       </Badge>

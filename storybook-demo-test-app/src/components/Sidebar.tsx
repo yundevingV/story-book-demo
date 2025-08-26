@@ -1,11 +1,11 @@
 "use client";
-
-import { cn, Link } from "@yundeving/story-book-demo-ui";
-
 import { usePathname } from "next/navigation";
 
+import { Link, cn } from "@yundeving/story-book-demo-ui";
+
+
 interface SidebarItem {
-  name: string;
+  name: string; 
   href: string;
 }
 
@@ -26,10 +26,10 @@ const sidebarItems: SidebarItem[] = [
 ];
 
 export default function Sidebar() {
-  const pathname = usePathname();
+  const pathname = usePathname(); 
 
   return (
-    <div className="h-screen w-64 bg-default-200 dark:bg-default-800 shadow-lg p-4 flex flex-col gap-4 overflow-y-auto">
+    <div className="bg-default-200 dark:bg-default-800 flex h-screen w-64 flex-col gap-4 overflow-y-auto p-4 shadow-lg">
       {/* Sidebar */}
       {/* Navigation Items */}
       <nav className="mt-4 flex flex-col gap-2">
@@ -40,7 +40,7 @@ export default function Sidebar() {
               href={item.href}
               key={item.href}
               className={cn(
-                "w-full bg-transparent h-9 px-4 inline-flex items-center justify-start font-medium rounded-lg transition-all duration-200 ease-in-out",
+                "inline-flex h-9 w-full items-center justify-start rounded-lg bg-transparent px-4 font-medium transition-all duration-200 ease-in-out",
                 "text-default-800 dark:text-default-200",
                 isActive && "bg-default-300 dark:bg-default-700"
               )}

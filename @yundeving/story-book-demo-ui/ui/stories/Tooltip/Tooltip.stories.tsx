@@ -1,7 +1,9 @@
-import React from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import Tooltip from "../../components/Tooltip";
+
+import React from "react";
+
 import Button from "../../components/Button";
+import Tooltip from "../../components/Tooltip";
 
 const meta: Meta<typeof Tooltip> = {
   title: "Tooltip",
@@ -46,7 +48,7 @@ export const Default: Story = {
 // 다양한 위치
 export const Positions: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-4 items-center justify-center p-8">
+    <div className="flex flex-wrap items-center justify-center gap-4 p-8">
       <Tooltip content="위쪽 툴팁" position="top">
         <Button>Top</Button>
       </Tooltip>
@@ -69,7 +71,7 @@ export const Positions: Story = {
 // 다양한 크기
 export const Sizes: Story = {
   render: () => (
-    <div className="flex gap-4 items-center">
+    <div className="flex items-center gap-4">
       <Tooltip content="작은 툴팁" size="sm">
         <Button>Small</Button>
       </Tooltip>
@@ -88,7 +90,7 @@ export const Sizes: Story = {
 // 다양한 요소들
 export const DifferentElements: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-4 items-center justify-center">
+    <div className="flex flex-wrap items-center justify-center gap-4">
       <Tooltip content="버튼 툴팁">
         <Button>Button</Button>
       </Tooltip>
@@ -103,13 +105,13 @@ export const DifferentElements: Story = {
       </Tooltip>
 
       <Tooltip content="아이콘 툴팁">
-        <div className="w-8 h-8 bg-default-200 rounded-full flex items-center justify-center cursor-pointer">
+        <div className="bg-default-200 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full">
           ℹ️
         </div>
       </Tooltip>
 
       <Tooltip content="텍스트 툴팁">
-        <span className="text-default-600 dark:text-default-400 cursor-help border-b border-dotted border-default-400">
+        <span className="text-default-600 dark:text-default-400 border-default-400 cursor-help border-b border-dotted">
           Hover me
         </span>
       </Tooltip>
@@ -120,7 +122,7 @@ export const DifferentElements: Story = {
 // 지연 시간 테스트
 export const DelayTest: Story = {
   render: () => (
-    <div className="flex gap-4 items-center">
+    <div className="flex items-center gap-4">
       <Tooltip content="빠른 툴팁 (0ms)" delay={0}>
         <Button>Fast</Button>
       </Tooltip>
@@ -158,7 +160,7 @@ export const WithLongContent: Story = {
 // 실제 사용 예시
 export const RealWorldExample: Story = {
   render: () => (
-    <div className="space-y-4 w-80">
+    <div className="w-80 space-y-4">
       <div className="flex items-center gap-2">
         <span>사용자 이름:</span>
         <Tooltip content="사용자의 실제 이름을 입력하세요">

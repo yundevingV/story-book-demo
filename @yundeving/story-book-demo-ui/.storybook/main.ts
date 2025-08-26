@@ -1,5 +1,5 @@
-import { join, dirname } from "path";
 import type { StorybookConfig } from "@storybook/nextjs";
+import { dirname, join } from "path";
 
 function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, "package.json")));

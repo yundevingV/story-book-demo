@@ -1,4 +1,5 @@
 import type { AnchorHTMLAttributes } from "react";
+
 import { SizeType } from "../common.type";
 
 export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {

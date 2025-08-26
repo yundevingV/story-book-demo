@@ -1,12 +1,13 @@
 import React from "react";
 
 import { cn } from "../../lib/utils";
+
 const Card = ({ className, ...props }: React.ComponentProps<"div">) => {
   return (
     <div
       data-slot="card"
       className={cn(
-        "border border-default-50 dark:border-default-600",
+        "border-default-50 dark:border-default-600 border",
         "bg-default-100 dark:bg-default-800",
         "flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
         className
@@ -50,7 +51,7 @@ const CardDescription = ({
     <div
       data-slot="card-description"
       className={cn(
-        "text-sm text-default-600 dark:text-default-400",
+        "text-default-600 dark:text-default-400 text-sm",
         className
       )}
       {...props}
