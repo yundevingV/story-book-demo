@@ -29,7 +29,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen w-64 bg-default-800 shadow-lg p-4 flex flex-col gap-4 overflow-y-auto">
+    <div className="h-screen w-64 bg-default-200 dark:bg-default-800 shadow-lg p-4 flex flex-col gap-4 overflow-y-auto">
       {/* Sidebar */}
       {/* Navigation Items */}
       <nav className="mt-4 flex flex-col gap-2">
