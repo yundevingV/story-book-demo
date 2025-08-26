@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Sidebar from "@/components/Sidebar";
 import "@yundeving/story-book-demo-ui/style.css";
+import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,12 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="flex bg-default-200 dark:bg-default-800">
-          <Sidebar />
-          <div className="flex-1 overflow-auto p-6">{children}</div>
-        </div>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="min-h-screen bg-default-200 dark:bg-default-800">
+            <Header />
+            <div className="flex pt-16">
+              {/* Header 높이만큼 padding-top */}
+              <Sidebar />
+              <div className="flex-1 overflow-auto p-6">{children}</div>
+            </div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

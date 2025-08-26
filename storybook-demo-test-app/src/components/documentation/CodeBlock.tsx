@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Button, Icon } from "@yundeving/story-book-demo-ui";
+import { Button, Icon, Skeleton } from "@yundeving/story-book-demo-ui";
 import { cn } from "@yundeving/story-book-demo-ui";
 import { FaCopy, FaCheck } from "react-icons/fa";
+import { useTheme } from "next-themes";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -19,6 +20,14 @@ interface CodeBlockProps {
 
 function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   const handleCopy = async () => {
     try {
@@ -41,7 +50,10 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
     }
   }, [copied]);
 
-  const isDark = true;
+  if (!mounted) {
+    return <Skeleton className="min-h-96" />;
+  }
+
   return (
     <div className={cn("relative mb-6", className)}>
       <Button
