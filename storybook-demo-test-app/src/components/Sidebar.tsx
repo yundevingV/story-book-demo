@@ -29,7 +29,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen w-64 bg-default-800 shadow-lg p-4 flex flex-col gap-4 overflow-y-auto">
+    <div className="h-screen w-64 bg-default-200 dark:bg-default-800 shadow-lg p-4 flex flex-col gap-4 overflow-y-auto">
       {/* Sidebar */}
       {/* Navigation Items */}
       <nav className="mt-4 flex flex-col gap-2">
@@ -40,8 +40,9 @@ export default function Sidebar() {
               href={item.href}
               key={item.href}
               className={cn(
-                "w-fit bg-transparent h-9 px-4 inline-flex items-center justify-center font-medium rounded-lg text-default-200 transition-all duration-200 ease-in-out",
-                isActive && "bg-default-900"
+                "w-full bg-transparent h-9 px-4 inline-flex items-center justify-start font-medium rounded-lg transition-all duration-200 ease-in-out",
+                "text-default-800 dark:text-default-200",
+                isActive && "bg-default-300 dark:bg-default-700"
               )}
             >
               {item.name}
