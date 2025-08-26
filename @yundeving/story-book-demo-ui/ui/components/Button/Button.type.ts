@@ -4,7 +4,7 @@ export type ButtonStatus = "default" | "loading" | "success" | "error";
 
 export interface ButtonProps extends React.ComponentProps<"button"> {
   label?: string;
-  variant?: VariantType;
+  variant?: VariantType | "ghost";
   size?: SizeType;
   status?: ButtonStatus;
 }
