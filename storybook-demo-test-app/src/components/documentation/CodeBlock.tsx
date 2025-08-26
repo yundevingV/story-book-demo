@@ -2,7 +2,7 @@
 
 import { Button, Icon, Skeleton } from "@yundeving/story-book-demo-ui";
 import { cn } from "@yundeving/story-book-demo-ui";
-
+import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import { FaCheck, FaCopy } from "react-icons/fa";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -10,8 +10,6 @@ import {
   materialDark,
   materialLight,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-import { useTheme } from "next-themes";
 
 interface CodeBlockProps {
   children: string;
@@ -70,12 +68,13 @@ function CodeBlock({ children, language = "tsx", className }: CodeBlockProps) {
       </Button>
 
       <SyntaxHighlighter
+        collapse={true}
         language={language}
         style={isDark ? materialDark : materialLight}
         customStyle={{
           margin: 0,
           borderRadius: "0.5rem",
-          minHeight: "24rem", // min-h-96
+          height: "24rem", // min-h-96
           lineHeight: "1.5",
         }}
         codeTagProps={{
