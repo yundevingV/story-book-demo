@@ -18,7 +18,7 @@ export default function BadgePage() {
           preview={<Badge> Badge </Badge>}
           code={`import { Badge } from "@yundeving/story-book-demo-ui";
 
-<Badge content="1" />`}
+<Badge> Badge </Badge> `}
         />
       </DocumentationSection>
 
