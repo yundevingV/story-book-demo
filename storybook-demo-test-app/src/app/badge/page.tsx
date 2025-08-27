@@ -9,7 +9,6 @@ import {
   DocumentationSection,
   SectionContent,
 } from "@/components/documentation";
-import { Badge } from "@yundeving/story-book-demo-ui";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
 export default function BadgePage() {
