@@ -29,6 +29,11 @@ interface LoginForm {
 
 type LoginButtonStatus = "default" | "loading" | "success" | "error";
 
+const SUCCESS_EMAIL = "success@gmail.com";
+const SUCCESS_PASSWORD = "123456";
+
+const API_DELAY = 1000;
+
 export default function InputPage() {
   // Success Login Form
   const [successLoginForm, setSuccessLoginForm] = useState<LoginForm>({
@@ -46,8 +51,8 @@ export default function InputPage() {
     setSuccessLoginButtonStatus("loading");
 
     if (
-      successLoginForm.email === "success@gmail.com" &&
-      successLoginForm.password === "123456"
+      successLoginForm.email === SUCCESS_EMAIL &&
+      successLoginForm.password === SUCCESS_PASSWORD
     ) {
       setTimeout(() => {
         setSuccessLoginButtonStatus("success");
@@ -62,18 +67,9 @@ export default function InputPage() {
   const handleFailLogin = () => {
     setFailLoginButtonStatus("loading");
 
-    if (
-      failLoginForm.email === "fail@gmail.com" &&
-      failLoginForm.password === "123456"
-    ) {
-      setTimeout(() => {
-        setFailLoginButtonStatus("success");
-      }, 1000);
-    } else {
-      setTimeout(() => {
-        setFailLoginButtonStatus("error");
-      }, 1000);
-    }
+    setTimeout(() => {
+      setFailLoginButtonStatus("error");
+    }, API_DELAY);
   };
 
   const [failLoginForm, setFailLoginForm] = useState<LoginForm>({
