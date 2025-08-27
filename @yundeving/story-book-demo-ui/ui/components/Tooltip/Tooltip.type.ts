@@ -6,4 +6,5 @@ export interface TooltipProps {
   delay?: number;
   isArrow?: boolean;
   className?: string;
+  ref?: React.Ref<HTMLDivElement>;
 }

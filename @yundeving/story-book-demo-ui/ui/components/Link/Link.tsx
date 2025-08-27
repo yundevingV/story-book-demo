@@ -1,9 +1,7 @@
-import { cva } from "class-variance-authority";
-
-import React from "react";
-
 import { cn } from "../../lib/utils";
 import type { LinkProps } from "./Link.type";
+import { cva } from "class-variance-authority";
+import React from "react";
 
 const LinkStyle = cva(
   `font-medium rounded-lg text-default-200
@@ -25,42 +23,44 @@ const LinkStyle = cva(
   }
 );
 
-const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
-  (
-    { size, label, className, children, disabled = false, onClick, ...props },
-    ref
-  ) => {
-    const handleClick = React.useCallback(
-      (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (disabled) {
-          e.preventDefault();
-          return;
-        }
-        onClick?.(e);
-      },
-      [disabled, onClick]
-    );
+const Link = ({
+  size,
+  label,
+  className,
+  children,
+  disabled = false,
+  onClick,
+  ref,
+  ...props
+}: LinkProps) => {
+  const handleClick = React.useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (disabled) {
+        e.preventDefault();
+        return;
+      }
+      onClick?.(e);
+    },
+    [disabled, onClick]
+  );
 
-    return (
-      <a
-        ref={ref}
-        data-slot="link"
-        className={cn(LinkStyle({ size }), className)}
-        aria-disabled={disabled}
-        onClick={handleClick}
-        tabIndex={disabled ? -1 : undefined}
-        {...props}
-        href={disabled ? undefined : props.href}
-      >
-        <div className="flex items-center justify-center gap-2">
-          {children}
-          {label && <span className="truncate">{label}</span>}
-        </div>
-      </a>
-    );
-  }
-);
-
-Link.displayName = "Link";
+  return (
+    <a
+      ref={ref}
+      data-slot="link"
+      className={cn(LinkStyle({ size }), className)}
+      aria-disabled={disabled}
+      onClick={handleClick}
+      tabIndex={disabled ? -1 : undefined}
+      {...props}
+      href={disabled ? undefined : props.href}
+    >
+      <div className="flex items-center justify-center gap-2">
+        {children}
+        {label && <span className="truncate">{label}</span>}
+      </div>
+    </a>
+  );
+};
 
 export default Link;
