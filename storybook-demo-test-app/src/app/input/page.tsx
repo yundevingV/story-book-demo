@@ -63,8 +63,8 @@ export default function InputPage() {
     setFailLoginButtonStatus("loading");
 
     if (
-      successLoginForm.email === "success@gmail.com" &&
-      successLoginForm.password === "123456"
+      failLoginForm.email === "fail@gmail.com" &&
+      failLoginForm.password === "123456"
     ) {
       setTimeout(() => {
         setFailLoginButtonStatus("success");
