@@ -1,7 +1,6 @@
 import { cn } from "../../lib/utils";
 import { type InputProps } from "./Input.type";
 import { cva } from "class-variance-authority";
-import React from "react";
 
 const inputStyle = cva(
   `border border-1 border-default-400 flex w-full min-w-0 h-9 rounded-md border bg-transparent px-3 py-1 shadow-xs transition-[color,box-shadow] outline-none 
@@ -32,48 +31,42 @@ const inputStyle = cva(
   }
 );
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      className,
-      variant = "default",
-      placeholder,
-      error,
-      helperText,
-      type,
-      ...props
-    },
-    ref
-  ) => {
-    return (
-      <div className="w-full">
-        <input
-          ref={ref}
-          placeholder={placeholder ?? "placeholder"}
-          type={type}
-          data-slot="input"
-          className={cn(
-            inputStyle({ variant, type }),
-            error && "border-error ring-error/20",
-            className
-          )}
-          {...props}
-        />
-        {helperText && (
-          <p
-            className={cn(
-              "mt-1 text-sm",
-              error ? "text-error-500" : "text-default-300"
-            )}
-          >
-            {helperText}
-          </p>
+const Input = ({
+  className,
+  variant = "default",
+  placeholder,
+  error,
+  helperText,
+  type,
+  ref,
+  ...props
+}: InputProps) => {
+  return (
+    <div className="w-full">
+      <input
+        ref={ref}
+        placeholder={placeholder ?? "placeholder"}
+        type={type}
+        data-slot="input"
+        className={cn(
+          inputStyle({ variant, type }),
+          error && "border-error-500 ring-error-500/20",
+          className
         )}
-      </div>
-    );
-  }
-);
-
-Input.displayName = "Input";
+        {...props}
+      />
+      {helperText && (
+        <p
+          className={cn(
+            "mt-1 text-sm",
+            error ? "text-error-500" : "text-default-300"
+          )}
+        >
+          {helperText}
+        </p>
+      )}
+    </div>
+  );
+};
 
 export default Input;

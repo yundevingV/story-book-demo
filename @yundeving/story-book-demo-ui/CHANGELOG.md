@@ -24,10 +24,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Button Style**: Add 'ghost' variant with transparent background
 
-## [1.1.6] - 2024-08-26
+## [1.1.7] - 2024-08-26
 
 ### Changed
 
 ~~🧪 experiment~~ - Completed !
 
 - **Status Button**: Delete StatusButton and Implement Button with Status
+
+## [1.1.8] - 2024-08-26
+
+### Changed
+
+- **Migrate forwardRef**: Replace React.forwardRef with React 19 native ref props pattern
+  - Updated Input,Link, Select, Tooltip component to use direct ref prop instead of forwardRef
+  - Removed all displayName declarations as they are no longer needed
+  - Added ref type definitions to all component interfaces
+  - Improved code readability and reduced complexity by eliminating forwardRef wrappers
