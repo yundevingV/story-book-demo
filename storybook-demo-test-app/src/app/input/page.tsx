@@ -108,10 +108,12 @@ export default function InputPage() {
           This is a success login example. <br /> <br />
         </SectionDescription>
         <SectionDescription>
-          1. Login This Email & Password. <br />
-          2. Email : success@gmail.com <br />
-          3. Password : 123456 <br />
-          4. Success Login !
+          <ul>
+            <li>Login This Email & Password.</li>
+            <li>Email : {SUCCESS_EMAIL}</li>
+            <li>Password : {SUCCESS_PASSWORD}</li>
+            <li>Success Login !</li>
+          </ul>
         </SectionDescription>
         <SectionContent
           preview={
@@ -186,10 +188,12 @@ export default function InputPage() {
           This is a fail login example. <br /> <br />
         </SectionDescription>
         <SectionDescription>
-          1. Login This Email & Password. <br />
-          2. Email : fail@gmail.com <br />
-          3. Password : 123456 <br />
-          4. If you login fail, you can see the fail message.
+          <ul>
+            <li>Login This Email & Password.</li>
+            <li>Email : fail@gmail.com</li>
+            <li>Password : 123456</li>
+            <li>Fail Login !</li>
+          </ul>
         </SectionDescription>
         <SectionContent
           preview={
