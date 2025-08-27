@@ -11,33 +11,24 @@ import {
 } from "@/components/documentation";
 import reactElementToJSXString from "react-element-to-jsx-string";
 
+const tooltipSections = [
+  { id: "basic-usage", component: DefaultTooltip },
+  { id: "position-usage", component: PositionTooltip },
+  { id: "delay-usage", component: DelayTooltip },
+  { id: "without-arrow-usage", component: WithoutArrowTooltip },
+];
+
 export default function TooltipPage() {
   return (
     <DocumentationLayout title="Tooltip" description="Displays a tooltip.">
-      <DocumentationSection id="basic-usage">
-        <SectionContent
-          preview={<DefaultTooltip />}
-          code={reactElementToJSXString(DefaultTooltip(), {})}
-        />
-      </DocumentationSection>
-      <DocumentationSection id="position-usage">
-        <SectionContent
-          preview={<PositionTooltip />}
-          code={reactElementToJSXString(PositionTooltip(), {})}
-        />
-      </DocumentationSection>
-      <DocumentationSection id="delay-usage">
-        <SectionContent
-          preview={<DelayTooltip />}
-          code={reactElementToJSXString(DelayTooltip(), {})}
-        />
-      </DocumentationSection>
-      <DocumentationSection id="without-arrow-usage">
-        <SectionContent
-          preview={<WithoutArrowTooltip />}
-          code={reactElementToJSXString(WithoutArrowTooltip(), {})}
-        />
-      </DocumentationSection>
+      {tooltipSections.map(({ id, component: Component }) => (
+        <DocumentationSection key={id} id={id}>
+          <SectionContent
+            preview={<Component />}
+            code={reactElementToJSXString(Component(), {})}
+          />
+        </DocumentationSection>
+      ))}
     </DocumentationLayout>
   );
 }
