@@ -23,3 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Button Style**: Add 'ghost' variant with transparent background
+
+## [1.1.6] - 2024-08-26
+
+### Changed
+
+~~🧪 experiment~~ - Completed !
+
+- **Status Button**: Delete StatusButton and Implement Button with Status

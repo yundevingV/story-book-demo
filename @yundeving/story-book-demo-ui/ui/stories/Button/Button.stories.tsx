@@ -1,9 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-import { fn } from "storybook/test";
-
-import React from "react";
-
 import Button from "../../components/Button";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import React from "react";
+import { fn } from "storybook/test";
 
 const meta: Meta<typeof Button> = {
   title: "Button",
@@ -85,6 +83,22 @@ export const SizeButtonList: Story = {
         <Story args={{ label: "md", size: "md" }} />
         <Story args={{ label: "sm", size: "sm" }} />
         <Story args={{ label: "lg", size: "lg" }} />
+      </div>
+    ),
+  ],
+};
+
+export const StatusButtonList: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  decorators: [
+    (Story) => (
+      <div className="flex gap-4">
+        <Story args={{ label: "default", status: "default" }} />
+        <Story args={{ label: "loading", status: "loading" }} />
+        <Story args={{ label: "success", status: "success" }} />
+        <Story args={{ label: "error", status: "error" }} />
       </div>
     ),
   ],
