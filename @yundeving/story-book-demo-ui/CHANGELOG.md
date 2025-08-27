@@ -28,6 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-🧪 experiment
+~~🧪 experiment~~ - Completed !
 
 - **Status Button**: Delete StatusButton and Implement Button with Status
