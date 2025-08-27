@@ -16,7 +16,6 @@ import {
   Label,
   Select,
   Skeleton,
-  StatusButton,
   Tooltip,
 } from "@yundeving/story-book-demo-ui";
 import React from "react";
@@ -151,9 +150,9 @@ export default function Home() {
             <CardDescription>현재 작업 상태</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
-            <StatusButton status="loading" label="로딩 중" variant="default" />
-            <StatusButton status="success" label="성공" variant="success" />
-            <StatusButton status="error" label="에러" variant="error" />
+            <Button status="loading" label="로딩 중" variant="default" />
+            <Button status="success" label="성공" variant="success" />
+            <Button status="error" label="에러" variant="error" />
           </CardContent>
         </Card>
 
