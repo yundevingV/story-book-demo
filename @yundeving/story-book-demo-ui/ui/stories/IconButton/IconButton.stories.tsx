@@ -1,6 +1,5 @@
+import { Icon, IconButton } from "../../components";
 import { Meta, StoryObj } from "@storybook/nextjs";
-import { fn } from "storybook/internal/test";
-
 import React from "react";
 import {
   FaAmazon,
@@ -16,8 +15,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import { SiLine, SiSlack } from "react-icons/si";
-
-import { Icon, IconButton } from "../../components";
+import { fn } from "storybook/internal/test";
 
 const meta: Meta<typeof IconButton> = {
   title: "Button",
@@ -36,17 +34,13 @@ const meta: Meta<typeof IconButton> = {
       options: ["main", "warning", "error"],
       description: "버튼 타입을 설정할 수 있습니다.",
     },
-    state: {
-      control: { type: "radio" },
-      options: ["default", "loading", "success", "error"],
-      description: "버튼 상태를 설정할 수 있습니다.",
-    },
     size: {
       control: { type: "radio" },
       options: ["sm", "md", "lg"],
       description: "버튼 크기를 설정할 수 있습니다.",
     },
   },
+
   args: { onClick: fn() },
 } satisfies Meta<typeof IconButton>;
 

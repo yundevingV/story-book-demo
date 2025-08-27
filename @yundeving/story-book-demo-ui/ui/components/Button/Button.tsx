@@ -1,7 +1,9 @@
-import { cva } from "class-variance-authority";
-
 import { cn } from "../../lib/utils";
 import { type ButtonProps } from "./Button.type";
+import { cva } from "class-variance-authority";
+import { BiSolidError } from "react-icons/bi";
+import { FaCheck } from "react-icons/fa";
+import { PiSpinnerBold } from "react-icons/pi";
 
 const buttonStyle = cva(
   `font-medium rounded-lg text-default-200
@@ -47,7 +49,7 @@ const Button = ({
   label,
   size,
   variant,
-  status,
+  status = "default",
   className,
   children,
   ...props
@@ -63,6 +65,9 @@ const Button = ({
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
+        {status === "loading" && <PiSpinnerBold className="animate-spin" />}
+        {status === "success" && <FaCheck />}
+        {status === "error" && <BiSolidError />}
         {children}
         {label && <span className="truncate">{label}</span>}
       </div>
