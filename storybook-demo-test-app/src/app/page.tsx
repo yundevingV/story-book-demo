@@ -1,5 +1,6 @@
 "use client";
 
+import SuccessLoginExample from "./input/components/SuccessLoginExample";
 import { KakaoIcon } from "@/components/icon/KakaoIcon";
 import {
   Badge,
@@ -29,38 +30,7 @@ export default function Home() {
         Hello Design System Demo
       </h1>
       <div className="grid w-full max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <Card className="w-full max-w-sm">
-          <CardHeader>
-            <CardTitle>Login to your account</CardTitle>
-            <CardDescription>
-              Enter your email below to login to your account
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-2">
-            <form>
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="m@example.com" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="password">Password</Label>
-                  <Input id="password" placeholder="password" />
-                </div>
-              </div>
-            </form>
-          </CardContent>
-          <CardFooter className="flex flex-col gap-2">
-            <Button variant="primary" size="sm" className="w-full">
-              로그인
-            </Button>
-            <IconButton
-              label="Login with Kakao"
-              icon={<KakaoIcon />}
-              className="border-yellow w-full bg-yellow-500 text-sm text-black hover:bg-yellow-600 active:bg-yellow-700"
-            />
-          </CardFooter>
-        </Card>
+        <SuccessLoginExample />
         <Card>
           <CardHeader>
             <CardTitle>사용자 프로필</CardTitle>
