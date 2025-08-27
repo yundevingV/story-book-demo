@@ -1,9 +1,7 @@
-import { cva } from "class-variance-authority";
-
-import React from "react";
-
 import { cn } from "../../lib/utils";
 import { type InputProps } from "./Input.type";
+import { cva } from "class-variance-authority";
+import React from "react";
 
 const inputStyle = cva(
   `border border-1 border-default-400 flex w-full min-w-0 h-9 rounded-md border bg-transparent px-3 py-1 shadow-xs transition-[color,box-shadow] outline-none 

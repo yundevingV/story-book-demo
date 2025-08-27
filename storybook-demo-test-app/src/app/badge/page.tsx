@@ -1,11 +1,15 @@
 "use client";
 
+import DefaultBadge from "./components/DefaultBadge";
+import LongTextBadge from "./components/LongTextBadge";
+import SizeBadge from "./components/SizeBadge";
+import VariantBadge from "./components/VariantBadge";
 import {
   DocumentationLayout,
   DocumentationSection,
   SectionContent,
 } from "@/components/documentation";
-import { Badge } from "@yundeving/story-book-demo-ui";
+import reactElementToJSXString from "react-element-to-jsx-string";
 
 export default function BadgePage() {
   return (
@@ -15,61 +19,28 @@ export default function BadgePage() {
     >
       <DocumentationSection id="basic-usage">
         <SectionContent
-          preview={<Badge> Badge </Badge>}
-          code={`import { Badge } from "@yundeving/story-book-demo-ui";
-
-<Badge> Badge </Badge> `}
+          preview={<DefaultBadge />}
+          code={reactElementToJSXString(DefaultBadge())}
         />
       </DocumentationSection>
 
       <DocumentationSection id="variant">
         <SectionContent
-          preview={
-            <>
-              <Badge variant="primary"> Badge </Badge>
-              <Badge variant="secondary"> Badge </Badge>
-              <Badge variant="success"> Badge </Badge>
-              <Badge variant="warning"> Badge </Badge>
-              <Badge variant="info"> Badge </Badge>
-            </>
-          }
-          code={`import { Badge } from "@yundeving/story-book-demo-ui";
-
-<Badge variant="primary"> Badge </Badge>
-<Badge variant="secondary"> Badge </Badge>
-<Badge variant="success"> Badge </Badge>
-<Badge variant="warning"> Badge </Badge>
-<Badge variant="info"> Badge </Badge>`}
+          preview={<VariantBadge />}
+          code={reactElementToJSXString(VariantBadge())}
         />
       </DocumentationSection>
 
       <DocumentationSection id="size">
         <SectionContent
-          preview={
-            <>
-              <Badge size="sm"> Badge </Badge>
-              <Badge size="md"> Badge </Badge>
-              <Badge size="lg"> Badge </Badge>
-            </>
-          }
-          code={`import { Badge } from "@yundeving/story-book-demo-ui";
-
-<Badge size="sm"> Badge </Badge>
-<Badge size="md"> Badge </Badge>
-<Badge size="lg"> Badge </Badge>`}
+          preview={<SizeBadge />}
+          code={reactElementToJSXString(SizeBadge())}
         />
       </DocumentationSection>
       <DocumentationSection id="long-text">
         <SectionContent
-          preview={
-            <>
-              <Badge size="md"> Long Long Text Badge </Badge>
-            </>
-          }
-          code={`import { Badge } from "@yundeving/story-book-demo-ui";
-
-<Badge size="md"> Long Long Text Badge </Badge>
-`}
+          preview={<LongTextBadge />}
+          code={reactElementToJSXString(LongTextBadge())}
         />
       </DocumentationSection>
     </DocumentationLayout>
