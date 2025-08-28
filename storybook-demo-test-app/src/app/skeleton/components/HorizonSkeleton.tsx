@@ -1,7 +1,7 @@
 import { Skeleton } from "@yundeving/story-book-demo-ui";
 
 export default function HorizonSkeleton() {
-  const opacitiyList = [
+  const OPACITY_LIST = [
     "opacity-100",
     "opacity-80",
     "opacity-60",
@@ -11,7 +11,7 @@ export default function HorizonSkeleton() {
 
   return (
     <div className="flex flex-col gap-4">
-      {opacitiyList.map((opacityClass) => (
+      {OPACITY_LIST.map((opacityClass) => (
         <div
           key={opacityClass}
           className={`flex items-center gap-2 ${opacityClass}`}
