@@ -1,14 +1,14 @@
 import { Skeleton } from "@yundeving/story-book-demo-ui";
 
-export default function HorizonSkeleton() {
-  const OPACITY_LIST = [
-    "opacity-100",
-    "opacity-80",
-    "opacity-60",
-    "opacity-40",
-    "opacity-10",
-  ];
+const OPACITY_LIST = [
+  "opacity-100",
+  "opacity-80",
+  "opacity-60",
+  "opacity-40",
+  "opacity-10",
+];
 
+export default function HorizonSkeleton() {
   return (
     <div className="flex flex-col gap-4">
       {OPACITY_LIST.map((opacityClass) => (
