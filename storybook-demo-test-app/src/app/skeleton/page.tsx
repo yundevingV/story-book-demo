@@ -14,18 +14,18 @@ const skeletonSections = [
   {
     id: "default-usage",
     component: DefaultSkeleton,
-    code: reactElementToJSXString(DefaultSkeleton(), {}),
+    code: reactElementToJSXString(DefaultSkeleton()),
   },
 
   {
     id: "horizon-usage",
     component: HorizonSkeleton,
-    code: reactElementToJSXString(HorizonSkeleton(), {}),
+    code: reactElementToJSXString(HorizonSkeleton()),
   },
   {
     id: "data-loading-usage",
     component: DataLoadingSkeleton,
-    code: reactElementToJSXString(DataLoadingSkeleton(), {}),
+    code: reactElementToJSXString(DataLoadingSkeleton()),
   },
 ];
 
