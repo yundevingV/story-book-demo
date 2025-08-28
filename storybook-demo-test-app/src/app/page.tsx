@@ -1,7 +1,6 @@
 "use client";
 
 import SuccessLoginExample from "./input/components/SuccessLoginExample";
-import { KakaoIcon } from "@/components/icon/KakaoIcon";
 import {
   Badge,
   Button,
@@ -13,8 +12,6 @@ import {
   CardTitle,
   Icon,
   IconButton,
-  Input,
-  Label,
   Select,
   Skeleton,
   Tooltip,
