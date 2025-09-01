@@ -41,9 +41,11 @@ export default function ButtonPage() {
       <DocumentationSection id="icon">
         <SectionTitle>Icon</SectionTitle>
         <SectionContent
-          preview={<Button leftIcon={<Icon icon={<FaCheck />} />} />}
+          preview={
+            <Button aria-label="check" leftIcon={<Icon icon={<FaCheck />} />} />
+          }
           code={reactElementToJSXString(
-            <Button leftIcon={<Icon icon={<FaCheck />} />} />
+            <Button aria-label="check" leftIcon={<Icon icon={<FaCheck />} />} />
           )}
         />
       </DocumentationSection>
