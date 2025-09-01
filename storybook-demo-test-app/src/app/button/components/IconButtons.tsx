@@ -15,9 +15,19 @@ export default function IconButtons() {
       <div>
         <h4 className="mb-3 text-sm font-medium text-gray-700">Left Icon</h4>
         <div className="flex flex-wrap gap-3">
-          <Button leftIcon={<FaDownload />} size="sm" />
-          <Button leftIcon={<FaPlus />} size="md" variant="primary" />
-          <Button leftIcon={<FaHeart />} size="lg" variant="error" />
+          <Button leftIcon={<FaDownload />} size="sm" aria-label="Download" />
+          <Button
+            leftIcon={<FaPlus />}
+            size="md"
+            variant="primary"
+            aria-label="Add new"
+          />
+          <Button
+            leftIcon={<FaHeart />}
+            size="lg"
+            variant="error"
+            aria-label="Like"
+          />
         </div>
       </div>
 
