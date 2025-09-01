@@ -64,15 +64,12 @@ const Button = ({
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
-        {/* 왼쪽 아이콘 영역: 로딩 중이면 스피너, 아니면 leftIcon */}
         {isLoading && <PiSpinnerBold className="animate-spin" />}
         {!isLoading && leftIcon}
 
-        {/* 텍스트 콘텐츠 영역 */}
         {children}
         {label && <span className="truncate">{label}</span>}
 
-        {/* 오른쪽 아이콘 영역: 로딩 중이 아닐 때만 표시 */}
         {!isLoading && rightIcon}
       </div>
     </button>
