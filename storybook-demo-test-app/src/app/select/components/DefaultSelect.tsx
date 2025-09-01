@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectItem,
 } from "@yundeving/story-book-demo-ui";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function DefaultSelect() {
   const options = [
@@ -20,8 +20,23 @@ export default function DefaultSelect() {
   const [isOpen, setIsOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        selectRef.current &&
+        !selectRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const handleSelect = (value: string) => {
     setSelectedValue(value);
+    setIsOpen(false);
   };
 
   return (
@@ -29,7 +44,12 @@ export default function DefaultSelect() {
       {/* Select 컨테이너 */}
       <SelectContainer ref={selectRef} size="md">
         <SelectTrigger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-          <SelectValue value={selectedValue || "Choose an option"} />
+          <SelectValue
+            value={
+              options.find((o) => o.value === selectedValue)?.label ||
+              "Choose an option"
+            }
+          />
         </SelectTrigger>
 
         <SelectGroup isOpen={isOpen}>
@@ -37,7 +57,7 @@ export default function DefaultSelect() {
           {options.map((option) => (
             <SelectItem
               key={option.value}
-              value={option.value}
+              value={option.label}
               selected={selectedValue === option.value}
               onClick={() => handleSelect(option.value)}
             />
