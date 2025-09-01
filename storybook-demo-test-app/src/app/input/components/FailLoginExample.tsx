@@ -90,7 +90,6 @@ export default function FailLoginExample() {
           variant="primary"
           size="sm"
           className="w-full"
-          disabled={failLoginButtonStatus}
           isLoading={failLoginButtonStatus}
           onClick={handleFailLogin}
         >

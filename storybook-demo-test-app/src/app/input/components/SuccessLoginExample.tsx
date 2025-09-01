@@ -101,7 +101,6 @@ export default function SuccessLoginExample() {
           variant="primary"
           size="sm"
           className="w-full"
-          disabled={successLoginButtonStatus}
           isLoading={successLoginButtonStatus}
           onClick={handleSuccessLogin}
         >
