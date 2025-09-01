@@ -1,16 +1,7 @@
+import { Button, Divider, Icon, Input, Label } from "../../components";
 import type { Meta, StoryObj } from "@storybook/nextjs";
-
 import React from "react";
 import { FaAmazon, FaApple, FaFacebook } from "react-icons/fa";
-
-import {
-  Button,
-  Divider,
-  Icon,
-  IconButton,
-  Input,
-  Label,
-} from "../../components";
 
 const meta: Meta<typeof Input> = {
   title: "Input",
@@ -133,18 +124,18 @@ export const LoginForm: Story = {
       />
       <Button variant="success" label="Login" size="md" />
       <Divider />
-      <IconButton
-        icon={<Icon icon={<FaApple />} className="text-white-500" />}
+      <Button
+        leftIcon={<Icon icon={<FaApple />} className="text-white-500" />}
         label="Login with Apple"
         className="border-black bg-black text-sm text-white hover:bg-black/80 active:bg-black/90"
       />
-      <IconButton
-        icon={<Icon icon={<FaFacebook />} className="text-white-500" />}
+      <Button
+        leftIcon={<Icon icon={<FaFacebook />} className="text-white-500" />}
         label="Login with Facebook"
         className="text-default-900 border-blue bg-blue-500 text-sm hover:bg-blue-600 active:bg-blue-700"
       />
-      <IconButton
-        icon={<Icon icon={<FaAmazon />} className="text-white-500" />}
+      <Button
+        leftIcon={<Icon icon={<FaAmazon />} className="text-white-500" />}
         label="Login with Amazon"
         className="border-amber bg-amber-500 text-sm text-black hover:bg-amber-600 active:bg-amber-700"
       />

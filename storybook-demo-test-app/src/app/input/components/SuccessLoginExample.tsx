@@ -6,7 +6,6 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-  IconButton,
 } from "@yundeving/story-book-demo-ui";
 import { Label } from "@yundeving/story-book-demo-ui";
 import { Input } from "@yundeving/story-book-demo-ui";
@@ -17,8 +16,6 @@ interface LoginForm {
   email: string;
   password: string;
 }
-
-type LoginButtonStatus = "default" | "loading" | "success" | "error";
 
 const SUCCESS_EMAIL = "success@gmail.com";
 const SUCCESS_PASSWORD = "123456";
@@ -32,21 +29,23 @@ export default function SuccessLoginExample() {
   });
 
   const [successLoginButtonStatus, setSuccessLoginButtonStatus] =
-    useState<LoginButtonStatus>("default");
+    useState(false);
 
+  const [isError, setIsError] = useState(false);
   const handleSuccessLogin = () => {
-    setSuccessLoginButtonStatus("loading");
-
+    setSuccessLoginButtonStatus(true);
+    setIsError(false);
     if (
       successLoginForm.email === SUCCESS_EMAIL &&
       successLoginForm.password === SUCCESS_PASSWORD
     ) {
       setTimeout(() => {
-        setSuccessLoginButtonStatus("success");
+        setSuccessLoginButtonStatus(false);
       }, API_DELAY);
     } else {
       setTimeout(() => {
-        setSuccessLoginButtonStatus("error");
+        setSuccessLoginButtonStatus(false);
+        setIsError(true);
       }, API_DELAY);
     }
   };
@@ -68,6 +67,8 @@ export default function SuccessLoginExample() {
                 id="email"
                 placeholder="m@example.com"
                 value={successLoginForm.email}
+                error={isError}
+                helperText={isError ? "invalid Email Format" : undefined}
                 onChange={(e) =>
                   setSuccessLoginForm({
                     ...successLoginForm,
@@ -82,6 +83,8 @@ export default function SuccessLoginExample() {
                 id="password"
                 placeholder="password"
                 value={successLoginForm.password}
+                error={isError}
+                helperText={isError ? "invalid Password" : undefined}
                 onChange={(e) =>
                   setSuccessLoginForm({
                     ...successLoginForm,
@@ -98,15 +101,15 @@ export default function SuccessLoginExample() {
           variant="primary"
           size="sm"
           className="w-full"
-          disabled={successLoginButtonStatus === "loading"}
-          status={successLoginButtonStatus}
+          disabled={successLoginButtonStatus}
+          isLoading={successLoginButtonStatus}
           onClick={handleSuccessLogin}
         >
           로그인
         </Button>
-        <IconButton
+        <Button
           label="Login with Kakao"
-          icon={<KakaoIcon />}
+          leftIcon={<KakaoIcon />}
           className="border-yellow w-full bg-yellow-500 text-sm text-black hover:bg-yellow-600 active:bg-yellow-700"
         />
       </CardFooter>

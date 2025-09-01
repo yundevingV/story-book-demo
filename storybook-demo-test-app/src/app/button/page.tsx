@@ -12,7 +12,7 @@ import {
   SectionContent,
   SectionTitle,
 } from "@/components/documentation";
-import { Icon, IconButton } from "@yundeving/story-book-demo-ui";
+import { Button, Icon } from "@yundeving/story-book-demo-ui";
 import React from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { FaCheck } from "react-icons/fa";
@@ -41,9 +41,9 @@ export default function ButtonPage() {
       <DocumentationSection id="icon">
         <SectionTitle>Icon</SectionTitle>
         <SectionContent
-          preview={<IconButton onlyIcon icon={<Icon icon={<FaCheck />} />} />}
+          preview={<Button leftIcon={<Icon icon={<FaCheck />} />} />}
           code={reactElementToJSXString(
-            <IconButton onlyIcon icon={<Icon icon={<FaCheck />} />} />
+            <Button leftIcon={<Icon icon={<FaCheck />} />} />
           )}
         />
       </DocumentationSection>
