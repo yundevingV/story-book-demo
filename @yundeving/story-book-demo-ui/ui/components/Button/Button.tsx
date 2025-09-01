@@ -75,19 +75,12 @@ const Button = ({
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
-        {isLoading && (
-          <PiSpinnerBold
-            className="animate-spin"
-            aria-hidden="true"
-            role="status"
-          />
-        )}
-        {!isLoading && leftIcon && <span aria-hidden="true">{leftIcon}</span>}
+        {isLoading ? <PiSpinnerBold className="animate-spin" /> : leftIcon}
 
         {children}
         {label && <span className="truncate">{label}</span>}
 
-        {!isLoading && rightIcon && <span aria-hidden="true">{rightIcon}</span>}
+        {isLoading ? <PiSpinnerBold className="animate-spin" /> : rightIcon}
       </div>
 
       {/* 로딩 상태를 스크린 리더에 알림 */}
