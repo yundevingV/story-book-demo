@@ -11,7 +11,6 @@ import {
   CardHeader,
   CardTitle,
   Icon,
-  IconButton,
   Select,
   Skeleton,
   Tooltip,
@@ -79,12 +78,12 @@ export default function Home() {
             <CardDescription>자주 사용하는 작업을 빠르게 실행</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-3">
-            <IconButton
+            <Button
               label="새로고침"
-              icon={<Icon icon={<VscRefresh />} />}
+              leftIcon={<Icon icon={<VscRefresh />} />}
             />
-            <IconButton label="추가" icon={<Icon icon={<FaPlus />} />} />
-            <IconButton label="삭제" icon={<Icon icon={<FaTrash />} />} />
+            <Button label="추가" leftIcon={<Icon icon={<FaPlus />} />} />
+            <Button label="삭제" leftIcon={<Icon icon={<FaTrash />} />} />
           </CardContent>
         </Card>
 
@@ -113,13 +112,11 @@ export default function Home() {
         {/* 시스템 상태 */}
         <Card>
           <CardHeader>
-            <CardTitle>System Status</CardTitle>
-            <CardDescription>현재 작업 상태</CardDescription>
+            <CardTitle>Loading Status</CardTitle>
+            <CardDescription>로딩 버튼</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-2">
-            <Button status="loading" label="로딩 중" variant="default" />
-            <Button status="success" label="성공" variant="success" />
-            <Button status="error" label="에러" variant="error" />
+            <Button isLoading label="로딩 중" variant="default" />
           </CardContent>
         </Card>
 

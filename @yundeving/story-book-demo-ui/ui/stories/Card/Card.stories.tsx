@@ -1,7 +1,3 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-
-import React from "react";
-
 import {
   Button,
   Card,
@@ -12,10 +8,11 @@ import {
   CardHeader,
   CardTitle,
   Icon,
-  IconButton,
   Input,
   Label,
 } from "../../components";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import React from "react";
 
 const meta: Meta<typeof Card> = {
   title: "Card",
@@ -347,9 +344,9 @@ export const LoginCard: Story = {
         <Button variant="primary" size="sm" className="w-full">
           로그인
         </Button>
-        <IconButton
+        <Button
           label="Login with Kakao"
-          icon={
+          leftIcon={
             <Icon
               icon={
                 <svg

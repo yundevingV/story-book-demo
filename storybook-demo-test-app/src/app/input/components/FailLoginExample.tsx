@@ -9,15 +9,13 @@ import {
 } from "@yundeving/story-book-demo-ui";
 import { Label } from "@yundeving/story-book-demo-ui";
 import { Input } from "@yundeving/story-book-demo-ui";
-import { Button, IconButton } from "@yundeving/story-book-demo-ui";
+import { Button } from "@yundeving/story-book-demo-ui";
 import { useState } from "react";
 
 interface LoginForm {
   email: string;
   password: string;
 }
-
-type LoginButtonStatus = "default" | "loading" | "success" | "error";
 
 const API_DELAY = 1000;
 
@@ -27,14 +25,17 @@ export default function FailLoginExample() {
     password: "",
   });
 
-  const [failLoginButtonStatus, setFailLoginButtonStatus] =
-    useState<LoginButtonStatus>("default");
+  const [failLoginButtonStatus, setFailLoginButtonStatus] = useState(false);
+
+  const [isError, setIsError] = useState(false);
 
   const handleFailLogin = () => {
-    setFailLoginButtonStatus("loading");
+    setFailLoginButtonStatus(true);
+    setIsError(false);
 
     setTimeout(() => {
-      setFailLoginButtonStatus("error");
+      setFailLoginButtonStatus(false);
+      setIsError(true);
     }, API_DELAY);
   };
 
@@ -55,12 +56,8 @@ export default function FailLoginExample() {
                 id="email"
                 placeholder="m@example.com"
                 value={failLoginForm.email}
-                error={failLoginButtonStatus === "error"}
-                helperText={
-                  failLoginButtonStatus === "error"
-                    ? "invalid Email Format"
-                    : undefined
-                }
+                error={isError}
+                helperText={isError ? "invalid Email Format" : undefined}
                 onChange={(e) =>
                   setFailLoginForm({
                     ...failLoginForm,
@@ -75,12 +72,8 @@ export default function FailLoginExample() {
                 id="password"
                 placeholder="password"
                 value={failLoginForm.password}
-                error={failLoginButtonStatus === "error"}
-                helperText={
-                  failLoginButtonStatus === "error"
-                    ? "invalid Email Format"
-                    : undefined
-                }
+                error={isError}
+                helperText={isError ? "invalid Password" : undefined}
                 onChange={(e) =>
                   setFailLoginForm({
                     ...failLoginForm,
@@ -97,15 +90,14 @@ export default function FailLoginExample() {
           variant="primary"
           size="sm"
           className="w-full"
-          disabled={failLoginButtonStatus === "loading"}
-          status={failLoginButtonStatus}
+          isLoading={failLoginButtonStatus}
           onClick={handleFailLogin}
         >
           로그인
         </Button>
-        <IconButton
+        <Button
           label="Login with Kakao"
-          icon={<KakaoIcon />}
+          leftIcon={<KakaoIcon />}
           className="border-yellow w-full bg-yellow-500 text-sm text-black hover:bg-yellow-600 active:bg-yellow-700"
         />
       </CardFooter>

@@ -1,6 +1,6 @@
 "use client";
 
-import { IconButton, Skeleton, cn } from "@yundeving/story-book-demo-ui";
+import { Button, Skeleton, cn } from "@yundeving/story-book-demo-ui";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className=" dark:bg-default-900/80 border-default-200 dark:border-default-700 fixed top-0 right-0 left-0 z-50 border-b bg-white/80 backdrop-blur-sm">
+    <header className="dark:bg-default-900/80 border-default-200 dark:border-default-700 fixed top-0 right-0 left-0 z-50 border-b bg-white/80 backdrop-blur-sm">
       <div className="flex items-center justify-between px-6 py-3">
         {/* 로고/제목 영역 */}
         <div className="flex items-center gap-3">
@@ -32,14 +32,14 @@ export default function Header() {
 
         {/* 테마 토글 버튼 */}
         <div className="flex items-center gap-2">
-          <IconButton
+          <Button
             size="sm"
             onClick={toggleTheme}
             className={cn(
               "flex items-center gap-2 bg-transparent",
               "hover:bg-default-200 dark:hover:bg-default-700"
             )}
-            icon={
+            leftIcon={
               !mounted ? (
                 <Skeleton className="h-4 w-10" />
               ) : isDark ? (
