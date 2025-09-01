@@ -3,6 +3,7 @@
 import DefaultButton from "./components/DefaultButton";
 import DisabledButton from "./components/DisabledButton";
 import FacebookLoginButton from "./components/FacbookLoginButton";
+import IconButtons from "./components/IconButtons";
 import LoadingButton from "./components/LoadingButton";
 import SecondaryButton from "./components/Secondary";
 import {
@@ -52,6 +53,14 @@ export default function ButtonPage() {
         <SectionContent
           preview={<FacebookLoginButton />}
           code={reactElementToJSXString(FacebookLoginButton())}
+        />
+      </DocumentationSection>
+
+      <DocumentationSection id="left-right-icons">
+        <SectionTitle>Left & Right Icons</SectionTitle>
+        <SectionContent
+          preview={<IconButtons />}
+          code={reactElementToJSXString(<IconButtons />)}
         />
       </DocumentationSection>
 

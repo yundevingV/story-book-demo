@@ -1,14 +1,13 @@
 import { cn } from "../../lib/utils";
 import { type ButtonProps } from "./Button.type";
 import { cva } from "class-variance-authority";
-import { BiSolidError } from "react-icons/bi";
-import { FaCheck } from "react-icons/fa";
 import { PiSpinnerBold } from "react-icons/pi";
 
 const buttonStyle = cva(
   `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   disabled:opacity-50 disabled:cursor-not-allowed
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
   `,
   {
     variants: {
@@ -49,28 +48,43 @@ const Button = ({
   label,
   size,
   variant,
-  status = "default",
+  isLoading,
+  leftIcon,
+  rightIcon,
   className,
   children,
   ...props
 }: ButtonProps) => {
-  // 상태별 비활성화
-  const isDisabled = status === "loading";
+  // 아이콘 전용 버튼 감지 (label이나 children이 없으면 아이콘 전용)
+  const isIconOnly = !label && !children && (leftIcon || rightIcon);
+
+  // aria-label이 없는 아이콘 전용 버튼 경고
+  if (isIconOnly && !props["aria-label"]) {
+    console.warn(
+      "Icon-only buttons should have an aria-label for accessibility"
+    );
+  }
 
   return (
     <button
       type="button"
-      disabled={isDisabled}
+      disabled={isLoading}
       className={cn(buttonStyle({ size, variant }), className)}
+      aria-busy={isLoading}
+      aria-disabled={isLoading}
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
-        {status === "loading" && <PiSpinnerBold className="animate-spin" />}
-        {status === "success" && <FaCheck />}
-        {status === "error" && <BiSolidError />}
+        {isLoading ? <PiSpinnerBold className="animate-spin" /> : leftIcon}
+
         {children}
         {label && <span className="truncate">{label}</span>}
+
+        {!isLoading && rightIcon}
       </div>
+
+      {/* 로딩 상태를 스크린 리더에 알림 */}
+      {isLoading && <span className="sr-only">로딩 중...</span>}
     </button>
   );
 };
