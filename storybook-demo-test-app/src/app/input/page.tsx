@@ -11,20 +11,10 @@ import {
   SectionContent,
   SectionTitle,
 } from "@/components/documentation";
-import { useState } from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
-
-interface LoginForm {
-  email: string;
-  password: string;
-}
-
-type LoginButtonStatus = "default" | "loading" | "success" | "error";
 
 const SUCCESS_EMAIL = "success@gmail.com";
 const SUCCESS_PASSWORD = "123456";
-
-const API_DELAY = 1000;
 
 export default function InputPage() {
   return (
