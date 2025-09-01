@@ -12,7 +12,6 @@ export {
 
 export { default as Divider } from "./Divider";
 export { default as Icon } from "./Icon";
-export { default as IconButton } from "./IconButton";
 export { default as Input } from "./Input";
 export { default as Label } from "./Label";
 
