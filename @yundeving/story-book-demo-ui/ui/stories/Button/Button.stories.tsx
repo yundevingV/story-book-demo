@@ -1,6 +1,7 @@
 import Button from "../../components/Button";
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
+import { FaDownload } from "react-icons/fa";
 import { fn } from "storybook/test";
 
 const meta: Meta<typeof Button> = {
@@ -29,9 +30,9 @@ const meta: Meta<typeof Button> = {
       ],
       description: "버튼 타입을 설정할 수 있습니다.",
     },
-    status: {
+    isLoading: {
       control: { type: "radio" },
-      options: ["default", "loading", "success", "error"],
+      options: [true, false],
       description: "버튼 상태를 설정할 수 있습니다.",
     },
     size: {
@@ -88,17 +89,28 @@ export const SizeButtonList: Story = {
   ],
 };
 
-export const StatusButtonList: Story = {
+export const LoadingButtonList: Story = {
   parameters: {
     controls: { disable: true },
   },
   decorators: [
     (Story) => (
       <div className="flex gap-4">
-        <Story args={{ label: "default", status: "default" }} />
-        <Story args={{ label: "loading", status: "loading" }} />
-        <Story args={{ label: "success", status: "success" }} />
-        <Story args={{ label: "error", status: "error" }} />
+        <Story args={{ label: "default", isLoading: true }} />
+      </div>
+    ),
+  ],
+};
+
+export const IconButtonList: Story = {
+  parameters: {
+    controls: { disable: true },
+  },
+  decorators: [
+    (Story) => (
+      <div className="flex gap-4">
+        <Story args={{ label: "default", leftIcon: <FaDownload /> }} />
+        <Story args={{ label: "default", rightIcon: <FaDownload /> }} />
       </div>
     ),
   ],
