@@ -1,11 +1,10 @@
 "use client";
-import { usePathname } from "next/navigation";
 
 import { Link, cn } from "@yundeving/story-book-demo-ui";
-
+import { usePathname } from "next/navigation";
 
 interface SidebarItem {
-  name: string; 
+  name: string;
   href: string;
 }
 
@@ -16,17 +15,14 @@ const sidebarItems: SidebarItem[] = [
   { name: "Card", href: "/card" },
   { name: "Input", href: "/input" },
   { name: "Select", href: "/select" },
-  { name: "IconButton", href: "/icon-button" },
   { name: "Tooltip", href: "/tooltip" },
   { name: "Skeleton", href: "/skeleton" },
-  { name: "StatusButton", href: "/status-button" },
   { name: "Divider", href: "/divider" },
   { name: "Label", href: "/label" },
-  { name: "Icon", href: "/icon" },
 ];
 
 export default function Sidebar() {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   return (
     <div className="bg-default-200 dark:bg-default-800 flex h-screen w-64 flex-col gap-4 overflow-y-auto p-4 shadow-lg">
