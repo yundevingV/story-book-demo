@@ -7,6 +7,7 @@ const buttonStyle = cva(
   `font-medium rounded-lg text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   disabled:opacity-50 disabled:cursor-not-allowed
+  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
   `,
   {
     variants: {
@@ -54,24 +55,47 @@ const Button = ({
   children,
   ...props
 }: ButtonProps) => {
-  // 상태별 비활성화
+  // 아이콘 전용 버튼 감지 (label이나 children이 없으면 아이콘 전용)
+  const isIconOnly = !label && !children && (leftIcon || rightIcon);
+
+  // aria-label이 없는 아이콘 전용 버튼 경고
+  if (isIconOnly && !props["aria-label"]) {
+    console.warn(
+      "Icon-only buttons should have an aria-label for accessibility"
+    );
+  }
 
   return (
     <button
       type="button"
       disabled={isLoading}
       className={cn(buttonStyle({ size, variant }), className)}
+      aria-busy={isLoading}
+      aria-disabled={isLoading}
       {...props}
     >
       <div className="flex items-center justify-center gap-2">
-        {isLoading && <PiSpinnerBold className="animate-spin" />}
-        {!isLoading && leftIcon}
+        {isLoading && (
+          <PiSpinnerBold
+            className="animate-spin"
+            aria-hidden="true"
+            role="status"
+          />
+        )}
+        {!isLoading && leftIcon && <span aria-hidden="true">{leftIcon}</span>}
 
         {children}
         {label && <span className="truncate">{label}</span>}
 
-        {!isLoading && rightIcon}
+        {!isLoading && rightIcon && <span aria-hidden="true">{rightIcon}</span>}
       </div>
+
+      {/* 로딩 상태를 스크린 리더에 알림 */}
+      {isLoading && (
+        <span className="clip-[rect(0,0,0,0)] absolute -m-1 h-1 w-1 overflow-hidden border-0 p-0 whitespace-nowrap">
+          로딩 중...
+        </span>
+      )}
     </button>
   );
 };
