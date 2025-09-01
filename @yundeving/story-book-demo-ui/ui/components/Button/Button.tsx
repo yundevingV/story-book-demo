@@ -80,15 +80,11 @@ const Button = ({
         {children}
         {label && <span className="truncate">{label}</span>}
 
-        {isLoading ? <PiSpinnerBold className="animate-spin" /> : rightIcon}
+        {!isLoading && rightIcon}
       </div>
 
       {/* 로딩 상태를 스크린 리더에 알림 */}
-      {isLoading && (
-        <span className="clip-[rect(0,0,0,0)] absolute -m-1 h-1 w-1 overflow-hidden border-0 p-0 whitespace-nowrap">
-          로딩 중...
-        </span>
-      )}
+      {isLoading && <span className="sr-only">로딩 중...</span>}
     </button>
   );
 };
