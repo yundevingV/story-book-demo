@@ -71,6 +71,7 @@ const Radio = ({
             <RadioGroup.Item
               value={option.value}
               id={uniqueId}
+              disabled={option.disabled}
               className={cn(
                 radioStyles({ size, variant: error ? "error" : variant })
               )}
