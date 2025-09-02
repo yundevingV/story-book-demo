@@ -49,6 +49,7 @@ const radioGroupIndicatorStyles = cva(
 const RadioGroup = ({
   options = [],
   value,
+  className,
   onValueChange,
   size = "md",
   variant = "default",
@@ -61,7 +62,7 @@ const RadioGroup = ({
   return (
     <RadioGroupPrimitive.Root
       value={value}
-      className="grid gap-2"
+      className={cn("grid gap-2", className)}
       onValueChange={onValueChange}
       ref={ref}
       {...props}
