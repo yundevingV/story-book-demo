@@ -60,6 +60,7 @@ const Checkbox = ({
   return (
     <div className="flex items-start space-x-2">
       <CheckboxPrimitive.Root
+        id={props.id}
         className={cn(
           checkboxStyles({ size, variant: error ? "error" : variant }),
           error && "border-error-500 dark:border-error-300",
@@ -80,11 +81,11 @@ const Checkbox = ({
         <div className="flex flex-col">
           {label && (
             <label
+              htmlFor={props.id}
               className={cn(
                 "text-default-800 dark:text-default-50 text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
                 props.disabled && "cursor-not-allowed opacity-50"
               )}
-              onClick={() => props.onCheckedChange?.(!props.checked)}
             >
               {label}
             </label>

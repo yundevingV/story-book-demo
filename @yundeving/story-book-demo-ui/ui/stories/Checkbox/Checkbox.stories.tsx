@@ -41,6 +41,7 @@ export const Default: Story = {
   args: {
     label: "이용약관에 동의합니다",
     "aria-label": "이용약관에 동의합니다",
+    id: "default-checkbox",
   },
 };
 
@@ -50,13 +51,24 @@ export const Sizes: Story = {
   },
   render: () => (
     <div className="flex flex-col gap-4">
-      <Checkbox size="sm" label="Small Checkbox" aria-label="Small Checkbox" />
+      <Checkbox
+        size="sm"
+        label="Small Checkbox"
+        aria-label="Small Checkbox"
+        id="small-checkbox"
+      />
       <Checkbox
         size="md"
         label="Medium Checkbox"
         aria-label="Medium Checkbox"
+        id="medium-checkbox"
       />
-      <Checkbox size="lg" label="Large Checkbox" aria-label="Large Checkbox" />
+      <Checkbox
+        size="lg"
+        label="Large Checkbox"
+        aria-label="Large Checkbox"
+        id="large-checkbox"
+      />
     </div>
   ),
 };
@@ -72,24 +84,28 @@ export const Variants: Story = {
         label="Default"
         defaultChecked
         aria-label="Default"
+        id="default-checkbox"
       />
       <Checkbox
         variant="primary"
         label="Primary"
         defaultChecked
         aria-label="Primary"
+        id="primary-checkbox"
       />
       <Checkbox
         variant="success"
         label="Success"
         defaultChecked
         aria-label="Success"
+        id="success-checkbox"
       />
       <Checkbox
         variant="error"
         label="Error"
         defaultChecked
         aria-label="Error"
+        id="error-checkbox"
       />
     </div>
   ),
@@ -101,19 +117,35 @@ export const States: Story = {
   },
   render: () => (
     <div className="flex flex-col gap-4">
-      <Checkbox label="Unchecked" aria-label="Unchecked" />
-      <Checkbox label="Checked" defaultChecked aria-label="Checked" />
+      <Checkbox
+        label="Unchecked"
+        aria-label="Unchecked"
+        id="unchecked-checkbox"
+      />
+      <Checkbox
+        label="Checked"
+        defaultChecked
+        aria-label="Checked"
+        id="checked-checkbox"
+      />
       <Checkbox
         label="Indeterminate"
         checked="indeterminate"
         aria-label="Indeterminate"
+        id="indeterminate-checkbox"
       />
-      <Checkbox label="Disabled" disabled aria-label="Disabled" />
+      <Checkbox
+        label="Disabled"
+        disabled
+        aria-label="Disabled"
+        id="disabled-checkbox"
+      />
       <Checkbox
         label="Disabled Checked"
         disabled
         defaultChecked
         aria-label="Disabled Checked"
+        id="disabled-checked-checkbox"
       />
     </div>
   ),
@@ -125,6 +157,7 @@ export const WithHelperText: Story = {
     description: "이메일과 SMS로 마케팅 정보를 받아보실 수 있습니다",
     helperText: "언제든지 설정에서 변경할 수 있습니다",
     "aria-label": "마케팅 정보 수신 동의",
+    id: "with-helper-text-checkbox",
   },
 };
 
@@ -134,5 +167,6 @@ export const ErrorState: Story = {
     error: true,
     helperText: "이 항목은 반드시 선택해야 합니다",
     "aria-label": "필수 약관 동의",
+    id: "error-checkbox",
   },
 };
