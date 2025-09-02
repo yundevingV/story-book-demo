@@ -46,6 +46,18 @@ const checkboxStyles = cva(
     },
   }
 );
+const checkboxIconStyles = cva("", {
+  variants: {
+    size: {
+      sm: "size-2",
+      md: "size-3",
+      lg: "size-4",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});
 
 const Checkbox = ({
   className,
@@ -71,12 +83,12 @@ const Checkbox = ({
           {props.checked === "indeterminate" ? (
             <FaMinus
               className={cn(
-                checkboxStyles({ size, variant }),
+                checkboxIconStyles({ size }),
                 "text-default-800 dark:text-default-50"
               )}
             />
           ) : (
-            <FaCheck className={cn(checkboxStyles({ size, variant }))} />
+            <FaCheck className={cn(checkboxIconStyles({ size }))} />
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
