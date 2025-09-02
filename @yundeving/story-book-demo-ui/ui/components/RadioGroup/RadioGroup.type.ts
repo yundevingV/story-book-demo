@@ -10,9 +10,7 @@ export interface RadioGroupOption {
 
 export interface RadioGroupProps
   extends ComponentProps<typeof RadioGroupPrimitive.Root> {
-  label?: string;
   error?: boolean;
-  helperText?: string;
   options?: RadioGroupOption[];
   size?: "sm" | "md" | "lg";
   variant?: "default" | "primary" | "success" | "error";
