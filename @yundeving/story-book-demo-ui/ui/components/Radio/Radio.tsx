@@ -47,7 +47,7 @@ const radioIndicatorStyles = cva(
   }
 );
 const Radio = ({
-  options,
+  options = [],
   value,
   onValueChange,
   size = "md",
@@ -64,7 +64,7 @@ const Radio = ({
       onValueChange={onValueChange}
       {...props}
     >
-      {options?.map((option) => {
+      {options.map((option) => {
         const uniqueId = `${id}-${option.value}`;
         return (
           <div key={option.value} className="flex items-center space-x-2">
