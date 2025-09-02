@@ -29,7 +29,7 @@ const radioStyles = cva(
   }
 );
 const radioIndicatorStyles = cva(
-  "size-2 rounded-full bg-current transition-all duration-200 ease-in-out",
+  "size-2 rounded-full transition-all duration-200 ease-in-out",
   {
     variants: {
       size: {
