@@ -70,7 +70,7 @@ const Checkbox = ({
   ...props
 }: CheckboxProps) => {
   return (
-    <div className="flex items-start space-x-2">
+    <div className="flex items-center space-x-2">
       <CheckboxPrimitive.Root
         id={props.id}
         className={cn(
