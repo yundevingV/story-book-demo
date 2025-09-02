@@ -1,6 +1,6 @@
-import { Tooltip } from "../";
+import { Tooltip } from "..";
 import { cn } from "../../lib/utils";
-import { RadioProps } from "./RadioGroup.type";
+import { RadioProps } from "./Radio.type";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { cva } from "class-variance-authority";
 import { useId } from "react";
