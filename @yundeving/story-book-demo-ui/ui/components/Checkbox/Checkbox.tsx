@@ -8,7 +8,7 @@ const checkboxStyles = cva(
   `peer shrink-0 rounded-sm  
    ring-offset-background focus-visible:outline-none focus-visible:ring-2 
    focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed 
-   disabled:opacity-50 
+   disabled:opacity-50 transition-colors duration-200 ease-in-out
    `,
   {
     variants: {
