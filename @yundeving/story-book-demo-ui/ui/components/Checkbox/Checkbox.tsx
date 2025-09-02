@@ -63,7 +63,6 @@ const Checkbox = ({
         id={props.id}
         className={cn(
           checkboxStyles({ size, variant: error ? "error" : variant }),
-          error && "border-error-500 dark:border-error-300",
           className
         )}
         {...props}
