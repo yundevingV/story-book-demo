@@ -19,7 +19,7 @@ const checkboxStyles = cva(
       },
       variant: {
         default: `
-          border border-default-800 dark:border-default-300
+          border border-default-800 dark:border-default-50
           data-[state=checked]:bg-default-800 text-white
           dark:data-[state=checked]:bg-default-50 dark:text-black
         `,
@@ -69,9 +69,14 @@ const Checkbox = ({
       >
         <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">
           {props.checked === "indeterminate" ? (
-            <FaMinus className="text-default-50 dark:text-default-800 size-3" />
+            <FaMinus
+              className={cn(
+                checkboxStyles({ size, variant }),
+                "text-default-800 dark:text-default-50"
+              )}
+            />
           ) : (
-            <FaCheck className="size-3" />
+            <FaCheck className={cn(checkboxStyles({ size, variant }))} />
           )}
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
