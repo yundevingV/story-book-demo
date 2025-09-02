@@ -27,3 +27,5 @@ export {
 export { default as Skeleton } from "./Skeleton";
 export { default as Tooltip } from "./Tooltip";
 export { default as Link } from "./Link";
+
+export { default as Checkbox } from "./Checkbox";

@@ -1,7 +1,3 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-
-import React from "react";
-
 import {
   Select,
   SelectContainer,
@@ -12,6 +8,8 @@ import {
   SelectValue,
 } from "../../components";
 import Label from "../../components/Label";
+import type { Meta, StoryObj } from "@storybook/nextjs";
+import React from "react";
 
 const meta: Meta<typeof Select> = {
   title: "Select",
