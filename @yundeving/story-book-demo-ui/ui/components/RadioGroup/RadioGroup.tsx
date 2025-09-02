@@ -53,6 +53,7 @@ const RadioGroup = ({
   size = "md",
   variant = "default",
   error,
+  ref,
   ...props
 }: RadioGroupProps) => {
   const id = useId();
@@ -62,6 +63,7 @@ const RadioGroup = ({
       value={value}
       className="grid gap-2"
       onValueChange={onValueChange}
+      ref={ref}
       {...props}
     >
       {options.map((option) => {
