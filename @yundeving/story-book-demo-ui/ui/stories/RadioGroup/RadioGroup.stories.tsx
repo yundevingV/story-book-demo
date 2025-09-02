@@ -1,10 +1,10 @@
-import { Radio } from "../../components";
+import { RadioGroup } from "../../components";
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { useState } from "react";
 
-const meta: Meta<typeof Radio> = {
-  title: "Radio",
-  component: Radio,
+const meta: Meta<typeof RadioGroup> = {
+  title: "RadioGroup",
+  component: RadioGroup,
   parameters: {
     layout: "centered",
   },
@@ -33,17 +33,17 @@ const meta: Meta<typeof Radio> = {
       description: "비활성화 상태",
     },
   },
-} satisfies Meta<typeof Radio>;
+} satisfies Meta<typeof RadioGroup>;
 
 export default meta;
-type Story = StoryObj<typeof Radio>;
+type Story = StoryObj<typeof RadioGroup>;
 
 export const Default: Story = {
   render: () => {
     const [value, setValue] = useState("option1");
 
     return (
-      <Radio
+      <RadioGroup
         options={[
           { value: "option1", label: "첫 번째 옵션" },
           { value: "option2", label: "두 번째 옵션" },
@@ -71,7 +71,7 @@ export const Sizes: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Small
           </h4>
-          <Radio
+          <RadioGroup
             size="sm"
             options={[
               { value: "sm1", label: "Small Option 1" },
@@ -86,7 +86,7 @@ export const Sizes: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Medium
           </h4>
-          <Radio
+          <RadioGroup
             size="md"
             options={[
               { value: "md1", label: "Medium Option 1" },
@@ -101,7 +101,7 @@ export const Sizes: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Large
           </h4>
-          <Radio
+          <RadioGroup
             size="lg"
             options={[
               { value: "lg1", label: "Large Option 1" },
@@ -133,7 +133,7 @@ export const Variants: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Default
           </h4>
-          <Radio
+          <RadioGroup
             variant="default"
             options={[
               { value: "default1", label: "Default Option" },
@@ -147,7 +147,7 @@ export const Variants: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Primary
           </h4>
-          <Radio
+          <RadioGroup
             variant="primary"
             options={[
               { value: "primary1", label: "Primary Option" },
@@ -161,7 +161,7 @@ export const Variants: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Success
           </h4>
-          <Radio
+          <RadioGroup
             variant="success"
             options={[
               { value: "success1", label: "Success Option" },
@@ -175,7 +175,7 @@ export const Variants: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Error
           </h4>
-          <Radio
+          <RadioGroup
             variant="error"
             options={[
               { value: "error1", label: "Error Option" },
@@ -206,7 +206,7 @@ export const States: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Default (No Selection)
           </h4>
-          <Radio
+          <RadioGroup
             options={[
               { value: "unselected1", label: "Option 1" },
               { value: "unselected2", label: "Option 2" },
@@ -220,7 +220,7 @@ export const States: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             With Selection
           </h4>
-          <Radio
+          <RadioGroup
             options={[
               { value: "selected1", label: "Selected Option" },
               { value: "selected2", label: "Option 2" },
@@ -234,7 +234,7 @@ export const States: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Disabled
           </h4>
-          <Radio
+          <RadioGroup
             disabled
             options={[
               { value: "disabled1", label: "Disabled Option 1" },
@@ -249,7 +249,7 @@ export const States: Story = {
           <h4 className="text-default-800 dark:text-default-200 mb-2 text-sm font-medium">
             Some Disabled Options
           </h4>
-          <Radio
+          <RadioGroup
             options={[
               { value: "mixed1", label: "Available Option" },
               { value: "mixed2", label: "Disabled Option", disabled: true },
@@ -269,7 +269,7 @@ export const WithDescription: Story = {
     const [planValue, setPlanValue] = useState("plan2");
 
     return (
-      <Radio
+      <RadioGroup
         options={[
           {
             value: "plan1",
@@ -314,7 +314,7 @@ export const FormExample: Story = {
               <label className="text-default-800 dark:text-default-200 mb-2 block text-sm font-medium">
                 선호하는 연락 방법을 선택해주세요
               </label>
-              <Radio
+              <RadioGroup
                 variant="primary"
                 options={[
                   { value: "email", label: "이메일" },
@@ -330,7 +330,7 @@ export const FormExample: Story = {
               <label className="text-default-800 dark:text-default-200 mb-2 block text-sm font-medium">
                 서비스 만족도를 평가해주세요
               </label>
-              <Radio
+              <RadioGroup
                 variant="success"
                 size="sm"
                 options={[

@@ -1,12 +1,12 @@
 import { Tooltip } from "..";
 import { cn } from "../../lib/utils";
-import { RadioProps } from "./Radio.type";
-import * as RadioGroup from "@radix-ui/react-radio-group";
+import { RadioGroupProps } from "./RadioGroup.type";
+import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { cva } from "class-variance-authority";
 import { useId } from "react";
 import { FaInfoCircle } from "react-icons/fa";
 
-const radioStyles = cva(
+const radioGroupStyles = cva(
   "peer rounded-full border text-default-800 dark:text-default-200 ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-200 ease-in-out",
   {
     variants: {
@@ -28,7 +28,7 @@ const radioStyles = cva(
     },
   }
 );
-const radioIndicatorStyles = cva(
+const radioGroupIndicatorStyles = cva(
   "size-2 rounded-full transition-all duration-200 ease-in-out",
   {
     variants: {
@@ -46,7 +46,7 @@ const radioIndicatorStyles = cva(
     },
   }
 );
-const Radio = ({
+const RadioGroup = ({
   options = [],
   value,
   onValueChange,
@@ -54,11 +54,11 @@ const Radio = ({
   variant = "default",
   error,
   ...props
-}: RadioProps) => {
+}: RadioGroupProps) => {
   const id = useId();
 
   return (
-    <RadioGroup.Root
+    <RadioGroupPrimitive.Root
       value={value}
       className="grid gap-2"
       onValueChange={onValueChange}
@@ -68,25 +68,25 @@ const Radio = ({
         const uniqueId = `${id}-${option.value}`;
         return (
           <div key={option.value} className="flex items-center space-x-2">
-            <RadioGroup.Item
+            <RadioGroupPrimitive.Item
               value={option.value}
               id={uniqueId}
               disabled={option.disabled}
               className={cn(
-                radioStyles({ size, variant: error ? "error" : variant })
+                radioGroupStyles({ size, variant: error ? "error" : variant })
               )}
             >
-              <RadioGroup.Indicator className="flex items-center justify-center">
+              <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
                 <div
                   className={cn(
-                    radioIndicatorStyles({
+                    radioGroupIndicatorStyles({
                       size,
                       variant: error ? "error" : variant,
                     })
                   )}
                 />
-              </RadioGroup.Indicator>
-            </RadioGroup.Item>
+              </RadioGroupPrimitive.Indicator>
+            </RadioGroupPrimitive.Item>
             <label
               htmlFor={uniqueId}
               className="text-default-800 dark:text-default-200 text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -101,8 +101,8 @@ const Radio = ({
           </div>
         );
       })}
-    </RadioGroup.Root>
+    </RadioGroupPrimitive.Root>
   );
 };
 
-export default Radio;
+export default RadioGroup;
