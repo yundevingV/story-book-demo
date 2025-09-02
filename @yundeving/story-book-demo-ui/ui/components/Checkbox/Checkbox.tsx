@@ -99,7 +99,7 @@ const Checkbox = ({
               className={cn(
                 "mt-1 text-xs",
                 error
-                  ? "text-error-600 dark:text-error-400"
+                  ? "text-error-600 dark:text-error-300"
                   : "text-default-600 dark:text-default-300"
               )}
             >
