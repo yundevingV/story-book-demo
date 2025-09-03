@@ -59,6 +59,27 @@ test.describe("Button 접근성 테스트", () => {
     await expect(button).toBeFocused();
   });
 
+  test("Button 다크/라이트 모드 색상 대비 테스트", async ({ page }) => {
+    await page.goto("/iframe.html?id=button--variant-button-list");
+
+    // 라이트 모드 테스트
+    const lightModeResults = await new AxeBuilder({ page })
+      .withRules(["color-contrast"])
+      .analyze();
+    expect(lightModeResults.violations).toEqual([]);
+
+    // 다크 모드 활성화
+    await page.evaluate(() => {
+      document.documentElement.classList.add("dark");
+    });
+
+    // 다크 모드 테스트
+    const darkModeResults = await new AxeBuilder({ page })
+      .withRules(["color-contrast"])
+      .analyze();
+    expect(darkModeResults.violations).toEqual([]);
+  });
+
   test("Button 다양한 상태 접근성", async ({ page }) => {
     // Disabled 버튼 테스트
     await page.goto("/iframe.html?id=button--disabled");
