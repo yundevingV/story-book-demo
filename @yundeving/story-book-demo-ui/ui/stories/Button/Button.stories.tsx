@@ -109,7 +109,7 @@ export const LoadingButtonList: Story = {
   decorators: [
     (Story) => (
       <div className="flex gap-4">
-        <Story args={{ label: "default", isLoading: true }} />
+        <Story args={{ label: "Loading", isLoading: true }} />
       </div>
     ),
   ],

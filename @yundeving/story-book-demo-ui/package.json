@@ -16,7 +16,13 @@
     "storybook": "storybook dev -p 6006",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf dist node_modules styled.css",
-    "test": "playwright test"
+    "test": "playwright test",
+    "test:accessibility": "playwright test tests/accessibility",
+    "test:components": "playwright test tests/components",
+    "test:visual": "playwright test tests/visual",
+    "test:button": "playwright test tests/**/button.spec.ts",
+    "test:checkbox": "playwright test tests/**/checkbox.spec.ts",
+    "test:radiogroup": "playwright test tests/**/radiogroup.spec.ts"
   },
   "keywords": [
     "ui",
