@@ -49,11 +49,11 @@ const radioGroupIndicatorStyles = cva(
 const RadioGroup = ({
   options = [],
   value,
-  className,
   onValueChange,
   size = "md",
   variant = "default",
   error,
+  className,
   ref,
   ...props
 }: RadioGroupProps) => {
