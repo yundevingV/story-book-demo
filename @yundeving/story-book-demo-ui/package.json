@@ -15,7 +15,8 @@
     "build": "tsc",
     "storybook": "storybook dev -p 6006",
     "prepublishOnly": "npm run build",
-    "clean": "rm -rf dist node_modules styled.css"
+    "clean": "rm -rf dist node_modules styled.css",
+    "test": "playwright test"
   },
   "keywords": [
     "ui",
@@ -39,6 +40,8 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "^1.55.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
