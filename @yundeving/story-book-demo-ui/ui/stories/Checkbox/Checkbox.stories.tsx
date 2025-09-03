@@ -37,11 +37,11 @@ const meta: Meta<typeof Checkbox> = {
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
 
-export const Default: Story = {
+export const Example: Story = {
   args: {
     label: "이용약관에 동의합니다",
     "aria-label": "이용약관에 동의합니다",
-    id: "default-checkbox",
+    id: "example-checkbox",
   },
 };
 
