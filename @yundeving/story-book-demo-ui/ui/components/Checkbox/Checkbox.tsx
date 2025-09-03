@@ -65,13 +65,13 @@ const checkboxIconStyles = cva("transition-all duration-200 ease-in-out", {
 });
 
 const Checkbox = ({
-  className,
   label,
   description,
-  error,
-  helperText,
   size = "md",
   variant = "default",
+  error,
+  helperText,
+  className,
   ...props
 }: CheckboxProps) => {
   return (
