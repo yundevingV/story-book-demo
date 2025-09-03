@@ -11,7 +11,7 @@ export default defineConfig({
 
   use: {
     baseURL: "http://localhost:6006",
-    trace: "on-first-retry",
+    trace: "on",
     screenshot: "only-on-failure",
   },
 
@@ -29,13 +29,4 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
   ],
-
-  // Storybook 자동 실행
-  // webServer: {
-  //   command: "yarn storybook",
-  //   url: "http://localhost:6006",
-  //   reuseExistingServer: !process.env.CI,
-  //   timeout: 120 * 1000,
-  //   cwd: process.cwd(),
-  // },
 });
