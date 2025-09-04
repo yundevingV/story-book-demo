@@ -64,6 +64,7 @@ const RadioGroup = ({
       value={value}
       className={cn("grid gap-2", className)}
       onValueChange={onValueChange}
+      orientation="vertical"
       ref={ref}
       {...props}
     >
