@@ -62,23 +62,18 @@ test.describe("Size Button Component", () => {
   test("정확한 버튼 높이", async ({ page }) => {
     await page.goto("/iframe.html?id=button--size-button-list");
 
-    const mdButton = page.locator("button:has-text('md')");
-    const mdBox = await mdButton.boundingBox();
+    const sizes = [
+      { name: "md", height: BUTTON_HEIGHT.MD },
+      { name: "sm", height: BUTTON_HEIGHT.SM },
+      { name: "lg", height: BUTTON_HEIGHT.LG },
+    ];
 
-    expect(mdBox).not.toBeNull();
-    expect(mdBox!.height).toBe(BUTTON_HEIGHT.MD);
-
-    const smButton = page.locator("button:has-text('sm')");
-    const smBox = await smButton.boundingBox();
-
-    expect(smBox).not.toBeNull();
-    expect(smBox!.height).toBe(BUTTON_HEIGHT.SM);
-
-    const lgButton = page.locator("button:has-text('lg')");
-    const lgBox = await lgButton.boundingBox();
-
-    expect(lgBox).not.toBeNull();
-    expect(lgBox!.height).toBe(BUTTON_HEIGHT.LG);
+    for (const { name, height } of sizes) {
+      const button = page.locator(`button:has-text('${name}')`);
+      const box = await button.boundingBox();
+      expect(box).not.toBeNull();
+      expect(box!.height).toBe(height);
+    }
   });
 });
 
