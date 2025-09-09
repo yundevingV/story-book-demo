@@ -23,7 +23,6 @@ test.describe("Button 접근성 테스트", () => {
     // 브라우저별 처리
     if (browserName === "webkit") {
       // Safari: Tab 키 활성화 후 테스트
-      console.log("WebKit 브라우저: Tab 키 설정 후 테스트");
 
       // Safari에서 Tab 키가 비활성화 되어있을 수 있음
       // Safari에서 Tab 키 활성화 시도
@@ -40,14 +39,12 @@ test.describe("Button 접근성 테스트", () => {
         (el) => document.activeElement === el
       );
       if (!isFocused) {
-        console.log("Tab 키 실패, 직접 포커스로 대체");
         await button.focus();
       }
 
       await expect(button).toBeFocused();
     } else {
       // Chrome, Firefox: Tab 키로 포커스 이동
-      console.log(`${browserName} 브라우저: Tab 키 방식 사용`);
       await page.keyboard.press("Tab");
       await expect(button).toBeFocused();
     }
