@@ -45,6 +45,12 @@ test.describe("Variant Button Component", () => {
   });
 });
 
+const BUTTON_HEIGHT = {
+  MD: 36,
+  SM: 32,
+  LG: 40,
+};
+
 // size button test
 test.describe("Size Button Component", () => {
   test("정확한 버튼 높이", async ({ page }) => {
@@ -53,17 +59,17 @@ test.describe("Size Button Component", () => {
     const mdButton = page.locator("button:has-text('md')");
     const mdBox = await mdButton.boundingBox();
 
-    expect(mdBox.height).toBe(36);
+    expect(mdBox.height).toBe(BUTTON_HEIGHT.MD);
 
     const smButton = page.locator("button:has-text('sm')");
     const smBox = await smButton.boundingBox();
 
-    expect(smBox.height).toBe(32);
+    expect(smBox.height).toBe(BUTTON_HEIGHT.SM);
 
     const lgButton = page.locator("button:has-text('lg')");
     const lgBox = await lgButton.boundingBox();
 
-    expect(lgBox.height).toBe(40);
+    expect(lgBox.height).toBe(BUTTON_HEIGHT.LG);
   });
 });
 
