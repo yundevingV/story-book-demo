@@ -38,7 +38,7 @@ const meta: Meta<typeof RadioGroup> = {
 export default meta;
 type Story = StoryObj<typeof RadioGroup>;
 
-export const Default: Story = {
+export const Example: Story = {
   render: () => {
     const [value, setValue] = useState("option1");
 

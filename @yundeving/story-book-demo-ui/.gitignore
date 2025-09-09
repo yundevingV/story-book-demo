@@ -48,3 +48,7 @@ storybook-static
 # dist file
 styled.css
 dist
+
+# playwright
+playwright-report
+test-results
