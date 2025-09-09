@@ -13,7 +13,7 @@ test.describe("Button 접근성 테스트", () => {
     expect(accessibilityScanResults.violations).toEqual([]);
   });
 
-  test("Button 키보드 접근성", async ({ page, browserName }) => {
+  test("Button 키보드 접근성", async ({ page }) => {
     await page.goto("/iframe.html?id=button--example");
 
     // 버튼이 존재하는지 먼저 확인
