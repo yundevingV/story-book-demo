@@ -14,32 +14,17 @@ test.describe("Checkbox 접근성 테스트", () => {
     expect(accessibilityScanResults.violations).toEqual([]);
   });
 
-  test("Checkbox 키보드 접근성", async ({ page, browserName }) => {
+  test("Checkbox 키보드 접근성", async ({ page }) => {
     await page.goto("/iframe.html?id=checkbox--example");
 
     const checkbox = page.locator('[role="checkbox"]').first();
     await expect(checkbox).toBeVisible();
 
-    // 브라우저별 처리
-    if (browserName === "webkit") {
-      await page.evaluate(() => {
-        document.body.setAttribute("tabindex", "-1");
-      });
+    // Tab 키로 체크박스에 포커스
+    await page.keyboard.press("Tab");
+    await expect(checkbox).toBeFocused();
 
-      await page.keyboard.press("Tab");
-
-      const isFocused = await checkbox.evaluate(
-        (el) => document.activeElement === el
-      );
-      if (!isFocused) {
-        await checkbox.focus();
-      }
-      await expect(checkbox).toBeFocused();
-    } else {
-      await page.keyboard.press("Tab");
-      await expect(checkbox).toBeFocused();
-    }
-
+    // Enter 키로 체크/언체크 가능한지
     await page.keyboard.press("Enter");
     await expect(checkbox).toBeFocused();
 
