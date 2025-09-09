@@ -1,7 +1,7 @@
 // tests/visual/visual-regression.spec.ts
-import { deleteCSS } from "./helper/deleteCSS";
-import { initPage } from "./helper/initPage";
-import { waitFunction } from "./helper/waitFunction";
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import { test, expect } from "@playwright/test";
 
 test.describe("Visual Regression Tests", () => {
