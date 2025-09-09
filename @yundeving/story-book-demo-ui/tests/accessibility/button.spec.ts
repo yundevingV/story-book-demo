@@ -73,6 +73,54 @@ test.describe("Button 접근성 테스트", () => {
     expect(darkModeResults.violations).toEqual([]);
   });
 
+  // ARIA 상태 테스트
+  test("Button ARIA 일관성 테스트", async ({ page }) => {
+    await initPage(page);
+
+    // 여러 variant 버튼들이 있는 페이지로 이동
+    await page.goto("/iframe.html?id=button--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
+
+    const button = page.locator("button:has-text('Button')");
+
+    // 모든 버튼의 ARIA 속성이 일관되게 설정되어 있는지 확인
+    const type = await button.getAttribute("type");
+
+    const textContent = await button.textContent();
+
+    // 모든 버튼이 기본 속성을 가져야 함
+    expect(type).toBe("button");
+    expect(textContent?.trim()).toBeTruthy(); // 접근 가능한 텍스트
+  });
+
+  test("Loading Button ARIA 일관성 테스트", async ({ page }) => {
+    await initPage(page);
+
+    // 여러 variant 버튼들이 있는 페이지로 이동
+    await page.goto("/iframe.html?id=button--loading-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
+
+    const button = page.locator("button:has-text('Loading')");
+
+    // 모든 버튼의 ARIA 속성이 일관되게 설정되어 있는지 확인
+    const type = await button.getAttribute("type");
+    const ariaBusy = await button.getAttribute("aria-busy");
+    const ariaDisabled = await button.getAttribute("aria-disabled");
+    const textContent = await button.textContent();
+
+    // 모든 버튼이 기본 속성을 가져야 함
+    expect(type).toBe("button");
+    expect(ariaBusy).toBe("true");
+    expect(ariaDisabled).toBe("true");
+    expect(textContent?.trim()).toBeTruthy(); // 접근 가능한 텍스트
+  });
+
   test("Button 다양한 상태 접근성", async ({ page }) => {
     await initPage(page);
 
