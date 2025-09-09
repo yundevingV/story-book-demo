@@ -53,20 +53,27 @@ test.describe("Checkbox Variant Component", () => {
 });
 
 // Indeterminate
-test("Indeterminate 혹은 Disabled 상태가 렌더링되어야 함", async ({ page }) => {
-  await page.goto("/iframe.html?id=checkbox--states");
+test.describe("Indeterminate or Disabled Checkbox Component", () => {
+  test("Indeterminate 혹은 Disabled 상태가 렌더링되어야 함", async ({
+    page,
+  }) => {
+    await page.goto("/iframe.html?id=checkbox--states");
 
-  const indeterminateCheckbox = page.getByRole("checkbox", {
-    name: "Indeterminate",
+    const indeterminateCheckbox = page.getByRole("checkbox", {
+      name: "Indeterminate",
+    });
+
+    await expect(indeterminateCheckbox).toHaveAttribute(
+      "aria-checked",
+      "mixed"
+    );
+
+    // Disabled 체크박스도 같은 방식으로
+    const disabledCheckbox = page.getByRole("checkbox", {
+      name: "Disabled",
+      exact: true,
+    });
+
+    await expect(disabledCheckbox).toBeDisabled();
   });
-
-  await expect(indeterminateCheckbox).toHaveAttribute("aria-checked", "mixed");
-
-  // Disabled 체크박스도 같은 방식으로
-  const disabledCheckbox = page.getByRole("checkbox", {
-    name: "Disabled",
-    exact: true,
-  });
-
-  await expect(disabledCheckbox).toBeDisabled();
 });
