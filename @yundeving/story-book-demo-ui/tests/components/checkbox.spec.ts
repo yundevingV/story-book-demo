@@ -39,15 +39,16 @@ test.describe("Checkbox Component", () => {
   });
 });
 
+const variants = ["default", "primary", "success", "error"];
+
 // Variant Checkbox Component
 test.describe("Checkbox Variant Component", () => {
   test("모든 variant가 렌더링되어야 함", async ({ page }) => {
     await page.goto("/iframe.html?id=checkbox--variant");
 
-    await expect(page.locator("label:has-text('Default')")).toBeVisible();
-    await expect(page.locator("label:has-text('Primary')")).toBeVisible();
-    await expect(page.locator("label:has-text('Success')")).toBeVisible();
-    await expect(page.locator("label:has-text('Error')")).toBeVisible();
+    for (const variant of variants) {
+      await expect(page.locator(`label:has-text('${variant}')`)).toBeVisible();
+    }
   });
 });
 
