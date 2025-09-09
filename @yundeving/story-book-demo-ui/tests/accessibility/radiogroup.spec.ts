@@ -1,10 +1,19 @@
 // tests/accessibility/radiogroup.spec.ts
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
 test.describe("RadioGroup 접근성 테스트", () => {
   test("RadioGroup 접근성 위반사항 없어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=radiogroup--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -15,7 +24,13 @@ test.describe("RadioGroup 접근성 테스트", () => {
   });
 
   test("RadioGroup 키보드 접근성", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=radiogroup--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const radioGroup = page.locator('[role="radiogroup"]');
     await expect(radioGroup).toBeVisible();

@@ -1,9 +1,18 @@
 // tests/components/radiogroup.spec.ts
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import { test, expect } from "@playwright/test";
 
 test.describe("RadioGroup Component", () => {
   test("단일 선택만 가능해야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=radiogroup--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const radio1 = page.locator('[role="radio"]').first();
     const radio2 = page.locator('[role="radio"]').nth(1);

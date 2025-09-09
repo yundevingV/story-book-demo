@@ -1,9 +1,18 @@
 // tests/components/checkbox.spec.ts
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import { test, expect } from "@playwright/test";
 
 test.describe("Checkbox Component", () => {
   test("체크박스 토글이 작동해야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=checkbox--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const checkbox = page.locator('[role="checkbox"]');
 
@@ -20,6 +29,8 @@ test.describe("Checkbox Component", () => {
   });
 
   test("라벨 클릭으로 토글되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?args=label:Test Label&id=checkbox--example");
 
     const checkbox = page.locator('[role="checkbox"]');
@@ -31,7 +42,13 @@ test.describe("Checkbox Component", () => {
   });
 
   test("에러 상태가 표시되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?args=error:true&id=checkbox--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const checkbox = page.locator('[role="checkbox"]');
     // 에러 스타일이 적용되었는지 확인 (예: 빨간 테두리)
@@ -44,7 +61,13 @@ const variants = ["default", "primary", "success", "error"];
 // Variant Checkbox Component
 test.describe("Checkbox Variant Component", () => {
   test("모든 variant가 렌더링되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=checkbox--variant");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     for (const variant of variants) {
       await expect(page.locator(`label:has-text('${variant}')`)).toBeVisible();
@@ -57,7 +80,13 @@ test.describe("Indeterminate or Disabled Checkbox Component", () => {
   test("Indeterminate 혹은 Disabled 상태가 렌더링되어야 함", async ({
     page,
   }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=checkbox--states");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const indeterminateCheckbox = page.getByRole("checkbox", {
       name: "Indeterminate",

@@ -1,10 +1,19 @@
 // tests/accessibility/button.spec.ts
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
 test.describe("Button 접근성 테스트", () => {
   test("Button 접근성 위반사항 없어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
@@ -14,7 +23,13 @@ test.describe("Button 접근성 테스트", () => {
   });
 
   test("Button 키보드 접근성", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     // 버튼이 존재하는지 먼저 확인
     const button = page.locator("button:has-text('Button')");
@@ -32,7 +47,13 @@ test.describe("Button 접근성 테스트", () => {
   });
 
   test("Button 다크/라이트 모드 색상 대비 테스트", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--variant-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     // 라이트 모드 테스트
     const lightModeResults = await new AxeBuilder({ page })
@@ -53,8 +74,14 @@ test.describe("Button 접근성 테스트", () => {
   });
 
   test("Button 다양한 상태 접근성", async ({ page }) => {
+    await initPage(page);
+
     // Disabled 버튼 테스트
     await page.goto("/iframe.html?id=button--disabled");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa", "wcag21aa"])

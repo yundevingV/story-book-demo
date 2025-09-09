@@ -1,10 +1,19 @@
 // tests/components/button.spec.ts
+import { deleteCSS } from "../helper/deleteCSS";
+import { initPage } from "../helper/initPage";
+import { waitFunction } from "../helper/waitFunction";
 import { test, expect } from "@playwright/test";
 
 // example button test
 test.describe("Button Component", () => {
   test("기본 버튼이 렌더링되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const button = page.locator("button:has-text('Button')");
 
@@ -13,7 +22,13 @@ test.describe("Button Component", () => {
   });
 
   test("버튼 클릭이 작동해야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--example");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const button = page.locator("button:has-text('Button')");
 
@@ -43,7 +58,13 @@ const variants = [
 // variant button test
 test.describe("Variant Button Component", () => {
   test("모든 variant가 렌더링되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--variant-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     for (const variant of variants) {
       await expect(page.locator(`button:has-text('${variant}')`)).toBeVisible();
@@ -60,7 +81,13 @@ const BUTTON_HEIGHT = {
 // size button test
 test.describe("Size Button Component", () => {
   test("정확한 버튼 높이", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--size-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const sizes = [
       { name: "md", height: BUTTON_HEIGHT.MD },
@@ -80,7 +107,13 @@ test.describe("Size Button Component", () => {
 // loading button test
 test.describe("Loading Button Component", () => {
   test("로딩 상태에서 버튼이 비활성화되어야 함", async ({ page }) => {
+    await initPage(page);
+
     await page.goto("/iframe.html?id=button--loading-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
 
     const button = page.locator("button:has-text('Loading')");
     await expect(button).toBeDisabled();
