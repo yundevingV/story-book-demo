@@ -65,17 +65,20 @@ test.describe("Size Button Component", () => {
     const mdButton = page.locator("button:has-text('md')");
     const mdBox = await mdButton.boundingBox();
 
-    expect(mdBox.height).toBe(BUTTON_HEIGHT.MD);
+    expect(mdBox).not.toBeNull();
+    expect(mdBox!.height).toBe(BUTTON_HEIGHT.MD);
 
     const smButton = page.locator("button:has-text('sm')");
     const smBox = await smButton.boundingBox();
 
-    expect(smBox.height).toBe(BUTTON_HEIGHT.SM);
+    expect(smBox).not.toBeNull();
+    expect(smBox!.height).toBe(BUTTON_HEIGHT.SM);
 
     const lgButton = page.locator("button:has-text('lg')");
     const lgBox = await lgButton.boundingBox();
 
-    expect(lgBox.height).toBe(BUTTON_HEIGHT.LG);
+    expect(lgBox).not.toBeNull();
+    expect(lgBox!.height).toBe(BUTTON_HEIGHT.LG);
   });
 });
 
