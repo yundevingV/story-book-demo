@@ -28,20 +28,26 @@ test.describe("Button Component", () => {
   });
 });
 
+const variants = [
+  "default",
+  "primary",
+  "secondary",
+  "accent",
+  "info",
+  "success",
+  "warning",
+  "error",
+  "ghost",
+];
+
 // variant button test
 test.describe("Variant Button Component", () => {
   test("모든 variant가 렌더링되어야 함", async ({ page }) => {
     await page.goto("/iframe.html?id=button--variant-button-list");
 
-    await expect(page.locator("button:has-text('default')")).toBeVisible();
-    await expect(page.locator("button:has-text('primary')")).toBeVisible();
-    await expect(page.locator("button:has-text('secondary')")).toBeVisible();
-    await expect(page.locator("button:has-text('accent')")).toBeVisible();
-    await expect(page.locator("button:has-text('info')")).toBeVisible();
-    await expect(page.locator("button:has-text('success')")).toBeVisible();
-    await expect(page.locator("button:has-text('warning')")).toBeVisible();
-    await expect(page.locator("button:has-text('error')")).toBeVisible();
-    await expect(page.locator("button:has-text('ghost')")).toBeVisible();
+    for (const variant of variants) {
+      await expect(page.locator(`button:has-text('${variant}')`)).toBeVisible();
+    }
   });
 });
 
