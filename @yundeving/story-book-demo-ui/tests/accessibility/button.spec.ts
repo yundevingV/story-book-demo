@@ -5,7 +5,7 @@ import { waitFunction } from "../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "@playwright/test";
 
-//  pr test commit
+//  pr test commit 2
 test.describe("Button 접근성 테스트", () => {
   test("Button 접근성 위반사항 없어야 함", async ({ page }) => {
     await initPage(page);
