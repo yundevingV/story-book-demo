@@ -32,7 +32,7 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN  }}
-          buildScriptName: yarn ui build-storybook
+          buildScriptName: yarn build-storybook
           onlyChanged: true
 
       - name: Run tests
