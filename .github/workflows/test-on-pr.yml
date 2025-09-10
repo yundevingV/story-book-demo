@@ -27,11 +27,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Install Playwright browsers
-        run: npx playwright install --with-deps
-
-      - name: Run storybook
-        run: yarn ui storybook
+      - name: Publish to Chromatic
+        id: publish_chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN  }}
+          buildScriptName: build-storybook
+          onlyChanged: true
 
       - name: Run tests
         run: yarn ui test
