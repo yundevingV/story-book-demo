@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [master]
     paths:
-      - "@yundeving/story-book-demo-ui/**"
+      - ['@yundeving/story-book-demo-ui/**','.github/workflows/test-on-pr.yml']
 
 jobs:
   test:
@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: "18"
           cache: "yarn"
-          
+
       - name: Setup Yarn 4
             run: |
               corepack enable
