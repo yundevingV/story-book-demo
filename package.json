@@ -14,7 +14,8 @@
     "ui": "yarn workspace @yundeving/story-book-demo-ui",
     "app": "yarn workspace storybook-demo-test-app",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "build-storybook": "yarn ui build-storybook"
   },
   "dependencies": {
     "@yundeving/story-book-demo-ui": "^1.1.6",
