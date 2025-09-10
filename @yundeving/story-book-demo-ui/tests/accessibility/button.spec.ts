@@ -73,6 +73,35 @@ test.describe("Button 접근성 테스트", () => {
     expect(darkModeResults.violations).toEqual([]);
   });
 
+  test("로그인 아이콘 버튼 다크/라이트 모드 색상 대비 테스트", async ({
+    page,
+  }) => {
+    await initPage(page);
+
+    await page.goto("/iframe.html?id=button--login-icon-button-list");
+
+    await waitFunction(page);
+
+    await deleteCSS(page);
+
+    // 라이트 모드 테스트
+    const lightModeResults = await new AxeBuilder({ page })
+      .withRules(["color-contrast"])
+      .analyze();
+    expect(lightModeResults.violations).toEqual([]);
+
+    // 다크 모드 활성화
+    await page.evaluate(() => {
+      document.documentElement.classList.add("dark");
+    });
+
+    // 다크 모드 테스트
+    const darkModeResults = await new AxeBuilder({ page })
+      .withRules(["color-contrast"])
+      .analyze();
+    expect(darkModeResults.violations).toEqual([]);
+  });
+
   // ARIA 상태 테스트
   test("Button ARIA 일관성 테스트", async ({ page }) => {
     await initPage(page);
