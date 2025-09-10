@@ -29,4 +29,12 @@ export default defineConfig({
       use: { ...devices["Desktop Safari"] },
     },
   ],
+
+  webServer: {
+    command:
+      "npx http-server @yundeving/story-book-demo-ui/storybook-static -p 6006 -s",
+    url: "http://127.0.0.1:6006",
+    reuseExistingServer: true,
+    timeout: 120_000,
+  },
 });
