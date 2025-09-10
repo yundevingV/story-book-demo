@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [master]
     paths:
-      - ['@yundeving/story-book-demo-ui/**','.github/workflows/test-on-pr.yml']
+      - ["@yundeving/story-book-demo-ui/**", ".github/workflows/test-on-pr.yml"]
 
 jobs:
   test:
@@ -21,10 +21,10 @@ jobs:
           cache: "yarn"
 
       - name: Setup Yarn 4
-            run: |
-              corepack enable
-              corepack prepare yarn@4.9.0 --activate
-              yarn --version  # 버전 확인
+        run: |
+          corepack enable
+          corepack prepare yarn@4.9.0 --activate
+          yarn --version  # 버전 확인
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
