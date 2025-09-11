@@ -5,8 +5,8 @@ on:
   pull_request:
     branches: [master]
     paths:
-      - "@yundeving/story-book-demo-ui/**"
-      - ".github/workflows/test-on-pr.yml"
+      - '@yundeving/story-book-demo-ui/**'
+      - '.github/workflows/test-on-pr.yml'
 
 jobs:
   test:
@@ -16,14 +16,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Enable Corepack
         run: corepack enable
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.18.0"
-          cache: "yarn"
+          node-version: '20.18.0'
+          cache: 'yarn'
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -32,7 +33,7 @@ jobs:
         id: publish_chromatic
         uses: chromaui/action@v1
         with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN  }}
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: build-storybook
           onlyChanged: true
 
@@ -41,12 +42,13 @@ jobs:
           echo "Chromatic outputs:"
           echo "build-url: ${{ steps.publish_chromatic.outputs.build-url }}"
           echo "전체 steps.publish_chromatic.outputs: ${{ toJson(steps.publish_chromatic.outputs) }}"
-      - name: Create PR comment
-        if: ${{ steps.publish_chromatic.outputs.build-url != '' }}
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
+
+      # - name: Create PR comment
+      #   if: ${{ steps.publish_chromatic.outputs.build-url != '' }}
+      #   env:
+      #     GH_TOKEN: ${{ secrets.TOKEN }}
+      #   run: |
+      #     gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
 
       # - name: Run tests
       #   run: yarn ui test
