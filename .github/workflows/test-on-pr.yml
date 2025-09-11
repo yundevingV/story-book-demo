@@ -30,7 +30,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Playwright 설치
-        run: npx exec playwright install --with-deps
+        run: npx playwright install --with-deps
 
       - name: 스토리북 빌드
         run: yarn build-storybook
