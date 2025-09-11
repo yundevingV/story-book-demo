@@ -41,12 +41,13 @@ jobs:
           echo $! > .storybook-pid
 
       - name: Publish to Chromatic
-        id: publish_chromatic
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
           buildScriptName: build-storybook
           onlyChanged: true
+          chromaticVersion: latest
 
       - name: 디버깅 Chromatic 출력값 확인
         run: |
