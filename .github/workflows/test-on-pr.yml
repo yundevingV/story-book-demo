@@ -30,7 +30,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Playwright 설치
-        run: npx playwright install --with-deps
+        run: npx exec playwright install --with-deps
 
       - name: 스토리북 빌드
         run: yarn build-storybook
@@ -39,7 +39,6 @@ jobs:
         run: |
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
-          sleep 5
 
       - name: Publish to Chromatic
         id: publish_chromatic
@@ -48,6 +47,9 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: build-storybook
           onlyChanged: true
+
+      - name: Run tests
+        run: yarn ui test
 
       - name: 디버깅 Chromatic 출력값 확인
         run: |
@@ -61,9 +63,6 @@ jobs:
           GH_TOKEN: ${{ secrets.TOKEN }}
         run: |
           gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
-
-      - name: Run tests
-        run: yarn ui test
 
       - name: 스토리북 서버 종료
         if: always()
