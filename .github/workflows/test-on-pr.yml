@@ -51,7 +51,7 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: build-storybook
           onlyChanged: true
-
+          chromaticVersion: latest
       - name: 디버깅 Chromatic 출력값 확인
         run: |
           echo "Chromatic outputs:"
