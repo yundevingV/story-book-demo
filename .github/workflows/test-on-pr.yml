@@ -40,23 +40,6 @@ jobs:
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
 
-      - name: 디버깅 - 서버 상태 확인
-        run: |
-          echo "서버 프로세스 확인:"
-          ps aux | grep serve || true
-          echo "포트 6006 확인:"
-          netstat -tlnp | grep 6006 || true
-          echo "HTTP 응답 확인:"
-          curl -I http://localhost:6006 || true
-
-      - name: 디버깅 - 테스트 실행 전 환경 확인
-        run: |
-          echo "현재 디렉토리: $(pwd)"
-          echo "파일 목록:"
-          ls -la @yundeving/story-book-demo-ui/storybook-static/ || true
-          echo "Node.js 버전: $(node --version)"
-          echo "Yarn 버전: $(yarn --version)"
-
       - name: Run tests
         run: yarn ui test --reporter=list,html
 
