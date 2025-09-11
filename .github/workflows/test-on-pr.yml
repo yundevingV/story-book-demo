@@ -36,16 +36,18 @@ jobs:
           buildScriptName: build-storybook
           onlyChanged: true
 
+      - name: 디버깅: Chromatic 출력값 확인
+        run: |
+          echo "Chromatic outputs:"
+          echo "build-url: ${{ steps.publish_chromatic.outputs.build-url }}"
+          echo "전체 steps.publish_chromatic.outputs: ${{ toJson(steps.publish_chromatic.outputs) }}"
       - name: Create PR comment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `## 📚 Storybook Preview\n\n [View Storybook](${{ steps.publish_chromatic.outputs.build-url }})\n\n✅ Chromatic build completed successfully!`
-            })
+        if: ${{ steps.publish_chromatic.outputs.build-url != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
+
       # - name: Run tests
       #   run: yarn ui test
 
