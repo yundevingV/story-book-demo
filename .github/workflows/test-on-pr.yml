@@ -37,6 +37,8 @@ jobs:
           onlyChanged: true
 
       - name: Create PR comment
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
         run: |
           gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
 
