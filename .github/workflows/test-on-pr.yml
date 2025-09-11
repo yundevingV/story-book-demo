@@ -44,7 +44,7 @@ jobs:
             issue_number: context.issue.number,
             owner: context.repo.owner,
             repo: context.repo.repo,
-            body: `## 📚 Storybook Preview\n\n�� [View Storybook](${{ steps.publish_chromatic.outputs.build-url }})\n\n✅ Chromatic build completed successfully!`
+            body: `## 📚 Storybook Preview\n\n [View Storybook](${{ steps.publish_chromatic.outputs.build-url }})\n\n✅ Chromatic build completed successfully!`
           })
       # - name: Run tests
       #   run: yarn ui test
