@@ -37,11 +37,15 @@ jobs:
           onlyChanged: true
 
       - name: Create PR comment
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
-
+        uses: actions/github-script@v7
+        with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## 📚 Storybook Preview\n\n�� [View Storybook](${{ steps.publish_chromatic.outputs.build-url }})\n\n✅ Chromatic build completed successfully!`
+          })
       # - name: Run tests
       #   run: yarn ui test
 
