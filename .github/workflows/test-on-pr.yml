@@ -5,8 +5,8 @@ on:
   pull_request:
     branches: [master]
     paths:
-      - '@yundeving/story-book-demo-ui/**'
-      - '.github/workflows/test-on-pr.yml'
+      - "@yundeving/story-book-demo-ui/**"
+      - ".github/workflows/test-on-pr.yml"
 
 jobs:
   test:
@@ -23,8 +23,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.18.0'
-          cache: 'yarn'
+          node-version: "20.18.0"
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -37,7 +37,7 @@ jobs:
           buildScriptName: build-storybook
           onlyChanged: true
 
-      - name: 디버깅: Chromatic 출력값 확인
+      - name: 디버깅 Chromatic 출력값 확인
         run: |
           echo "Chromatic outputs:"
           echo "build-url: ${{ steps.publish_chromatic.outputs.build-url }}"
