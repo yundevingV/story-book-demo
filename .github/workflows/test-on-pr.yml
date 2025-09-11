@@ -37,9 +37,8 @@ jobs:
           onlyChanged: true
 
       - name: Create PR comment
-        uses: thollander/actions-commit-pull-request@v1
-        with:
-          message: "storybook : ${{ steps.publish_chromatic.outputs.build-url }}"
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.build-url }}"
 
       # - name: Run tests
       #   run: yarn ui test
