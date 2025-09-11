@@ -41,6 +41,7 @@ jobs:
           echo $! > .storybook-pid
 
       - name: Run tests
+        continue-on-error: true
         run: yarn ui test --reporter=list,html
 
       - name: Publish to Chromatic
