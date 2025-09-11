@@ -49,6 +49,8 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          workingDir: "@yundeving/story-book-demo-ui"
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
           buildScriptName: build-storybook
           onlyChanged: true
 
