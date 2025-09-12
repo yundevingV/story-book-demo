@@ -40,14 +40,15 @@ jobs:
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
 
-      # - name: Publish to Chromatic
-      #   uses: chromaui/action@v1
-      #   with:
-      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      #     storybookBaseDir: "@yundeving/story-book-demo-ui"
-      #     buildScriptName: build-storybook
-      #     onlyChanged: true
-      #     chromaticVersion: latest
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
+          buildScriptName: build-storybook
+          onlyChanged: false
+          chromaticVersion: latest
+
       - name: 디버깅 - 빌드 결과 확인
         run: |
           echo "빌드된 파일들:"
