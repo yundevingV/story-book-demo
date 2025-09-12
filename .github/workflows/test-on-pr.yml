@@ -68,9 +68,12 @@ jobs:
         run: |
           gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
 
-      - name: Run tests --ignore-snpashots
+      - name: 스냅샷 갱신
+        run: yarn ui test:visual --update-snapshots
+
+      - name: 테스트 시작
         continue-on-error: true
-        run: yarn ui test --reporter=list,html --update-snapshots
+        run: yarn ui test --reporter=list,html
 
       - name: 스토리북 서버 종료
         if: always()
