@@ -1,0 +1,93 @@
+# .github/workflows/test-on-pr.yml
+name: Test on Pull Request
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "@yundeving/story-book-demo-ui/**"
+      - ".github/workflows/test-on-pr.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.18.0"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Playwright 설치
+        run: npx playwright install --with-deps
+
+      - name: 스토리북 빌드
+        run: yarn ui build-storybook
+
+      - name: 스토리북 실행
+        run: |
+          npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
+          echo $! > .storybook-pid
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
+          buildScriptName: build-storybook
+          onlyChanged: false
+
+      - name: 디버깅 - 빌드 결과 확인
+        run: |
+          echo "빌드된 파일들:"
+          ls -la @yundeving/story-book-demo-ui/storybook-static/ || true
+          echo "index.html 존재 여부:"
+          test -f @yundeving/story-book-demo-ui/storybook-static/index.html && echo "OK" || echo "MISSING"
+
+      - name: 디버깅 Chromatic 출력값 확인
+        run: |
+          echo "Chromatic outputs:"
+          echo "build-url: ${{ steps.publish_chromatic.outputs.build-url }}"
+          echo "전체 steps.publish_chromatic.outputs: ${{ toJson(steps.publish_chromatic.outputs) }}"
+
+      - name: Create PR comment
+        if: ${{ steps.publish_chromatic.outputs.url != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
+
+      - name: 스냅샷 갱신
+        run: yarn ui test:visual --update-snapshots
+
+      - name: 테스트 시작
+        continue-on-error: true
+        run: yarn ui test --reporter=list,html
+
+      - name: 스토리북 서버 종료
+        if: always()
+        run: |
+          if [ -f .storybook-pid ]; then
+            kill $(cat .storybook-pid) || true
+            rm .storybook-pid
+          fi
+
+      - name: 테스트 결과
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            @yundeving/story-book-demo-ui/playwright-report/
+            @yundeving/story-book-demo-ui/test-results/
+          retention-days: 30

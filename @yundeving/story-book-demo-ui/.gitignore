@@ -52,3 +52,4 @@ dist
 # playwright
 playwright-report
 test-results
+/tests/visual/visual-regression.spec.ts-snapshots

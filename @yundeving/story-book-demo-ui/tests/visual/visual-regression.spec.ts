@@ -15,7 +15,7 @@ test.describe("Visual Regression Tests", () => {
 
     await deleteCSS(page);
 
-    await expect(page).toHaveScreenshot("");
+    await expect(page).toHaveScreenshot("variant-button-list.png");
   });
 
   test("Checkbox 모든 상태 스크린샷", async ({ page }) => {
@@ -29,7 +29,7 @@ test.describe("Visual Regression Tests", () => {
 
     await deleteCSS(page);
 
-    await expect(page).toHaveScreenshot("");
+    await expect(page).toHaveScreenshot("checkbox-example.png");
   });
 
   test("반응형 디자인 테스트", async ({ page }) => {
@@ -48,6 +48,8 @@ test.describe("Visual Regression Tests", () => {
     // 애니메이션/트랜지션 노이즈 제거
     await deleteCSS(page);
 
-    await expect(page).toHaveScreenshot("");
+    await expect(page).toHaveScreenshot(
+      "responsive-design-sized-button-list.png"
+    );
   });
 });
