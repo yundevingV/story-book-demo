@@ -7,6 +7,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 1,
   workers: 1,
+
   reporter: "html",
   use: {
     actionTimeout: 5000,
