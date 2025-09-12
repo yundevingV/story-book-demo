@@ -54,6 +54,7 @@ jobs:
           ls -la @yundeving/story-book-demo-ui/storybook-static/ || true
           echo "index.html 존재 여부:"
           test -f @yundeving/story-book-demo-ui/storybook-static/index.html && echo "OK" || echo "MISSING"
+
       - name: 디버깅 Chromatic 출력값 확인
         run: |
           echo "Chromatic outputs:"
@@ -84,6 +85,6 @@ jobs:
         with:
           name: test-results
           path: |
-            playwright-report/
-            .playwright/
+            @yundeving/story-book-demo-ui/playwright-report/
+            @yundeving/story-book-demo-ui/test-results/
           retention-days: 30
