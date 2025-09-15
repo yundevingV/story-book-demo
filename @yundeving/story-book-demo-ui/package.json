@@ -23,7 +23,8 @@
     "test:visual": "playwright test tests/visual",
     "test:button": "playwright test tests/**/button.spec.ts tests/components/button/**.spec.ts",
     "test:checkbox": "playwright test tests/**/checkbox.spec.ts",
-    "test:radiogroup": "playwright test tests/**/radiogroup.spec.ts"
+    "test:radiogroup": "playwright test tests/**/radiogroup.spec.ts",
+    "test:card": "playwright test tests/accessibility/card/**.spec.ts"
   },
   "keywords": [
     "ui",
