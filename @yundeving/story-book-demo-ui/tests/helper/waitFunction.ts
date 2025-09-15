@@ -20,6 +20,6 @@ export const waitFunction = async (page: Page) => {
 
       return performance.now() - (window as Window).__lastCheck.t > 500;
     },
-    { timeout: 5000 }
+    { timeout: 3000 }
   );
 };
