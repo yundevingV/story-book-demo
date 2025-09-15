@@ -1,5 +1,4 @@
 // tests/accessibility/card.spec.ts
-import { deleteCSS } from "../../helper/deleteCSS";
 import { initPage } from "../../helper/initPage";
 import { waitFunction } from "../../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";

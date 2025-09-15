@@ -1,5 +1,4 @@
-// tests/accessibility/card/with-action-card.spec.ts
-import { deleteCSS } from "../../helper/deleteCSS";
+// tests/accessibility/card/thumbnail-view-card.spec.ts
 import { initPage } from "../../helper/initPage";
 import { waitFunction } from "../../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
