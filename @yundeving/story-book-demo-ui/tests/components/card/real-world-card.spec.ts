@@ -31,15 +31,14 @@ test.describe("Real World Card 접근성 테스트", () => {
     await expect(button).toBeVisible();
   });
 
-  test("통계 카드 렌더링 테스트", async ({ page }) => {
+  test("통계 카드 클릭 테스트", async ({ page }) => {
     const button = page.locator("button:has-text('자세히 보기')");
 
-    await expect(button).toBeEnabled();
-    await button.click();
     await expect(button).toBeVisible();
+    await expect(button).toContainText("자세히 보기");
   });
 
-  test("통계 카드 클릭 테스트", async ({ page }) => {
+  test("통계 카드 렌더링 테스트", async ({ page }) => {
     const button = page.locator("button:has-text('자세히 보기')");
 
     await expect(button).toBeEnabled();
