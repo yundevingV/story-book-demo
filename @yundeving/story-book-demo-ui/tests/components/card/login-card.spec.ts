@@ -4,7 +4,7 @@ import { initPage } from "../../helper/initPage";
 import { waitFunction } from "../../helper/waitFunction";
 import { test, expect } from "@playwright/test";
 
-test.describe("Login Card 접근성 테스트", () => {
+test.describe("Login Card 컴포넌트 테스트", () => {
   // before start test
   test.beforeEach(async ({ page }) => {
     await initPage(page);
