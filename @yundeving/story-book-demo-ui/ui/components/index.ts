@@ -30,3 +30,11 @@ export { default as Link } from "./Link";
 
 export { default as Checkbox } from "./Checkbox";
 export { default as RadioGroup } from "./RadioGroup";
+
+export {
+  TypographyH1,
+  TypographyH2,
+  TypographyH3,
+  TypographyH4,
+  TypographyP,
+} from "./Typography";
