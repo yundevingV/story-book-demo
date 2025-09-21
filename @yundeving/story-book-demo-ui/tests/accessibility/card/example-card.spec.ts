@@ -44,10 +44,9 @@ test.describe("Card 접근성 테스트", () => {
       .locator('[data-testid="card"], .card, [role="article"]')
       .first();
 
-    if ((await card.count()) > 0) {
-      await card.focus();
-      await expect(card).toBeFocused();
-    }
+    await expect(card).toBeVisible();
+    await card.focus();
+    await expect(card).toBeFocused();
   });
 });
 
