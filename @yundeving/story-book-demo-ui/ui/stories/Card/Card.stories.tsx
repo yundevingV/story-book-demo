@@ -33,7 +33,7 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 // 기본 Card
-export const Default: Story = {
+export const Example: Story = {
   render: () => (
     <Card className="w-80">
       <CardHeader>
