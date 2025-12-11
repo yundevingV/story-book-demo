@@ -14,6 +14,12 @@ const meta: Meta = {
     layout: "padded",
   },
   tags: ["autodocs"],
+  argTypes: {
+    className: {
+      control: { type: "text" },
+      description: "추가 CSS 클래스",
+    },
+  },
 } satisfies Meta;
 
 export default meta;
@@ -21,27 +27,27 @@ type Story = StoryObj;
 
 // H1 헤딩
 export const H1: Story = {
-  render: () => <TypographyH1>제목 1</TypographyH1>,
+  render: (arg) => <TypographyH1 {...arg}>제목 1</TypographyH1>,
 };
 
 // H2 헤딩
 export const H2: Story = {
-  render: () => <TypographyH2>제목 2</TypographyH2>,
+  render: (arg) => <TypographyH2 {...arg}>제목 2</TypographyH2>,
 };
 
 // H3 헤딩
 export const H3: Story = {
-  render: () => <TypographyH3>제목 3</TypographyH3>,
+  render: (arg) => <TypographyH3 {...arg}>제목 3</TypographyH3>,
 };
 
 // H4 헤딩
 export const H4: Story = {
-  render: () => <TypographyH4>제목 4</TypographyH4>,
+  render: (arg) => <TypographyH4 {...arg}>제목 4</TypographyH4>,
 };
 
 // P 문단
 export const P: Story = {
-  render: () => <TypographyP>기본 글씨</TypographyP>,
+  render: (arg) => <TypographyP {...arg}>기본 글씨</TypographyP>,
 };
 
 // 모든 Typography 조합
