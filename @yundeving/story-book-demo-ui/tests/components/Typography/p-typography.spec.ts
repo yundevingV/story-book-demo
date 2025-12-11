@@ -22,14 +22,14 @@ test.describe("Typography P 구조/정렬", () => {
   });
 
   test("className 주입 테스트", async ({ page }) => {
-    await page.goto(`/iframe.html?id=${storyId}&args=className:text-left`);
+    await page.goto(`/iframe.html?id=${storyId}&args=className:text-center`);
     const story = page.locator("#storybook-root");
-    const pLeft = story.locator("p").first();
-    await expect(await pLeft.getAttribute("class")).toMatch(/text-left/);
+    const pCenter = story.locator("p").first();
+    await expect(await pCenter.getAttribute("class")).toMatch(/text-center/);
     await expect(
-      await pLeft.evaluate(
+      await pCenter.evaluate(
         (el) => getComputedStyle(el as HTMLElement).textAlign
       )
-    ).toBe("left");
+    ).toBe("center");
   });
 });
