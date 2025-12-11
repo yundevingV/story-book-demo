@@ -10,7 +10,6 @@ import {
   Icon,
   Input,
   Label,
-  TypographyH1,
   TypographyP,
 } from "../../components";
 import type { Meta, StoryObj } from "@storybook/nextjs";
@@ -303,9 +302,9 @@ export const RealWorldExample: Story = {
         </CardHeader>
         <CardContent>
           <div className="text-center">
-            <TypographyH1 className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
+            <TypographyP className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
               1,234
-            </TypographyH1>
+            </TypographyP>
             <CardDescription>총 방문자 수</CardDescription>
           </div>
         </CardContent>
