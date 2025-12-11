@@ -9,7 +9,7 @@ const TypographyH1 = ({
   return (
     <h1
       className={cn(
-        "text-default-700 dark:text-default-200 scroll-m-20 text-4xl font-extrabold tracking-tight text-balance",
+        "text-default-700 dark:text-default-200 scroll-m-20 text-4xl font-extrabold tracking-tight",
         className
       )}
       {...props}
@@ -27,7 +27,7 @@ const TypographyH2 = ({
   return (
     <h2
       className={cn(
-        "text-default-700 dark:text-default-200 scroll-m-20 text-3xl font-extrabold tracking-tight text-balance",
+        "text-default-700 dark:text-default-200 scroll-m-20 text-3xl font-extrabold tracking-tight",
         className
       )}
       {...props}
@@ -45,7 +45,7 @@ const TypographyH3 = ({
   return (
     <h3
       className={cn(
-        "text-default-700 dark:text-default-200 scroll-m-20 text-2xl font-extrabold tracking-tight text-balance",
+        "text-default-700 dark:text-default-200 scroll-m-20 text-2xl font-extrabold tracking-tight",
         className
       )}
       {...props}
@@ -63,7 +63,7 @@ const TypographyH4 = ({
   return (
     <h4
       className={cn(
-        "text-default-700 dark:text-default-200 scroll-m-20 text-xl font-extrabold tracking-tight text-balance",
+        "text-default-700 dark:text-default-200 scroll-m-20 text-xl font-extrabold tracking-tight",
         className
       )}
       {...props}
@@ -81,7 +81,7 @@ const TypographyP = ({
   return (
     <p
       className={cn(
-        "text-default-700 dark:text-default-200 scroll-m-20 text-base font-normal tracking-tight text-balance",
+        "text-default-700 dark:text-default-200 scroll-m-20 text-base font-normal tracking-tight",
         className
       )}
       {...props}
