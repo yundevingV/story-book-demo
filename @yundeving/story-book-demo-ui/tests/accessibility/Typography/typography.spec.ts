@@ -4,14 +4,23 @@ import { waitFunction } from "../../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-test.describe("Typography H1 접근성 테스트", () => {
-  test("Typography H1 접근성 위반사항 없어야 함", async ({ page }) => {
+const ids = [
+  "typography--h-1",
+  "typography--h-2",
+  "typography--h-3",
+  "typography--h-4",
+  "typography--p",
+];
+
+test.describe("Typography P 접근성 테스트", () => {
+  test("모든 typography가 접근성 위반사항 없어야 함", async ({ page }) => {
     await initPage(page);
 
-    await page.goto("/iframe.html?id=typography--h-1");
+    for (const id of ids) {
+      await page.goto(`/iframe.html?id=${id}`);
+    }
 
     await waitFunction(page);
-
     await deleteCSS(page);
 
     const accessibilityScanResults = await new AxeBuilder({ page })
