@@ -72,7 +72,7 @@ jobs:
           echo "전체 steps.publish_chromatic.outputs: ${{ toJson(steps.publish_chromatic.outputs) }}"
 
       - name: Create PR comment
-        if: ${{ steps.publish_chromatic.outputs.url != '' }}
+        # if: ${{ steps.publish_chromatic.outputs.url != '' }}
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}
         run: |
