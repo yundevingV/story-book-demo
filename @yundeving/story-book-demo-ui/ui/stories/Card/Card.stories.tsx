@@ -10,6 +10,7 @@ import {
   Icon,
   Input,
   Label,
+  TypographyP,
 } from "../../components";
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import React from "react";
@@ -41,10 +42,10 @@ export const Example: Story = {
         <CardDescription>카드에 대한 간단한 설명입니다.</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>
+        <TypographyP>
           카드의 주요 내용이 들어갑니다. 여기에 텍스트, 이미지, 폼 등 다양한
           요소를 배치할 수 있습니다.
-        </p>
+        </TypographyP>
       </CardContent>
       <CardFooter className="flex justify-end gap-2">
         <Button variant="primary">확인</Button>
@@ -80,7 +81,9 @@ export const WithAction: Story = {
         </CardAction>
       </CardHeader>
       <CardContent>
-        <p>사용자로부터 새로운 메시지가 도착했습니다. 확인해보세요.</p>
+        <TypographyP>
+          사용자로부터 새로운 메시지가 도착했습니다. 확인해보세요.
+        </TypographyP>
       </CardContent>
     </Card>
   ),
@@ -97,7 +100,7 @@ export const ThumbnailViewCard: Story = {
           <CardDescription>썸네일 뷰 카드입니다.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>썸네일 뷰 카드입니다.</p>
+          <TypographyP>썸네일 뷰 카드입니다.</TypographyP>
         </CardContent>
       </Card>
     </>
@@ -118,7 +121,7 @@ export const ListViewCard: Story = {
           <div className="from-primary-400 to-secondary-500 flex size-16 items-center justify-center rounded-lg bg-gradient-to-br">
             <span className="text-lg font-medium text-white"></span>
           </div>
-          <p>리스트 뷰 카드입니다.</p>
+          <TypographyP>리스트 뷰 카드입니다.</TypographyP>
         </CardContent>
       </Card>
 
@@ -132,7 +135,7 @@ export const ListViewCard: Story = {
             <span className="text-lg font-medium text-white"></span>
           </div>
           <div className="flex flex-col gap-2">
-            <p>리스트 뷰 카드입니다.</p>
+            <TypographyP>리스트 뷰 카드입니다.</TypographyP>
             <CardDescription>리스트 뷰 카드 설명입니다.</CardDescription>
           </div>
         </CardContent>
@@ -144,7 +147,7 @@ export const ListViewCard: Story = {
             <span className="text-lg font-medium text-white"></span>
           </div>
           <div className="flex flex-col gap-2">
-            <p>리스트 뷰 카드입니다.</p>
+            <TypographyP>리스트 뷰 카드입니다.</TypographyP>
             <CardDescription>리스트 뷰 카드 설명입니다.</CardDescription>
           </div>
         </CardContent>
@@ -163,9 +166,9 @@ export const DifferentSizes: Story = {
           <CardDescription>전체 너비를 사용하는 카드입니다.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>
+          <TypographyP>
             이 카드는 전체 너비를 사용하여 더 많은 내용을 표시할 수 있습니다.
-          </p>
+          </TypographyP>
         </CardContent>
       </Card>
 
@@ -175,7 +178,7 @@ export const DifferentSizes: Story = {
           <CardDescription>고정된 너비를 가진 카드입니다.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>적당한 크기로 내용을 표시합니다.</p>
+          <TypographyP>적당한 크기로 내용을 표시합니다.</TypographyP>
         </CardContent>
       </Card>
 
@@ -185,7 +188,7 @@ export const DifferentSizes: Story = {
           <CardDescription>컴팩트한 카드입니다.</CardDescription>
         </CardHeader>
         <CardContent>
-          <p>간단한 정보를 표시합니다.</p>
+          <TypographyP>간단한 정보를 표시합니다.</TypographyP>
         </CardContent>
       </Card>
     </div>
@@ -206,9 +209,9 @@ export const ThemeVariants: Story = {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-primary-700 dark:text-primary-300">
+          <TypographyP className="text-primary-700 dark:text-primary-300">
             Primary 색상과 어울리는 내용입니다.
-          </p>
+          </TypographyP>
         </CardContent>
       </Card>
 
@@ -222,9 +225,9 @@ export const ThemeVariants: Story = {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-secondary-700 dark:text-secondary-300">
+          <TypographyP className="text-secondary-700 dark:text-secondary-300">
             Secondary 색상과 어울리는 내용입니다.
-          </p>
+          </TypographyP>
         </CardContent>
       </Card>
 
@@ -238,9 +241,9 @@ export const ThemeVariants: Story = {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-success-700 dark:text-success-300">
+          <TypographyP className="text-success-700 dark:text-success-300">
             Success 색상과 어울리는 내용입니다.
-          </p>
+          </TypographyP>
         </CardContent>
       </Card>
 
@@ -254,9 +257,9 @@ export const ThemeVariants: Story = {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-warning-700 dark:text-warning-300">
+          <TypographyP className="text-warning-700 dark:text-warning-300">
             Warning 색상과 어울리는 내용입니다.
-          </p>
+          </TypographyP>
         </CardContent>
       </Card>
     </div>
@@ -279,7 +282,7 @@ export const RealWorldExample: Story = {
               U
             </div>
             <div>
-              <p className="font-medium">사용자 이름</p>
+              <TypographyP className="font-medium">사용자 이름</TypographyP>
               <CardDescription>user@example.com</CardDescription>
             </div>
           </div>
@@ -299,9 +302,9 @@ export const RealWorldExample: Story = {
         </CardHeader>
         <CardContent>
           <div className="text-center">
-            <div className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
+            <TypographyP className="text-primary-600 dark:text-primary-400 text-3xl font-bold">
               1,234
-            </div>
+            </TypographyP>
             <CardDescription>총 방문자 수</CardDescription>
           </div>
         </CardContent>

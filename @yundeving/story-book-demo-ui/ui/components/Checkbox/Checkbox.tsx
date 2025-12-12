@@ -1,4 +1,5 @@
 import { cn } from "../../lib/utils";
+import { TypographyP } from "../Typography";
 import { CheckboxProps } from "./Checkbox.type";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { cva } from "class-variance-authority";
@@ -113,12 +114,12 @@ const Checkbox = ({
             </label>
           )}
           {description && (
-            <p className="text-default-700 dark:text-default-300 text-sm">
+            <TypographyP className="text-default-700 dark:text-default-300 text-sm">
               {description}
-            </p>
+            </TypographyP>
           )}
           {helperText && (
-            <p
+            <TypographyP
               className={cn(
                 "mt-1 text-xs",
                 error
@@ -127,7 +128,7 @@ const Checkbox = ({
               )}
             >
               {helperText}
-            </p>
+            </TypographyP>
           )}
         </div>
       )}

@@ -1,4 +1,5 @@
 import { cn } from "../../lib/utils";
+import { TypographyP } from "../Typography";
 import { type InputProps } from "./Input.type";
 import { cva } from "class-variance-authority";
 
@@ -56,14 +57,14 @@ const Input = ({
         {...props}
       />
       {helperText && (
-        <p
+        <TypographyP
           className={cn(
             "mt-1 text-sm",
             error ? "text-error-500" : "text-default-300"
           )}
         >
           {helperText}
-        </p>
+        </TypographyP>
       )}
     </div>
   );
