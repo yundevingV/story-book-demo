@@ -44,7 +44,38 @@ jobs:
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
 
-      - name: 테스트 시작 (샤딩)
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
+          buildScriptName: build-storybook
+          onlyChanged: false
+
+      - name: 디버깅 - 빌드 결과 확인
+        run: |
+          echo "빌드된 파일들:"
+          ls -la @yundeving/story-book-demo-ui/storybook-static/ || true
+          echo "index.html 존재 여부:"
+          test -f @yundeving/story-book-demo-ui/storybook-static/index.html && echo "OK" || echo "MISSING"
+
+      - name: 디버깅 Chromatic 출력값 확인
+        run: |
+          echo "Chromatic outputs:"
+          echo "build-url: ${{ steps.publish_chromatic.outputs.build-url }}"
+          echo "전체 steps.publish_chromatic.outputs: ${{ toJson(steps.publish_chromatic.outputs) }}"
+
+      - name: Create PR comment
+        if: ${{ steps.publish_chromatic.outputs.url != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
+
+      - name: 스냅샷 갱신
+        run: yarn ui test:visual --update-snapshots
+
+      - name: 테스트 시작
         continue-on-error: true
         run: yarn ui test --shard=${{ matrix.shard }} --reporter=list,html
 
@@ -56,7 +87,7 @@ jobs:
             rm .storybook-pid
           fi
 
-      - name: 테스트 결과 업로드
+      - name: 테스트 결과
         uses: actions/upload-artifact@v4
         with:
           name: test-results-shard-${{ matrix.shard }}
