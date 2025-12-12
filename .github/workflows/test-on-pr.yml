@@ -83,7 +83,7 @@ jobs:
 
       - name: ${{ matrix.browser }} 테스트 시작
         continue-on-error: true
-        run: yarn ui test --browser=${{ matrix.project }} --reporter=list,html
+        run: yarn ui test --project=${{ matrix.project }} --reporter=list,html
 
       - name: 스토리북 서버 종료
         if: always()
