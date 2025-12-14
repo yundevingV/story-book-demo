@@ -82,6 +82,8 @@ jobs:
 
       - name: Playwright 테스트 결과 PR 코멘트 (${{ matrix.browser }})
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
         uses: daun/playwright-report-summary@v3
 
         with:
