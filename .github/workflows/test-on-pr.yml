@@ -50,59 +50,27 @@ jobs:
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBaseDir: "@yundeving/story-book-demo-ui"
-          buildScriptName: build-storybook
-          onlyChanged: false
+      # - name: Publish to Chromatic
+      #   uses: chromaui/action@v1
+      #   with:
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     storybookBaseDir: "@yundeving/story-book-demo-ui"
+      #     buildScriptName: build-storybook
+      #     onlyChanged: false
 
-      - name: Chromatic 빌드 결과 코멘트
-        if: ${{ steps.publish_chromatic.outputs.url != '' }}
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
+      # - name: Chromatic 빌드 결과 코멘트
+      #   if: ${{ steps.publish_chromatic.outputs.url != '' }}
+      #   env:
+      #     GH_TOKEN: ${{ secrets.TOKEN }}
+      #   run: |
+      #     gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
 
       - name: ${{ matrix.browser }} 테스트 시작
         id: test
         continue-on-error: true
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: "test-results-${{ matrix.project }}.json"
         run: yarn ui test --project=${{ matrix.project }} --reporter=list,html,junit
-
-      - name: 테스트 결과 파싱 (${{ matrix.browser }})
-        if: always()
-        id: parse_results
-        run: |
-          mkdir -p test-summary
-
-          if [ -f "@yundeving/story-book-demo-ui/test-results/junit.xml" ]; then
-            # JUnit XML 파싱
-            TOTAL=$(grep -o 'tests="[0-9]*"' "@yundeving/story-book-demo-ui/test-results/junit.xml" | grep -o '[0-9]*' | head -1 || echo "0")
-            FAILURES=$(grep -o 'failures="[0-9]*"' "@yundeving/story-book-demo-ui/test-results/junit.xml" | grep -o '[0-9]*' | head -1 || echo "0")
-            ERRORS=$(grep -o 'errors="[0-9]*"' "@yundeving/story-book-demo-ui/test-results/junit.xml" | grep -o '[0-9]*' | head -1 || echo "0")
-            SKIPPED=$(grep -o 'skipped="[0-9]*"' "@yundeving/story-book-demo-ui/test-results/junit.xml" | grep -o '[0-9]*' | head -1 || echo "0")
-            
-            # 통과한 테스트 수 계산
-            PASSED=$((TOTAL - FAILURES - ERRORS - SKIPPED))
-            
-            # 결과를 파일로 저장
-            echo "${{ matrix.project }},$TOTAL,$PASSED,$FAILURES,$ERRORS,$SKIPPED,${{ job.status }}" > test-summary/${{ matrix.project }}.txt
-            
-            # GitHub Output 설정
-            echo "total=$TOTAL" >> $GITHUB_OUTPUT
-            echo "passed=$PASSED" >> $GITHUB_OUTPUT
-            echo "failed=$FAILURES" >> $GITHUB_OUTPUT
-            echo "errors=$ERRORS" >> $GITHUB_OUTPUT
-            echo "skipped=$SKIPPED" >> $GITHUB_OUTPUT
-          else
-            echo "0,0,0,0,0,${{ job.status }}" > test-summary/${{ matrix.project }}.txt
-            echo "total=0" >> $GITHUB_OUTPUT
-            echo "passed=0" >> $GITHUB_OUTPUT
-            echo "failed=0" >> $GITHUB_OUTPUT
-            echo "errors=0" >> $GITHUB_OUTPUT
-            echo "skipped=0" >> $GITHUB_OUTPUT
-          fi
 
       - name: 스토리북 서버 종료
         if: always()
@@ -112,23 +80,30 @@ jobs:
             rm .storybook-pid
           fi
 
-      - name: 테스트 결과 업로드
+      - name: Playwright 테스트 결과 PR 코멘트 (${{ matrix.browser }})
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results-${{ matrix.project }}
-          path: |
-            @yundeving/story-book-demo-ui/playwright-report/
-            @yundeving/story-book-demo-ui/test-results/
-          retention-days: 30
+        uses: daun/playwright-report-summary@v3
 
-      - name: 테스트 통계 업로드
-        if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: test-summary-${{ matrix.project }}
-          path: test-summary/${{ matrix.project }}.txt
-          retention-days: 1
+          report-file: "@yundeving/story-book-demo-ui/test-results-${{ matrix.project }}.json"
+          report-tag: ${{ matrix.project }}
+      # - name: 테스트 결과 업로드
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: test-results-${{ matrix.project }}
+      #     path: |
+      #       @yundeving/story-book-demo-ui/playwright-report/
+      #       @yundeving/story-book-demo-ui/test-results/
+      #     retention-days: 30
+
+      # - name: 테스트 통계 업로드
+      #   if: always()
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: test-summary-${{ matrix.project }}
+      #     path: test-summary/${{ matrix.project }}.txt
+      #     retention-days: 1
 
   # 모든 테스트가 끝난 후 종합 보고서 생성
   test-summary:
@@ -145,82 +120,3 @@ jobs:
           pattern: test-summary-*
           merge-multiple: true
           path: test-summaries
-
-      - name: PR 댓글 생성
-        if: github.event_name == 'pull_request'
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}
-        run: |
-          # 각 브라우저별 통계 수집
-          COMMENT="# 🧪 Playwright 테스트 결과
-
-          ## 📊 브라우저별 테스트 통계
-
-          | 브라우저 | 시도 | ✅ 성공 | ❌ 실패 | ⚠️ 에러 | ⏭️ 스킵 | 상태 |
-          |---------|------|---------|---------|---------|---------|------|"
-
-          TOTAL_ALL=0
-          PASSED_ALL=0
-          FAILED_ALL=0
-          ERROR_ALL=0
-          SKIPPED_ALL=0
-
-          for browser in chromium firefox webkit; do
-            if [ -f "test-summaries/test-summary-$browser.txt" ]; then
-              IFS=',' read -r project total passed failed errors skipped status < "test-summaries/test-summary-$browser.txt"
-              
-              # 상태 이모지
-              if [ "$status" == "success" ] && [ "$failed" -eq 0 ] && [ "$errors" -eq 0 ]; then
-                STATUS_EMOJI="✅"
-              else
-                STATUS_EMOJI="❌"
-              fi
-              
-              # 브라우저 이름
-              case $browser in
-                chromium)
-                  BROWSER_NAME="🟢 Chromium (크롬)"
-                  ;;
-                firefox)
-                  BROWSER_NAME="🦊 Firefox (파이어폭스)"
-                  ;;
-                webkit)
-                  BROWSER_NAME="🍎 WebKit (사파리)"
-                  ;;
-                *)
-                  BROWSER_NAME="$browser"
-                  ;;
-              esac
-              
-              COMMENT="$COMMENT
-          | $BROWSER_NAME | $total | $passed | $failed | $errors | $skipped | $STATUS_EMOJI |"
-              
-              TOTAL_ALL=$((TOTAL_ALL + total))
-              PASSED_ALL=$((PASSED_ALL + passed))
-              FAILED_ALL=$((FAILED_ALL + failed))
-              ERROR_ALL=$((ERROR_ALL + errors))
-              SKIPPED_ALL=$((SKIPPED_ALL + skipped))
-            else
-              COMMENT="$COMMENT
-          | $browser | - | - | - | - | - | ⚠️ 결과 없음 |"
-            fi
-          done
-
-          COMMENT="$COMMENT
-
-          ## 📈 전체 요약
-
-          | 항목 | 수 |
-          |------|-----|
-          | 총 테스트 | **$TOTAL_ALL** |
-          | ✅ 성공 | **$PASSED_ALL** |
-          | ❌ 실패 | **$FAILED_ALL** |
-          | ⚠️ 에러 | **$ERROR_ALL** |
-          | ⏭️ 스킵 | **$SKIPPED_ALL** |
-
-          ---
-
-          📦 상세 리포트는 [GitHub Actions Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})에서 확인할 수 있습니다."
-
-          # PR 댓글 작성
-          gh pr comment ${{ github.event.pull_request.number }} --body "$COMMENT"

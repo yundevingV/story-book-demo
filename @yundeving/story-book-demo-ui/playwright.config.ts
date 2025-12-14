@@ -8,13 +8,7 @@ export default defineConfig({
   retries: 1,
   workers: 1,
 
-  reporter: process.env.CI
-    ? [
-        ["list"],
-        ["html", { outputFolder: "playwright-report" }],
-        ["junit", { outputFile: "test-results/junit.xml" }],
-      ]
-    : [["html", { outputFolder: "playwright-report" }]],
+  reporter: [["html", { outputFolder: "playwright-report" }]],
 
   use: {
     actionTimeout: 5000,
