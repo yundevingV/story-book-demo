@@ -35,6 +35,9 @@ test.describe("Button 접근성 테스트", () => {
     const button = page.locator("button:has-text('Button')");
     await expect(button).toBeVisible();
 
+    // 명시적으로 body에서 포커스를 시작
+    await page.locator("body").focus();
+
     // Tab 키로 포커스를 이동하고 확인합니다.
     await page.keyboard.press("Tab");
     await expect(button).toBeFocused();
