@@ -54,20 +54,20 @@ jobs:
           npx serve -l 6006 @yundeving/story-book-demo-ui/storybook-static &
           echo $! > .storybook-pid
 
-      # - name: Publish to Chromatic
-      #   uses: chromaui/action@v1
-      #   with:
-      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      #     storybookBaseDir: "@yundeving/story-book-demo-ui"
-      #     buildScriptName: build-storybook
-      #     onlyChanged: false
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
+          buildScriptName: build-storybook
+          onlyChanged: false
 
-      # - name: Chromatic 빌드 결과 코멘트
-      #   if: ${{ steps.publish_chromatic.outputs.url != '' }}
-      #   env:
-      #     GH_TOKEN: ${{ secrets.TOKEN }}
-      #   run: |
-      #     gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
+      - name: Chromatic 빌드 결과 코멘트
+        if: ${{ steps.publish_chromatic.outputs.url != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "Storybook preview: ${{ steps.publish_chromatic.outputs.url }}"
 
       - name: ${{ matrix.browser }} 테스트 시작
         id: test
@@ -112,17 +112,17 @@ jobs:
       #     retention-days: 1
 
   # 모든 테스트가 끝난 후 종합 보고서 생성
-  test-summary:
-    needs: test
-    runs-on: ubuntu-latest
-    if: always()
+  # test-summary:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   if: always()
 
-    steps:
-      - uses: actions/checkout@v4
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: 모든 테스트 통계 다운로드
-        uses: actions/download-artifact@v4
-        with:
-          pattern: test-summary-*
-          merge-multiple: true
-          path: test-summaries
+  #     - name: 모든 테스트 통계 다운로드
+  #       uses: actions/download-artifact@v4
+  #       with:
+  #         pattern: test-summary-*
+  #         merge-multiple: true
+  #         path: test-summaries
