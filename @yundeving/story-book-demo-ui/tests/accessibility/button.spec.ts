@@ -41,10 +41,10 @@ test.describe("Button 접근성 테스트", () => {
     // Tab 키로 포커스를 이동하고 확인합니다.
     await page.keyboard.press("Tab");
     await expect(button).toBeFocused();
-
+    console.log("button focused");
     // Enter 키로 버튼 활성화 가능한지 테스트
     await page.keyboard.press("Enter");
-
+    console.log("button entered");
     // 버튼이 여전히 포커스 상태인지 확인
     await expect(button).toBeFocused();
   });

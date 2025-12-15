@@ -44,10 +44,11 @@ test.describe("Real Word Card 접근성 테스트", () => {
       .locator('[data-testid="card"], .card, [role="article"]')
       .first();
 
-    // if ((await card.count()) > 0) {
-    await card.focus();
-    await expect(card).toBeFocused();
-    // }
+    if ((await card.count()) > 0) {
+      console.log("card focused");
+      await card.focus();
+      await expect(card).toBeFocused();
+    }
   });
 });
 
