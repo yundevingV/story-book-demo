@@ -3,7 +3,7 @@ import { deleteCSS } from "../helper/deleteCSS";
 import { initPage } from "../helper/initPage";
 import { waitFunction } from "../helper/waitFunction";
 import AxeBuilder from "@axe-core/playwright";
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 
 test.describe("Button 접근성 테스트", () => {
   test("Button 접근성 위반사항 없어야 함", async ({ page }) => {
@@ -32,21 +32,17 @@ test.describe("Button 접근성 테스트", () => {
     await deleteCSS(page);
 
     // 버튼이 존재하는지 먼저 확인
-    const button = page.locator("button:has-text('Button')");
+    const button = page.getByRole("button", { name: "Button" });
     await expect(button).toBeVisible();
 
-    // 명시적으로 body에서 포커스를 시작
-    await page.locator("body").focus();
+    await button.focus();
+    await expect(
+      button,
+      "버튼이 키보드 포커스를 받을 수 있어야 함"
+    ).toBeFocused();
 
-    // Tab 키로 포커스를 이동하고 확인합니다.
-    await page.keyboard.press("Tab");
-    await expect(button).toBeFocused();
-    console.log("button focused");
-    // Enter 키로 버튼 활성화 가능한지 테스트
     await page.keyboard.press("Enter");
-    console.log("button entered");
-    // 버튼이 여전히 포커스 상태인지 확인
-    await expect(button).toBeFocused();
+    await expect(button, "Enter 이후에도 포커스가 유지되어야 함").toBeFocused();
   });
 
   test("Button 다크/라이트 모드 색상 대비 테스트", async ({ page }) => {
