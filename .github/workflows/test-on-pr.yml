@@ -1,4 +1,3 @@
-# .github/workflows/test-on-pr.yml
 name: Test on Pull Request
 
 permissions:
