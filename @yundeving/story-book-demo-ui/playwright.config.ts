@@ -8,7 +8,8 @@ export default defineConfig({
   retries: 1,
   workers: 1,
 
-  reporter: "html",
+  reporter: [["html", { outputFolder: "playwright-report" }]],
+
   use: {
     actionTimeout: 5000,
     baseURL: "http://localhost:6006",

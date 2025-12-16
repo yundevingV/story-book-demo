@@ -1,0 +1,42 @@
+name: Publish Storybook to Chromatic
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "@yundeving/story-book-demo-ui/**"
+      - ".github/workflows/publish-chromatic.yml"
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.18.0"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Publish to Chromatic
+        id: publish_chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBaseDir: "@yundeving/story-book-demo-ui"
+          buildScriptName: build-storybook
+          onlyChanged: false
