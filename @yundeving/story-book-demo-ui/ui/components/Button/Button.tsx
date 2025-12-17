@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 import { PiSpinnerBold } from "react-icons/pi";
 
 const buttonStyle = cva(
-  `font-medium rounded-lg text-default-200
+  `font-medium rounded-md text-default-200
   transition-all duration-200 ease-in-out cursor-pointer
   disabled:opacity-50 disabled:cursor-not-allowed
   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2

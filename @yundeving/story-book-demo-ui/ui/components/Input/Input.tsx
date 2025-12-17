@@ -14,7 +14,8 @@ const inputStyle = cva(
     variants: {
       variant: {
         default: "bg-transparent",
-        filled: "bg-default-50 border-default-200",
+        filled:
+          "bg-default-50 border-default-200 dark:bg-default-900 dark:border-default-700",
         outline: "bg-transparent border-2",
       },
       type: {
