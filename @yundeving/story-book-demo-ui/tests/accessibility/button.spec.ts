@@ -32,7 +32,7 @@ test.describe("Button 접근성 테스트", () => {
     await deleteCSS(page);
 
     // 버튼이 존재하는지 먼저 확인
-    const button = page.locator("button:has-text('Button')");
+    const button = page.getByRole("button", { name: "Button" });
     await expect(button).toBeVisible();
 
     // // Tab 키로 포커스를 이동하고 확인합니다.
