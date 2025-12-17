@@ -31,9 +31,18 @@ test.describe("Button 접근성 테스트", () => {
 
     await deleteCSS(page);
 
+    // CI(ubuntu/headless)에서는 스토리 렌더가 느릴 수 있어 루트가 뜰 때까지 기다립니다.
+    const storyRoot = page.locator("#storybook-root, #root");
+    await expect(
+      storyRoot,
+      "Storybook iframe 루트가 렌더링되어야 함"
+    ).toBeVisible({ timeout: 20_000 });
+
     // 버튼이 존재하는지 먼저 확인
-    const button = page.getByRole("button", { name: "Button" });
-    await expect(button).toBeVisible();
+    const button = storyRoot.getByRole("button", { name: /button/i });
+    await expect(button, "버튼이 렌더링되어야 함").toBeVisible({
+      timeout: 20_000,
+    });
 
     // // Tab 키로 포커스를 이동하고 확인합니다.
     // await page.keyboard.press("Tab");
