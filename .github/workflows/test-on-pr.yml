@@ -58,7 +58,7 @@ jobs:
         continue-on-error: true
         env:
           PLAYWRIGHT_JSON_OUTPUT_NAME: "test-results-${{ matrix.project }}.json"
-        run: yarn ui test --project=${{ matrix.project }} --reporter=list,html,junit,json
+        run: yarn ui test:accessibility --project=${{ matrix.project }} --reporter=list,html,junit,json && yarn ui test:components --project=${{ matrix.project }} --reporter=list,html,junit,json && yarn ui test:components --project=${{ matrix.project }} --reporter=list,html,junit,json
 
       - name: 스토리북 서버 종료
         if: always()
