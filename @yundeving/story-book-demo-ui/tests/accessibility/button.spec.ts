@@ -23,6 +23,23 @@ test.describe("Button 접근성 테스트", () => {
   });
 
   test("Button 키보드 접근성", async ({ page }) => {
+    const debugLines: string[] = [];
+    page.on("console", (msg) => {
+      // 너무 길어지는 것을 방지하기 위해 길이 제한
+      const text = msg.text();
+      debugLines.push(`[console.${msg.type()}] ${text.slice(0, 500)}`);
+    });
+    page.on("pageerror", (err) => {
+      debugLines.push(
+        `[pageerror] ${String(err?.message ?? err).slice(0, 500)}`
+      );
+    });
+    page.on("requestfailed", (req) => {
+      debugLines.push(
+        `[requestfailed] ${req.url()} - ${req.failure()?.errorText ?? "unknown"}`
+      );
+    });
+
     await initPage(page);
 
     await page.goto("/iframe.html?id=button--example");
@@ -31,17 +48,37 @@ test.describe("Button 접근성 테스트", () => {
 
     await deleteCSS(page);
 
-    // CI(ubuntu/headless)에서는 스토리 렌더가 느릴 수 있어 루트가 뜰 때까지 기다립니다.
-    const storyRoot = page.locator("#storybook-root, #root");
-    await expect(
-      storyRoot,
-      "Storybook iframe 루트가 렌더링되어야 함"
-    ).toBeVisible({ timeout: 20_000 });
+    // Storybook preview는 초기에는 #storybook-root가 hidden 상태일 수 있음.
+    // "visible"이 아니라 "hidden 속성이 풀렸는지"를 기다리는 게 더 정확하다.
+    const storyRoot = page.locator("#storybook-root");
+    await expect(storyRoot, "#storybook-root는 존재해야 함").toHaveCount(1, {
+      timeout: 20_000,
+    });
+
+    try {
+      await page.waitForFunction(
+        () => {
+          const el = document.querySelector("#storybook-root");
+          return !!el && !el.hasAttribute("hidden");
+        },
+        { timeout: 60_000 }
+      );
+    } catch (e) {
+      // 렌더가 안 되는 경우: CI 로그에 원인(콘솔/요청 실패/에러)을 남긴다.
+      console.log(
+        [
+          "[storybook-debug] #storybook-root hidden 유지됨",
+          `url=${page.url()}`,
+          debugLines.slice(-50).join("\n"),
+        ].join("\n")
+      );
+      throw e;
+    }
 
     // 버튼이 존재하는지 먼저 확인
-    const button = storyRoot.getByRole("button", { name: /button/i });
+    const button = page.getByRole("button", { name: /button/i });
     await expect(button, "버튼이 렌더링되어야 함").toBeVisible({
-      timeout: 20_000,
+      timeout: 30_000,
     });
 
     // // Tab 키로 포커스를 이동하고 확인합니다.
